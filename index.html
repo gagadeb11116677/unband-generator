@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>XOBE DEV | Ultra Unban Generator VVIP</title>
+<style>
+:root{
+  --bg:#0e0e0e;
+  --card:#151515;
+  --accent:#00d4ff;
+  --text:#e4e4e4;
+  --muted:#8a8a8a;
+  --danger:#ff2e4d;
+  --font:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'Courier New',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.container{
+  width:100%;
+  max-width:900px;
+  background:var(--card);
+  border:1px solid #222;
+  border-radius:20px;
+  box-shadow:0 0 40px rgba(0,212,255,.15);
+  overflow:hidden;
+}
+.header{
+  padding:40px 35px 25px;
+  background:linear-gradient(135deg,#00d4ff 0%,#006eff 100%);
+  text-align:center;
+}
+.header h1{font-size:28px;font-weight:900;letter-spacing:.5px}
+.header p{font-size:15px;opacity:.9;margin-top:4px}
+form{padding:35px;display:grid;gap:22px}
+.grid-2{grid-template-columns:1fr 1fr}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
+label{font-size:14px;font-weight:600;margin-bottom:6px;display:block;color:var(--text)}
+input,select,textarea{
+  width:100%;
+  padding:14px 16px;
+  border-radius:10px;
+  border:1px solid #333;
+  background:#1a1a1a;
+  color:var(--text);
+  font-size:15px;
+  transition:border .2s;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+textarea{resize:vertical;min-height:110px}
+.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.option{
+  padding:14px 8px;
+  background:#1a1a1a;
+  border:1px solid #333;
+  border-radius:10px;
+  text-align:center;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:600;
+  transition:.2s;
+}
+.option.active{background:var(--accent);color:#000;border-color:var(--accent)}
+.toggles{display:flex;flex-direction:column;gap:10px}
+.toggle-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#1a1a1a;
+  padding:12px 16px;
+  border-radius:10px;
+}
+.switch{
+  position:relative;
+  width:46px;height:24px;
+  background:#333;
+  border-radius:24px;
+  cursor:pointer;
+}
+.switch::after{
+  content:'';
+  position:absolute;
+  top:2px;left:2px;
+  width:20px;height:20px;
+  background:#fff;
+  border-radius:50%;
+  transition:.3s;
+}
+.switch.on{background:var(--accent)}
+.switch.on::after{left:24px}
+.btn-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;margin-top:10px}
+.btn{
+  padding:15px;
+  font-size:15px;
+  font-weight:700;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.2s;
+}
+.btn.primary{background:var(--accent);color:#000}
+.btn.secondary{background:#333;color:var(--text)}
+.btn:hover{transform:translateY(-2px)}
+.preview{
+  margin:0 35px 35px;
+  padding:25px;
+  background:#0e0e0e;
+  border-left:4px solid var(--accent);
+  border-radius:0 14px 14px 0;
+}
+.preview h3{font-size:16px;margin-bottom:10px}
+.preview pre{
+  white-space:pre-wrap;
+  font-family:var(--mono);
+  font-size:13px;
+  line-height:1.6;
+  color:var(--muted);
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>XOBE DEV ULTRA UNBAN GENERATOR</h1>
+    <p>Professional WhatsApp Unban Appeal – VVIP Edition</p>
+  </div>
+
+  <form id="unbanForm">
+    <div class="grid-2">
+      <div>
+        <label>Full Name</label>
+        <input id="fullName" placeholder="John Doe" required />
+      </div>
+      <div>
+        <label>WhatsApp Number</label>
+        <input id="phone" placeholder="+62 8XX-XXXX-XXXX" required />
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <label>Email Address</label>
+        <input id="email" type="email" placeholder="john@example.com" required />
+      </div>
+      <div>
+        <label>Account Creation Date</label>
+        <input id="accountDate" type="date" />
+      </div>
+    </div>
+
+    <div>
+      <label>Reason for Ban</label>
+      <select id="reason" required>
+        <option value="">Select reason…</option>
+        <option value="spam">Mass Messaging / Spam</option>
+        <option value="automation">Third-Party Automation</option>
+        <option value="inappropriate">Community Guidelines</option>
+        <option value="business">Business Account Issue</option>
+        <option value="reported">False Reports</option>
+        <option value="unknown">Unknown</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Detailed Explanation</label>
+      <textarea id="details" placeholder="Explain the incident in detail…"></textarea>
+    </div>
+
+    <label>Tone of Appeal</label>
+    <div class="options">
+      <div class="option" data-tone="formal">Formal</div>
+      <div class="option" data-tone="friendly">Friendly</div>
+      <div class="option" data-tone="urgent">Urgent</div>
+      <div class="option" data-tone="apologetic">Apologetic</div>
+      <div class="option" data-tone="business">Business</div>
+      <div class="option" data-tone="legal">Legal</div>
+    </div>
+
+    <div class="toggles">
+      <div class="toggle-row">
+        <span>Include account history</span>
+        <div class="switch" id="historyToggle"></div>
+      </div>
+      <div class="toggle-row">
+        <span>Add promise statement</span>
+        <div class="switch" id="promiseToggle"></div>
+      </div>
+      <div class="toggle-row">
+        <span>Professional signature</span>
+        <div class="switch" id="signatureToggle"></div>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="submit" class="btn primary">Send to WhatsApp</button>
+      <button type="button" class="btn secondary" onclick="copyMessage()">Copy Message</button>
+      <button type="button" class="btn secondary" onclick="resetForm()">Reset</button>
+    </div>
+  </form>
+
+  <div class="preview">
+    <h3>Generated Message</h3>
+    <pre id="messagePreview">Complete the form to generate your message…</pre>
+  </div>
+</div>
+
+<script>
+/* ---------- CONFIG ---------- */
+let selectedTone = 'formal';
+
+/* ---------- UTILS ---------- */
+const $ = sel => document.querySelector(sel);
+const $$ = sel => [...document.querySelectorAll(sel)];
+
+/* ---------- EVENTS ---------- */
+$$('.option').forEach(opt=>{
+  opt.addEventListener('click',()=>{
+    $$('.option').forEach(o=>o.classList.remove('active'));
+    opt.classList.add('active');
+    selectedTone = opt.dataset.tone;
+    updatePreview();
+  });
+});
+
+$$('.switch').forEach(sw=>{
+  sw.addEventListener('click',()=>{
+    sw.classList.toggle('on');
+    updatePreview();
+  });
+});
+
+$$('input,select,textarea').forEach(el=>el.addEventListener('input',updatePreview));
+
+/* ---------- GENERATOR ---------- */
+function generateMessage(){
+  const name=$('#fullName').value.trim();
+  const phone=$('#phone').value.trim();
+  const email=$('#email').value.trim();
+  const accountDate=$('#accountDate').value;
+  const reason=$('#reason').value;
+  const details=$('#details').value.trim();
+  const history=$('#historyToggle').classList.contains('on');
+  const promise=$('#promiseToggle').classList.contains('on');
+  const signature=$('#signatureToggle').classList.contains('on');
+
+  if(!name || !phone || !email || !reason) return 'Complete required fields…';
+
+  const toneMap={
+    formal:{greet:"Dear WhatsApp Trust & Safety Team",close:"Respectfully submitted"},
+    friendly:{greet:"Hi WhatsApp Team",close:"Best regards"},
+    urgent:{greet:"URGENT: WhatsApp Support",close:"Thank you for immediate attention"},
+    apologetic:{greet:"Dear WhatsApp Moderation",close:"With sincere apologies"},
+    business:{greet:"WhatsApp Business API Support",close:"Best regards, business account"},
+    legal:{greet:"To: WhatsApp Legal Division",close:"Under penalty of perjury"}
+  };
+  const reasonMap={
+    spam:"alleged violation of Anti-Spam Policy (§4.B.2)",
+    automation:"use of unofficial automation tools (§4.A.3)",
+    inappropriate:"breach of Community Guidelines",
+    business:"business account compliance review",
+    reported:"false user reports",
+    unknown:"suspension without disclosed reason"
+  };
+
+  const t=toneMap[selectedTone];
+  const r=reasonMap[reason];
+  const ad=accountDate?new Date(accountDate).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}):null;
+
+  let msg=`${t.greet},\n\n`;
+  msg+=`I am writing to formally appeal the suspension of my WhatsApp account (${phone}) due to ${r}.\n\n`;
+
+  msg+=`Account Details:\n`;
+  msg+=`• Name: ${name}\n`;
+  msg+=`• Phone: ${phone}\n`;
+  msg+=`• Email: ${email}\n`;
+  if(ad) msg+=`• Created: ${ad}\n`;
+
+  if(details) msg+=`\nIncident Description:\n${details}\n`;
+
+  if(history && ad){
+    msg+=`\nAccount Integrity:\n`;
+    msg+=`• Zero prior violations since ${ad}.\n`;
+    msg+=`• All communications were user-consented or business-critical.\n`;
+  }
+
+  if(promise){
+    msg+=`\nUndertaking:\n`;
+    msg+=`I solemnly commit to strict adherence to all WhatsApp ToS & Community Guidelines.\n`;
+  }
+
+  if(signature){
+    msg+=`\nSubmitted by:\n${name} (${email}, ${phone})\n`;
+  }
+
+  msg+=`\n${t.close},\n${name}`;
+  return msg;
+}
+
+function updatePreview(){
+  $('#messagePreview').textContent=generateMessage();
+}
+
+function copyMessage(){
+  const msg=$('#messagePreview').textContent;
+  if(msg && msg!=='Complete required fields…'){
+    navigator.clipboard.writeText(msg);
+    alert('✅ Copied to clipboard');
+  }
+}
+
+function resetForm(){
+  $('#unbanForm').reset();
+  $$('.switch').forEach(s=>s.classList.remove('on'));
+  $$('.option').forEach(o=>o.classList.remove('active'));
+  $('.option[data-tone="formal"]').classList.add('active');
+  selectedTone='formal';
+  updatePreview();
+}
+
+/* ---------- SUBMIT ---------- */
+$('#unbanForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const phone=$('#phone').value.replace(/\D/g,'');
+  const msg=generateMessage();
+  if(msg==='Complete required fields…') return alert('⚠️ Please fill all required fields.');
+  const url=`https://wa.me/14155238886?text=${encodeURIComponent(msg)}`;
+  window.open(url,'_blank');
+});
+
+/* ---------- INIT ---------- */
+updatePreview();
+</script>
+</body>
+</html>
