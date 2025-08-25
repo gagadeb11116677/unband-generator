@@ -76,7 +76,6 @@ Gunakan nomor resmi WhatsApp Business API:
 Tool ini hanya membantu menyusun appeal.  
 Keputusan unban sepenuhnya di tangan WhatsApp.  
 Gunakan dengan jujur dan sesuai ketentuan WhatsApp.
-
 ## 📅 Changelog
 
 **v2.0 – 24 Aug 2025**
@@ -89,8 +88,18 @@ Gunakan dengan jujur dan sesuai ketentuan WhatsApp.
 - Teks unban lebih powerful & meyakinkan
 - Lebih banyak pilihan tone & opsi tambahan
 - Perbaikan bug & optimasi performa
-- Pembaruan UI & banner VVIP 2.1
------
+- Pembaruan UI & banner VVIP 2.1  
+
+**v2.2 – 25 Aug 2025 – 18:45**
+- 20 pilihan alasan ban
+- 12 pilihan tone surat
+- 12 toggle opsi tambahan
+- 3 bahasa langsung (ID / EN / CN)
+- 5 jenis akun (personal, bisnis, developer, organisasi, lainnya)
+- 2 template keamanan (biasa & super formal)
+- Fitur tambahan: UID game, bukti screenshot, riwayat top-up, ID lisensi, dsb
+- Preview real-time + Copy + Download + Kirim langsung ke WhatsApp Support
+
 ## ⚖️ Legal Note
 
 XOBE DEV Ultra Unban Generator adalah **tool generator teks otomatis** yang dibuat dengan **HTML, CSS, dan JavaScript murni**.  
