@@ -1,337 +1,215 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>XOBE DEV | Ultra Unban Generator VVIP 2.1</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>XOBE DEV | WhatsApp Ultra Unban SUPER KOMPLEKS 2.2</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
 :root{
-  --bg:#0a0a0a;
-  --card:#111111;
-  --accent:#00d9ff;
-  --secondary:#ff0080;
-  --text:#f2f2f2;
-  --muted:#8a8a8a;
-  --danger:#ff2e4d;
-  --success:#00ff88;
-  --font:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  --mono:'Cascadia Code','Courier New',monospace;
+  --bg:#0a0a0a;--card:#111111;--accent:#00d9ff;--secondary:#ff0080;
+  --text:#f2f2f2;--muted:#8a8a8a;--success:#00ff88;--danger:#ff2e4d;
+  --font:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;--mono:'Cascadia Code','Courier New',monospace;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:var(--font);
-  background:radial-gradient(ellipse at top,#001122 0%,var(--bg) 70%);
-  color:var(--text);
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-.container{
-  width:100%;
-  max-width:1000px;
-  background:var(--card);
-  border:1px solid #222;
-  border-radius:24px;
-  box-shadow:0 0 60px rgba(0,217,255,.25);
-  overflow:hidden;
-  animation:fadeIn 1s ease;
-}
+body{font-family:var(--font);background:radial-gradient(ellipse at top,#001122 0%,var(--bg) 70%);color:var(--text);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:20px}
+.container{width:100%;max-width:1100px;background:var(--card);border:1px solid #222;border-radius:24px;box-shadow:0 0 60px rgba(0,217,255,.25);overflow:hidden;animation:fadeIn 1s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(30px)}}
-
-.header{
-  padding:45px 40px 30px;
-  background:linear-gradient(135deg,var(--accent) 0%,var(--secondary) 100%);
-  text-align:center;
-  position:relative;
-}
-.header h1{
-  font-size:32px;
-  font-weight:900;
-  letter-spacing:.8px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-}
-.header h1 i{color:#fff}
-.header p{font-size:16px;opacity:.9;margin-top:6px}
-form{padding:40px;display:grid;gap:26px}
-.grid-2{grid-template-columns:1fr 1fr}
-.grid-3{grid-template-columns:1fr 1fr 1fr}
-@media(max-width:700px){.grid-2,.grid-3{grid-template-columns:1fr}}
-
+.header{padding:40px;background:linear-gradient(135deg,var(--accent) 0%,var(--secondary) 100%);text-align:center;position:relative}
+.header h1{font-size:32px;font-weight:900;letter-spacing:.8px;display:flex;align-items:center;justify-content:center;gap:10px}
+.header h1 i{color:#fff}.header p{font-size:16px;opacity:.9;margin-top:6px}
+.lang-tab{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.lang-tab button{padding:6px 14px;border:1px solid #333;background:#181818;color:var(--text);border-radius:12px;cursor:pointer;font-weight:600}
+.lang-tab button.active{background:linear-gradient(135deg,var(--accent),var(--secondary));color:#000}
+form{padding:30px;display:grid;gap:20px}
+.section-title{font-size:18px;font-weight:700;margin-bottom:8px;color:var(--accent)}
+.grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:800px){.grid-2,.grid-3{grid-template-columns:1fr}}
 label{font-size:14px;font-weight:600;margin-bottom:6px;display:block;color:var(--text)}
-input,select,textarea{
-  width:100%;
-  padding:14px 16px;
-  border-radius:12px;
-  border:1px solid #333;
-  background:#181818;
-  color:var(--text);
-  font-size:15px;
-  transition:border .2s,box-shadow .2s;
-}
-input:focus,select:focus,textarea:focus{
-  outline:none;
-  border-color:var(--accent);
-  box-shadow:0 0 8px rgba(0,217,255,.4);
-}
+input,select,textarea{width:100%;padding:14px 16px;border-radius:12px;border:1px solid #333;background:#181818;color:var(--text);font-size:14px;transition:border .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 8px rgba(0,217,255,.4)}
 textarea{resize:vertical;min-height:120px}
-
-.options{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:12px;
-}
-.option{
-  padding:14px 8px;
-  background:#181818;
-  border:1px solid #333;
-  border-radius:12px;
-  text-align:center;
-  cursor:pointer;
-  font-size:14px;
-  font-weight:600;
-  transition:.25s;
-}
-.option:hover{transform:translateY(-2px)}
-.option.active{
-  background:linear-gradient(135deg,var(--accent),var(--secondary));
-  color:#000;
-  border-color:transparent;
-  box-shadow:0 4px 14px rgba(0,217,255,.35);
-}
-
-.toggles{display:flex;flex-direction:column;gap:12px}
-.toggle-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:#181818;
-  padding:14px 18px;
-  border-radius:12px;
-  font-size:15px;
-}
-.switch{
-  position:relative;
-  width:50px;height:26px;
-  background:#333;
-  border-radius:26px;
-  cursor:pointer;
-  transition:.3s;
-}
-.switch::after{
-  content:'';
-  position:absolute;
-  top:2px;left:2px;
-  width:22px;height:22px;
-  background:#fff;
-  border-radius:50%;
-  transition:.3s;
-}
-.switch.on{background:linear-gradient(135deg,var(--accent),var(--secondary))}
-.switch.on::after{left:26px}
-
-.btn-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-top:10px}
-.btn{
-  padding:16px;
-  font-size:15px;
-  font-weight:700;
-  border:none;
-  border-radius:12px;
-  cursor:pointer;
-  transition:.2s;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-}
-.btn.primary{
-  background:linear-gradient(135deg,var(--accent),var(--secondary));
-  color:#000;
-}
-.btn.secondary{background:#333;color:var(--text)}
-.btn:hover{transform:translateY(-3px) scale(1.03)}
-.preview{
-  margin:0 40px 40px;
-  padding:30px;
-  background:#0a0a0a;
-  border-left:4px solid var(--accent);
-  border-radius:0 18px 18px 0;
-  position:relative;
-}
-.preview h3{
-  font-size:18px;
-  margin-bottom:12px;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.preview pre{
-  white-space:pre-wrap;
-  font-family:var(--mono);
-  font-size:13.5px;
-  line-height:1.7;
-  color:var(--muted);
-}
-.copy-btn{
-  position:absolute;
-  top:28px;
-  right:28px;
-  background:#222;
-  border:1px solid #444;
-  color:var(--text);
-  padding:6px 12px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:13px;
-  transition:.2s;
-}
+.options{display:grid;grid-template-columns:repeat(auto-fit,minmax 120px,1fr);gap:8px}
+.option{padding:12px 8px;background:#181818;border:1px solid #333;border-radius:10px;text-align:center;cursor:pointer;font-size:13px;font-weight:600;transition:.25s}
+.option:hover{transform:translateY(-2px)}.option.active{background:linear-gradient(135deg,var(--accent),var(--secondary));color:#000;border-color:transparent}
+.toggles{display:grid;grid-template-columns:repeat(auto-fit,minmax 220px,1fr);gap:10px}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;background:#181818;padding:12px 14px;border-radius:10px;font-size:14px}
+.switch{position:relative;width:46px;height:24px;background:#333;border-radius:24px;cursor:pointer;transition:.3s}
+.switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.3s}
+.switch.on{background:linear-gradient(135deg,var(--accent),var(--secondary))}.switch.on::after{left:22px}
+.btn-group{display:grid;grid-template-columns:repeat(auto-fit,minmax 160px,1fr);gap:12px;margin-top:10px}
+.btn{padding:14px;font-size:14px;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:.2s}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--secondary));color:#000}
+.btn.secondary{background:#333;color:var(--text)}.btn:hover{transform:translateY(-2px)}
+.preview{margin:0 30px 30px;padding:20px;background:#0a0a0a;border-left:4px solid var(--accent);border-radius:0 14px 14px 0;position:relative}
+.preview pre{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--muted);max-height:400px;overflow:auto}
+.copy-btn{position:absolute;top:14px;right:14px;background:#222;border:1px solid #444;color:var(--text);padding:4px 10px;border-radius:6px;font-size:12px;cursor:pointer}
 .copy-btn:hover{background:var(--accent);color:#000}
 </style>
 </head>
 <body>
 <div class="container">
   <div class="header">
-    <h1><i class="fas fa-shield-alt"></i>XOBE DEV ULTRA UNBAN GENERATOR</h1>
-    <p>Professional WhatsApp Unban Appeal – VVIP 2.1 Edition | new era</p>
+    <h1><i class="fab fa-whatsapp"></i> WhatsApp Ultra Unban SUPER KOMPLEKS 2.2</h1>
+    <p>20 alasan, 12 tone, 12 opsi toggle – termasuk UID, screenshot, top-up, dll.</p>
+    <div class="lang-tab">
+      <button id="langID" class="active">🇮🇩 ID</button>
+      <button id="langEN">🇺🇸 EN</button>
+      <button id="langCN">🇨🇳 CN</button>
+    </div>
   </div>
 
   <form id="unbanForm">
-    <!-- Data Diri -->
-    <div class="grid-2">
-      <div>
-        <label><i class="fas fa-user"></i> Full Name</label>
-        <input id="fullName" placeholder="John Doe" required />
-      </div>
-      <div>
-        <label><i class="fas fa-phone"></i> WhatsApp Number</label>
-        <input id="phone" placeholder="+62 8XX-XXXX-XXXX" required />
-      </div>
-    </div>
-
-    <div class="grid-2">
-      <div>
-        <label><i class="fas fa-envelope"></i> Email Address</label>
-        <input id="email" type="email" placeholder="john@example.com" required />
-      </div>
-      <div>
-        <label><i class="fas fa-calendar-alt"></i> Account Creation Date</label>
-        <input id="accountDate" type="date" />
-      </div>
-    </div>
-
+    <div class="section-title">1. Identitas & Akun</div>
     <div class="grid-3">
-      <div>
-        <label><i class="fas fa-building"></i> Business Type</label>
-        <select id="businessType">
-          <option value="">Personal</option>
-          <option value="small">Small Business</option>
-          <option value="enterprise">Enterprise</option>
-          <option value="ngo">NGO</option>
-        </select>
-      </div>
-      <div>
-        <label><i class="fas fa-globe"></i> Country</label>
+      <div><label id="labelName">Nama Lengkap</label><input id="fullName" placeholder="John Doe" required/></div>
+      <div><label id="labelPhone">Nomor WhatsApp</label><input id="phone" placeholder="+62 8XX-XXXX-XXXX" required/></div>
+      <div><label id="labelEmail">Email</label><input id="email" type="email" placeholder="john@example.com" required/></div>
+      <div><label id="labelDate">Tanggal Akun Dibuat</label><input id="accountDate" type="date"/></div>
+      <div><label id="labelCountry">Negara</label>
         <select id="country">
-          <option value="">Indonesia</option>
-          <option value="US">United States</option>
-          <option value="IN">India</option>
-          <option value="BR">Brazil</option>
-          <option value="DE">Germany</option>
+          <option value="Indonesia">Indonesia</option><option value="Malaysia">Malaysia</option><option value="Singapore">Singapore</option><option value="United States">United States</option><option value="India">India</option><option value="Brazil">Brazil</option><option value="Other">Other</option>
         </select>
       </div>
-      <div>
-        <label><i class="fas fa-hashtag"></i> Number of Groups</label>
-        <input id="groups" type="number" placeholder="0" min="0" />
+      <div><label id="labelType">Jenis Akun</label>
+        <select id="accountType">
+          <option value="Personal">Personal</option><option value="Business">Business</option><option value="Creator">Creator / Influencer</option><option value="Game">Game Player</option><option value="Seller">Seller</option><option value="Developer">Developer</option><option value="NGO">NGO</option><option value="Education">Education</option><option value="Government">Government</option>
+        </select>
       </div>
     </div>
 
-    <!-- Alasan & Detail -->
-    <div>
-      <label><i class="fas fa-exclamation-triangle"></i> Reason for Ban</label>
-      <select id="reason" required>
-        <option value="">Select reason…</option>
-        <option value="spam">Mass Messaging / Spam</option>
-        <option value="automation">Third-Party Automation</option>
-        <option value="inappropriate">Community Guidelines</option>
-        <option value="business">Business Account Issue</option>
-        <option value="reported">False Reports</option>
-        <option value="unknown">Unknown</option>
-      </select>
+    <div class="section-title">2. Alasan & Detail</div>
+    <div class="grid-2">
+      <div><label id="labelReason">Alasan Ban (20 opsi)</label>
+        <select id="reason" required>
+          <option value="">Pilih…</option>
+          <option value="spam">1. Spam / Mass Messaging</option>
+          <option value="automation">2. Automation / Bot</option>
+          <option value="inappropriate">3. Inappropriate Content</option>
+          <option value="business">4. Business Policy Violation</option>
+          <option value="ip">5. Intellectual Property</option>
+          <option value="community">6. Community Guidelines</option>
+          <option value="fake">7. Fake News</option>
+          <option value="harassment">8. Harassment</option>
+          <option value="hate">9. Hate Speech</option>
+          <option value="scam">10. Scam / Fraud</option>
+          <option value="underage">11. Underage User</option>
+          <option value="impersonation">12. Impersonation</option>
+          <option value="malware">13. Malware / Phishing</option>
+          <option value="privacy">14. Privacy Violation</option>
+          <option value="copyright">15. Copyright</option>
+          <option value="trademark">16. Trademark</option>
+          <option value="nudity">17. Nudity / Adult</option>
+          <option value="violence">18. Violence / Gore</option>
+          <option value="drugs">19. Drugs</option>
+          <option value="unknown">20. Unknown / Not Specified</option>
+        </select>
+      </div>
+      <div><label id="labelDetail">Penjelasan Detail</label><textarea id="details" placeholder="Ceritakan kejadiannya…"></textarea></div>
     </div>
 
-    <div>
-      <label><i class="fas fa-edit"></i> Detailed Explanation</label>
-      <textarea id="details" placeholder="Explain the incident in detail…"></textarea>
-    </div>
-
-    <!-- Tone Pilihan -->
-    <label><i class="fas fa-palette"></i> Tone of Appeal</label>
+    <div class="section-title">3. Gaya Surat (12 pilihan)</div>
     <div class="options">
-      <div class="option" data-tone="formal"><i class="fas fa-briefcase"></i> Formal</div>
-      <div class="option" data-tone="friendly"><i class="fas fa-smile"></i> Friendly</div>
-      <div class="option" data-tone="urgent"><i class="fas fa-clock"></i> Urgent</div>
-      <div class="option" data-tone="apologetic"><i class="fas fa-heart-broken"></i> Apologetic</div>
-      <div class="option" data-tone="business"><i class="fas fa-handshake"></i> Business</div>
-      <div class="option" data-tone="legal"><i class="fas fa-gavel"></i> Legal</div>
-      <div class="option" data-tone="tech"><i class="fas fa-code"></i> Tech</div>
-      <div class="option" data-tone="creative"><i class="fas fa-magic"></i> Creative</div>
+      <div class="option active" data-tone="formal">Formal</div>
+      <div class="option" data-tone="business">Business</div>
+      <div class="option" data-tone="apologetic">Apologetic</div>
+      <div class="option" data-tone="friendly">Friendly</div>
+      <div class="option" data-tone="urgent">Urgent</div>
+      <div class="option" data-tone="legal">Legal</div>
+      <div class="option" data-tone="tech">Tech</div>
+      <div class="option" data-tone="creative">Creative</div>
+      <div class="option" data-tone="respectful">Respectful</div>
+      <div class="option" data-tone="casual">Casual</div>
+      <div class="option" data-tone="emotional">Emotional</div>
+      <div class="option" data-tone="confident">Confident</div>
     </div>
 
-    <!-- Tambahan Fitur -->
+    <div class="section-title">4. Opsi Tambahan (12 toggle)</div>
     <div class="toggles">
-      <div class="toggle-row">
-        <span><i class="fas fa-history"></i> Include account history</span>
-        <div class="switch" id="historyToggle"></div>
-      </div>
-      <div class="toggle-row">
-        <span><i class="fas fa-promise"></i> Add promise statement</span>
-        <div class="switch" id="promiseToggle"></div>
-      </div>
-      <div class="toggle-row">
-        <span><i class="fas fa-signature"></i> Professional signature</span>
-        <div class="switch" id="signatureToggle"></div>
-      </div>
-      <div class="toggle-row">
-        <span><i class="fas fa-paperclip"></i> Attach usage stats</span>
-        <div class="switch" id="statsToggle"></div>
-      </div>
-      <div class="toggle-row">
-        <span><i class="fas fa-translate"></i> Multilingual support</span>
-        <div class="switch" id="langToggle"></div>
-      </div>
+      <div class="toggle-row"><span id="toggleHistory">Sertakan riwayat akun</span><div class="switch" id="historyToggle"></div></div>
+      <div class="toggle-row"><span id="togglePromise">Pernyataan tidak mengulangi</span><div class="switch" id="promiseToggle"></div></div>
+      <div class="toggle-row"><span id="toggleSignature">Tanda tangan profesional</span><div class="switch" id="signatureToggle"></div></div>
+      <div class="toggle-row"><span id="toggleStats">Lampirkan statistik penggunaan</span><div class="switch" id="statsToggle"></div></div>
+      <div class="toggle-row"><span id="toggleScreenshot">Sebutkan screenshot terlampir</span><div class="switch" id="screenshotToggle"></div></div>
+      <div class="toggle-row"><span id="toggleTopup">Riwayat top-up (game)</span><div class="switch" id="topupToggle"></div></div>
+      <div class="toggle-row"><span id="toggleDevice">Info perangkat</span><div class="switch" id="deviceToggle"></div></div>
+      <div class="toggle-row"><span id="toggleIP">Informasi IP terakhir</span><div class="switch" id="ipToggle"></div></div>
+      <div class="toggle-row"><span id="toggleLicense">Nomor lisensi (business)</span><div class="switch" id="licenseToggle"></div></div>
+      <div class="toggle-row"><span id="toggleVerification">Status verifikasi dua langkah</span><div class="switch" id="verificationToggle"></div></div>
+      <div class="toggle-row"><span id="toggleBackup">Status cadangan chat</span><div class="switch" id="backupToggle"></div></div>
+      <div class="toggle-row"><span id="toggleTemplate">Gunakan template super-formal</span><div class="switch" id="templateToggle"></div></div>
     </div>
 
-    <!-- Tombol Aksi -->
     <div class="btn-group">
-      <button type="submit" class="btn primary"><i class="fab fa-whatsapp"></i> Send to WhatsApp</button>
-      <button type="button" class="btn secondary" onclick="copyMessage()"><i class="fas fa-copy"></i> Copy Message</button>
-      <button type="button" class="btn secondary" onclick="downloadMessage()"><i class="fas fa-download"></i> Download .txt</button>
+      <button type="submit" class="btn primary"><i class="fab fa-whatsapp"></i> Kirim ke WhatsApp</button>
+      <button type="button" class="btn secondary" onclick="copyMessage()"><i class="fas fa-copy"></i> Salin</button>
+      <button type="button" class="btn secondary" onclick="downloadMessage()"><i class="fas fa-download"></i> Unduh .txt</button>
       <button type="button" class="btn secondary" onclick="resetForm()"><i class="fas fa-redo"></i> Reset</button>
     </div>
   </form>
 
   <div class="preview">
-    <h3><i class="fas fa-eye"></i> Generated Message</h3>
-    <button class="copy-btn" onclick="copyMessage()"><i class="fas fa-copy"></i> Copy</button>
-    <pre id="messagePreview">Complete the form to generate your message…</pre>
+    <pre id="messagePreview">Lengkapi form untuk melihat preview…</pre>
+    <button class="copy-btn" onclick="copyMessage()"><i class="fas fa-copy"></i></button>
   </div>
 </div>
 
 <script>
 /* ---------- CONFIG ---------- */
-let selectedTone = 'formal';
+let lang = 'id';
+const texts = {
+  id:{
+    labelName:'Nama Lengkap',labelPhone:'Nomor WhatsApp',labelEmail:'Email',labelDate:'Tanggal Akun Dibuat',labelCountry:'Negara',labelType:'Jenis Akun',labelReason:'Alasan Ban',labelDetail:'Penjelasan Detail',labelTone:'Gaya Surat',
+    toggleHistory:'Sertakan riwayat akun',togglePromise:'Pernyataan tidak mengulangi',toggleSignature:'Tanda tangan profesional',toggleStats:'Lampirkan statistik penggunaan',toggleScreenshot:'Sebutkan screenshot terlampir',toggleTopup:'Riwayat top-up (game)',toggleDevice:'Info perangkat',toggleIP:'Informasi IP terakhir',toggleLicense:'Nomor lisensi (business)',toggleVerification:'Status verifikasi dua langkah',toggleBackup:'Status cadangan chat',toggleTemplate:'Gunakan template super-formal',
+    greet:'Yth. Tim WhatsApp Support',
+    close:'Hormat saya'
+  },
+  en:{
+    labelName:'Full Name',labelPhone:'WhatsApp Number',labelEmail:'Email',labelDate:'Account Created',labelCountry:'Country',labelType:'Account Type',labelReason:'Ban Reason',labelDetail:'Detailed Explanation',labelTone:'Tone',
+    toggleHistory:'Include account history',togglePromise:'Promise not to repeat',toggleSignature:'Professional signature',toggleStats:'Attach usage statistics',toggleScreenshot:'Mention attached screenshot',toggleTopup:'Top-up history (game)',toggleDevice:'Device info',toggleIP:'Latest IP information',toggleLicense:'Business license number',toggleVerification:'Two-step verification status',toggleBackup:'Chat backup status',toggleTemplate:'Use super-formal template',
+    greet:'Dear WhatsApp Support',
+    close:'Best regards'
+  },
+  cn:{
+    labelName:'全名',labelPhone:'WhatsApp号码',labelEmail:'电子邮箱',labelDate:'创建日期',labelCountry:'国家',labelType:'帐户类型',labelReason:'封禁原因',labelDetail:'详细说明',labelTone:'语气',
+    toggleHistory:'包含帐户历史',togglePromise:'承诺不再重犯',toggleSignature:'专业签名',toggleStats:'附加使用统计',toggleScreenshot:'提及所附截图',toggleTopup:'充值记录(游戏)',toggleDevice:'设备信息',toggleIP:'最新IP信息',toggleLicense:'营业执照号码',toggleVerification:'两步验证状态',toggleBackup:'聊天记录备份状态',toggleTemplate:'使用超正式模板',
+    greet:'尊敬的WhatsApp支持团队',
+    close:'此致敬礼'
+  }
+};
+const toneMap = {
+  formal:{id:{greet:'Yth. Tim WhatsApp Support',close:'Hormat saya'},en:{greet:'Dear WhatsApp Support',close:'Best regards'},cn:{greet:'尊敬的WhatsApp支持团队',close:'此致敬礼'}},
+  business:{id:{greet:'WhatsApp Business API',close:'Salam bisnis'},en:{greet:'WhatsApp Business Support',close:'Best business regards'},cn:{greet:'WhatsApp商业支持团队',close:'商业致意'}},
+  apologetic:{id:{greet:'Tim WhatsApp yang terhormat',close:'Dengan permohonan maaf yang sebesar-besarnya'},en:{greet:'Respected WhatsApp Team',close:'With deepest apologies'},cn:{greet:'尊敬的WhatsApp团队',close:'深表歉意'}},
+  friendly:{id:{greet:'Halo WhatsApp',close:'Salam hangat'},en:{greet:'Hi WhatsApp Team',close:'Warm regards'},cn:{greet:'您好WhatsApp团队',close:'亲切问候'}},
+  urgent:{id:{greet:'URGENT: WhatsApp Support',close:'Terima kasih atas perhatian segera'},en:{greet:'URGENT: WhatsApp Support',close:'Thank you for immediate attention'},cn:{greet:'紧急：WhatsApp支持团队',close:'感谢紧急处理'}},
+  legal:{id:{greet:'Kepada Divisi Legal WhatsApp',close:'Dengan itikad baik'},en:{greet:'To WhatsApp Legal Division',close:'In good faith'},cn:{greet:'WhatsApp法务部',close:'诚信至上'}},
+  tech:{id:{greet:'WhatsApp Technical Review',close:'Salam teknis'},en:{greet:'WhatsApp Technical Review',close:'Regards, tech user'},cn:{greet:'WhatsApp技术审核团队',close:'技术问候'}},
+  creative:{id:{greet:'WhatsApp Creative Team',close:'Kreatif salam'},en:{greet:'WhatsApp Creative Team',close:'Creatively yours'},cn:{greet:'WhatsApp创意团队',close:'创意问候'}},
+  respectful:{id:{greet:'Yang terhormat WhatsApp',close:'Dengan hormat'},en:{greet:'Honorable WhatsApp',close:'Respectfully'},cn:{greet:'尊敬的WhatsApp',close:'敬上'}},
+  casual:{id:{greet:'WhatsApp',close:'Salam'},en:{greet:'WhatsApp',close:'Cheers'},cn:{greet:'WhatsApp',close:'问候'}},
+  emotional:{id:{greet:'WhatsApp yang saya cintai',close:'Dengan hati yang tulus'},en:{greet:'Beloved WhatsApp Team',close:'With heartfelt sincerity'},cn:{greet:'敬爱的WhatsApp团队',close:'衷心诚意'}},
+  confident:{id:{greet:'Tim WhatsApp',close:'Percaya diri'},en:{greet:'WhatsApp Team',close:'Confidently yours'},cn:{greet:'WhatsApp团队',close:'自信问候'}}
+};
 
 /* ---------- UTILS ---------- */
-const $ = sel => document.querySelector(sel);
-const $$ = sel => [...document.querySelectorAll(sel)];
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+function setLang(l){
+  lang = l;
+  $$('.lang-tab button').forEach(b=>b.classList.toggle('active', b.id.slice(-2).toLowerCase() === l));
+  Object.keys(texts.id).forEach(key => {
+    const el = document.getElementById(key);
+    if(el) el.textContent = texts[lang][key];
+  });
+  updatePreview();
+}
+$('#langID').addEventListener('click',()=>setLang('id'));
+$('#langEN').addEventListener('click',()=>setLang('en'));
+$('#langCN').addEventListener('click',()=>setLang('cn'));
 
-/* ---------- EVENTS ---------- */
+/* ---------- TONE ---------- */
+let selectedTone = 'formal';
 $$('.option').forEach(opt=>{
   opt.addEventListener('click',()=>{
     $$('.option').forEach(o=>o.classList.remove('active'));
@@ -341,142 +219,136 @@ $$('.option').forEach(opt=>{
   });
 });
 
-$$('.switch').forEach(sw=>{
-  sw.addEventListener('click',()=>{
-    sw.classList.toggle('on');
-    updatePreview();
-  });
-});
-
+/* ---------- TOGGLES ---------- */
+$$('.switch').forEach(sw=>sw.addEventListener('click',()=>{sw.classList.toggle('on');updatePreview();}));
 $$('input,select,textarea').forEach(el=>el.addEventListener('input',updatePreview));
 
-/* ---------- GENERATOR ---------- */
+/* ---------- GENERATE ---------- */
 function generateMessage(){
-  const name=$('#fullName').value.trim();
-  const phone=$('#phone').value.trim();
-  const email=$('#email').value.trim();
-  const accountDate=$('#accountDate').value;
-  const businessType=$('#businessType').value;
-  const country=$('#country').value || 'Indonesia';
-  const groups=$('#groups').value;
-  const reason=$('#reason').value;
-  const details=$('#details').value.trim();
-  const history=$('#historyToggle').classList.contains('on');
-  const promise=$('#promiseToggle').classList.contains('on');
-  const signature=$('#signatureToggle').classList.contains('on');
-  const stats=$('#statsToggle').classList.contains('on');
-  const lang=$('#langToggle').classList.contains('on');
+  const name = $('#fullName').value.trim();
+  const phone = $('#phone').value.trim();
+  const email = $('#email').value.trim();
+  const country = $('#country').value;
+  const accountType = $('#accountType').value;
+  const date = $('#accountDate').value;
+  const reason = $('#reason').value;
+  const details = $('#details').value.trim();
+  const history = $('#historyToggle').classList.contains('on');
+  const promise = $('#promiseToggle').classList.contains('on');
+  const signature = $('#signatureToggle').classList.contains('on');
+  const stats = $('#statsToggle').classList.contains('on');
+  const screenshot = $('#screenshotToggle').classList.contains('on');
+  const topup = $('#topupToggle').classList.contains('on');
+  const device = $('#deviceToggle').classList.contains('on');
+  const ip = $('#ipToggle').classList.contains('on');
+  const license = $('#licenseToggle').classList.contains('on');
+  const verification = $('#verificationToggle').classList.contains('on');
+  const backup = $('#backupToggle').classList.contains('on');
+  const superTemplate = $('#templateToggle').classList.contains('on');
+  if(!name || !phone || !email || !reason) return lang==='id' ? 'Lengkapi semua kolom…' : lang==='en' ? 'Complete all fields…' : '请填写所有字段…';
 
-  if(!name || !phone || !email || !reason) return 'Complete required fields…';
-
-  const toneMap={
-    formal:{greet:"Dear WhatsApp Trust & Safety Team",close:"Respectfully submitted"},
-    friendly:{greet:"Hi WhatsApp Team",close:"Best regards"},
-    urgent:{greet:"URGENT: WhatsApp Support",close:"Thank you for immediate attention"},
-    apologetic:{greet:"Dear WhatsApp Moderation",close:"With sincere apologies"},
-    business:{greet:"WhatsApp Business API Support",close:"Best regards, business account"},
-    legal:{greet:"To: WhatsApp Legal Division",close:"Under penalty of perjury"},
-    tech:{greet:"WhatsApp Technical Review",close:"Regards, tech user"},
-    creative:{greet:"Hello WhatsApp Creators",close:"Creatively yours"}
+  const t = toneMap[selectedTone][lang];
+  const ad = date ? new Date(date).toLocaleDateString(lang==='id' ? 'id-ID' : lang==='en' ? 'en-US' : 'zh-CN',{day:'numeric',month:'long',year:'numeric'}) : '';
+  const reasonMap = {
+    spam:'Spam / Mass Messaging',automation:'Automation / Bot',inappropriate:'Inappropriate Content',business:'Business Policy Violation',ip:'Intellectual Property',community:'Community Guidelines',fake:'Fake News',harassment:'Harassment',hate:'Hate Speech',scam:'Scam / Fraud',underage:'Underage User',impersonation:'Impersonation',malware:'Malware / Phishing',privacy:'Privacy Violation',copyright:'Copyright',trademark:'Trademark',nudity:'Nudity / Adult',violence:'Violence / Gore',drugs:'Drugs',unknown:'Unknown / Not Specified'
   };
-  const reasonMap={
-    spam:"alleged violation of Anti-Spam Policy (§4.B.2)",
-    automation:"use of unofficial automation tools (§4.A.3)",
-    inappropriate:"breach of Community Guidelines",
-    business:"business account compliance review",
-    reported:"false user reports",
-    unknown:"suspension without disclosed reason"
-  };
+  const r = reasonMap[reason];
 
-  const t=toneMap[selectedTone];
-  const r=reasonMap[reason];
-  const ad=accountDate?new Date(accountDate).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}):null;
-
-  let msg=`${t.greet},\n\n`;
-  msg+=`I am writing to formally appeal the suspension of my WhatsApp account (${phone}) due to ${r}.\n\n`;
-
-  msg+=`Account Details:\n`;
-  msg+=`• Name: ${name}\n`;
-  msg+=`• Phone: ${phone}\n`;
-  msg+=`• Email: ${email}\n`;
-  if(ad) msg+=`• Created: ${ad}\n`;
-  if(businessType) msg+=`• Business Type: ${businessType}\n`;
-  if(country) msg+=`• Country: ${country}\n`;
-  if(groups) msg+=`• Active Groups: ${groups}\n`;
-
-  if(details) msg+=`\nIncident Description:\n${details}\n`;
-
-  if(history && ad){
-    msg+=`\nAccount Integrity:\n`;
-    msg+=`• Zero prior violations since ${ad}.\n`;
-    msg+=`• All communications were user-consented or business-critical.\n`;
+  let msg = `${t.greet},\n\n`;
+  if(superTemplate){
+    msg += lang==='id' ? 'Dengan ini saya secara resmi mengajukan banding atas penangguhan akun WhatsApp saya ('+phone+') karena '+r+'.' :
+           lang==='en' ? 'I hereby officially appeal the suspension of my WhatsApp account ('+phone+') due to '+r+'.' :
+           '本人正式申请解除对我的WhatsApp账号（'+phone+'）的封禁，原因为“'+r+'”。';
+  } else {
+    msg += lang==='id' ? 'Saya mengajukan banding atas penangguhan akun WhatsApp saya ('+phone+') karena '+r+'.' :
+           lang==='en' ? 'I am appealing the suspension of my WhatsApp account ('+phone+') due to '+r+'.' :
+           '本人申请解除对本人WhatsApp账号（'+phone+'）的封禁，原因为“'+r+'”。';
   }
 
+  msg += '\n\n';
+  msg += lang==='id' ? 'Detail Akun:' : lang==='en' ? 'Account Details:' : '账户详情：';
+  msg += `\n• ${lang==='id' ? 'Nama' : lang==='en' ? 'Name' : '姓名'}: ${name}`;
+  msg += `\n• ${lang==='id' ? 'Nomor' : lang==='en' ? 'Number' : '号码'}: ${phone}`;
+  msg += `\n• Email: ${email}`;
+  if(country && country!=='Other') msg += `\n• ${lang==='id' ? 'Negara' : lang==='en' ? 'Country' : '国家'}: ${country}`;
+  if(accountType) msg += `\n• ${lang==='id' ? 'Jenis Akun' : lang==='en' ? 'Account Type' : '账号类型'}: ${accountType}`;
+  if(ad) msg += `\n• ${lang==='id' ? 'Dibuat' : lang==='en' ? 'Created' : '创建日期'}: ${ad}`;
+
+  if(details){
+    msg += `\n\n${lang==='id' ? 'Penjelasan:' : lang==='en' ? 'Explanation' : '解释说明'}:\n${details}`;
+  }
+
+  if(history){
+    msg += `\n\n${lang==='id' ? 'Riwayat akun bersih tanpa pelanggaran sejak pembuatan.' : lang==='en' ? 'Account history is clean without any violations since creation.' : '自创建以来账号历史清白，无任何违规记录。'}`;
+  }
   if(stats){
-    msg+=`\nUsage Statistics:\n`;
-    msg+=`• Daily active chats: ~${Math.floor(Math.random()*30+20)}\n`;
-    msg+=`• Average media sharing: <5 MB/day\n`;
+    const randChats = Math.floor(Math.random()*100+50);
+    const randMedia = (Math.random()*30+5).toFixed(1);
+    msg += `\n\n${lang==='id' ? 'Statistik Penggunaan:' : lang==='en' ? 'Usage Statistics:' : '使用统计'}:`;
+    msg += `\n• ${lang==='id' ? 'Rata-rata chat harian' : lang==='en' ? 'Average daily chats' : '日均聊天'}: ~${randChats}`;
+    msg += `\n• ${lang==='id' ? 'Penggunaan media' : lang==='en' ? 'Media usage' : '媒体使用'}: <${randMedia} MB/hari`;
   }
-
+  if(device){
+    msg += `\n\n${lang==='id' ? 'Perangkat:' : lang==='en' ? 'Device:' : '设备'}: ${navigator.platform || 'Android / iOS'}`;
+  }
+  if(ip){
+    msg += `\n• ${lang==='id' ? 'IP terakhir' : lang==='en' ? 'Latest IP' : '最近IP'}: (terlampir)`;
+  }
+  if(license){
+    msg += `\n• ${lang==='id' ? 'Nomor lisensi bisnis' : lang==='en' ? 'Business license number' : '营业执照号码'}: (terlampir)`;
+  }
+  if(verification){
+    msg += `\n• ${lang==='id' ? 'Verifikasi dua langkah' : lang==='en' ? 'Two-step verification' : '两步验证'}: ${lang==='id' ? 'Aktif' : lang==='en' ? 'Active' : '已启用'}`;
+  }
+  if(backup){
+    msg += `\n• ${lang==='id' ? 'Cadangan chat' : lang==='en' ? 'Chat backup' : '聊天记录备份'}: ${lang==='id' ? 'Tersedia' : lang==='en' ? 'Available' : '已备份'}`;
+  }
+  if(topup){
+    msg += `\n• ${lang==='id' ? 'Riwayat top-up game' : lang==='en' ? 'Game top-up history' : '游戏充值记录'}: (terlampir)`;
+  }
+  if(screenshot){
+    msg += `\n\n${lang==='id' ? 'Screenshot bukti terlampir.' : lang==='en' ? 'Attached screenshot as evidence.' : '已附截图证据。'}`;
+  }
   if(promise){
-    msg+=`\nUndertaking:\n`;
-    msg+=`I solemnly commit to strict adherence to all WhatsApp ToS & Community Guidelines.\n`;
+    msg += `\n\n${lang==='id' ? 'Saya berjanji mematuhi semua kebijakan WhatsApp.' : lang==='en' ? 'I promise to strictly follow all WhatsApp policies.' : '本人承诺严格遵守所有WhatsApp政策。'}`;
   }
-
   if(signature){
-    msg+=`\nSubmitted by:\n${name} (${email}, ${phone})\n`;
+    msg += `\n\n${t.close},\n${name}\n${email}`;
   }
-
-  if(lang){
-    msg+=`\nVersi Bahasa Indonesia:\nSaya mohon maaf atas pelanggaran yang terjadi dan berjanji untuk mematuhi semua kebijakan WhatsApp.\n`;
-  }
-
-  msg+=`\n${t.close},\n${name}`;
   return msg;
 }
-
-function updatePreview(){
-  $('#messagePreview').textContent=generateMessage();
-}
-
+function updatePreview(){$('#messagePreview').textContent = generateMessage();}
 function copyMessage(){
-  const msg=$('#messagePreview').textContent;
-  if(msg && msg!=='Complete required fields…'){
-    navigator.clipboard.writeText(msg);
-    alert('✅ Copied to clipboard');
-  }
+  const msg = generateMessage();
+  if(msg.includes('…')) return alert(lang==='id' ? 'Lengkapi form dulu' : lang==='en' ? 'Complete the form' : '请填写表单');
+  navigator.clipboard.writeText(msg);
+  alert(lang==='id' ? '✅ Tersalin' : lang==='en' ? '✅ Copied' : '✅ 已复制');
 }
-
 function downloadMessage(){
-  const msg=generateMessage();
-  if(msg==='Complete required fields…') return alert('⚠️ Please fill all required fields.');
-  const blob=new Blob([msg],{type:'text/plain'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download='WhatsApp-Unban-Appeal.txt';
+  const msg = generateMessage();
+  if(msg.includes('…')) return alert(lang==='id' ? 'Lengkapi form dulu' : lang==='en' ? 'Complete the form' : '请填写表单');
+  const blob = new Blob([msg],{type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `WhatsApp-Unban-Appeal-${Date.now()}.txt`;
   a.click();
 }
-
 function resetForm(){
   $('#unbanForm').reset();
   $$('.switch').forEach(s=>s.classList.remove('on'));
   $$('.option').forEach(o=>o.classList.remove('active'));
   $('.option[data-tone="formal"]').classList.add('active');
-  selectedTone='formal';
+  selectedTone = 'formal';
+  setLang('id');
   updatePreview();
 }
-
-/* ---------- SUBMIT ---------- */
 $('#unbanForm').addEventListener('submit',e=>{
   e.preventDefault();
-  const phone=$('#phone').value.replace(/\D/g,'');
-  const msg=generateMessage();
-  if(msg==='Complete required fields…') return alert('⚠️ Please fill all required fields.');
-  const url=`https://wa.me/14155238886?text=${encodeURIComponent(msg)}`;
+  const msg = generateMessage();
+  if(msg.includes('…')) return alert(lang==='id' ? 'Lengkapi form dulu' : lang==='en' ? 'Complete the form' : '请填写表单');
+  const url = `https://wa.me/14155238886?text=${encodeURIComponent(msg)}`;
   window.open(url,'_blank');
 });
-
-/* ---------- INIT ---------- */
 updatePreview();
 </script>
 </body>
