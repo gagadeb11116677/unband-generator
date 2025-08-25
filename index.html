@@ -3,22 +3,26 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>XOBE DEV | Ultra Unban Generator VVIP</title>
+<title>XOBE DEV | Ultra Unban Generator VVIP 2.1</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root{
-  --bg:#0e0e0e;
-  --card:#151515;
-  --accent:#00d4ff;
-  --text:#e4e4e4;
+  --bg:#0a0a0a;
+  --card:#111111;
+  --accent:#00d9ff;
+  --secondary:#ff0080;
+  --text:#f2f2f2;
   --muted:#8a8a8a;
   --danger:#ff2e4d;
+  --success:#00ff88;
   --font:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  --mono:'Courier New',monospace;
+  --mono:'Cascadia Code','Courier New',monospace;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:var(--font);
-  background:var(--bg);
+  background:radial-gradient(ellipse at top,#001122 0%,var(--bg) 70%);
   color:var(--text);
   min-height:100vh;
   display:flex;
@@ -28,138 +32,228 @@ body{
 }
 .container{
   width:100%;
-  max-width:900px;
+  max-width:1000px;
   background:var(--card);
   border:1px solid #222;
-  border-radius:20px;
-  box-shadow:0 0 40px rgba(0,212,255,.15);
+  border-radius:24px;
+  box-shadow:0 0 60px rgba(0,217,255,.25);
   overflow:hidden;
+  animation:fadeIn 1s ease;
 }
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px)}}
+
 .header{
-  padding:40px 35px 25px;
-  background:linear-gradient(135deg,#00d4ff 0%,#006eff 100%);
+  padding:45px 40px 30px;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--secondary) 100%);
   text-align:center;
+  position:relative;
 }
-.header h1{font-size:28px;font-weight:900;letter-spacing:.5px}
-.header p{font-size:15px;opacity:.9;margin-top:4px}
-form{padding:35px;display:grid;gap:22px}
+.header h1{
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:.8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+.header h1 i{color:#fff}
+.header p{font-size:16px;opacity:.9;margin-top:6px}
+form{padding:40px;display:grid;gap:26px}
 .grid-2{grid-template-columns:1fr 1fr}
-@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
+.grid-3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:700px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
 label{font-size:14px;font-weight:600;margin-bottom:6px;display:block;color:var(--text)}
 input,select,textarea{
   width:100%;
   padding:14px 16px;
-  border-radius:10px;
+  border-radius:12px;
   border:1px solid #333;
-  background:#1a1a1a;
+  background:#181818;
   color:var(--text);
   font-size:15px;
-  transition:border .2s;
+  transition:border .2s,box-shadow .2s;
 }
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
-textarea{resize:vertical;min-height:110px}
-.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+input:focus,select:focus,textarea:focus{
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 8px rgba(0,217,255,.4);
+}
+textarea{resize:vertical;min-height:120px}
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+}
 .option{
   padding:14px 8px;
-  background:#1a1a1a;
+  background:#181818;
   border:1px solid #333;
-  border-radius:10px;
+  border-radius:12px;
   text-align:center;
   cursor:pointer;
   font-size:14px;
   font-weight:600;
-  transition:.2s;
+  transition:.25s;
 }
-.option.active{background:var(--accent);color:#000;border-color:var(--accent)}
-.toggles{display:flex;flex-direction:column;gap:10px}
+.option:hover{transform:translateY(-2px)}
+.option.active{
+  background:linear-gradient(135deg,var(--accent),var(--secondary));
+  color:#000;
+  border-color:transparent;
+  box-shadow:0 4px 14px rgba(0,217,255,.35);
+}
+
+.toggles{display:flex;flex-direction:column;gap:12px}
 .toggle-row{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  background:#1a1a1a;
-  padding:12px 16px;
-  border-radius:10px;
+  background:#181818;
+  padding:14px 18px;
+  border-radius:12px;
+  font-size:15px;
 }
 .switch{
   position:relative;
-  width:46px;height:24px;
+  width:50px;height:26px;
   background:#333;
-  border-radius:24px;
+  border-radius:26px;
   cursor:pointer;
+  transition:.3s;
 }
 .switch::after{
   content:'';
   position:absolute;
   top:2px;left:2px;
-  width:20px;height:20px;
+  width:22px;height:22px;
   background:#fff;
   border-radius:50%;
   transition:.3s;
 }
-.switch.on{background:var(--accent)}
-.switch.on::after{left:24px}
-.btn-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;margin-top:10px}
+.switch.on{background:linear-gradient(135deg,var(--accent),var(--secondary))}
+.switch.on::after{left:26px}
+
+.btn-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-top:10px}
 .btn{
-  padding:15px;
+  padding:16px;
   font-size:15px;
   font-weight:700;
   border:none;
-  border-radius:10px;
+  border-radius:12px;
   cursor:pointer;
   transition:.2s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
 }
-.btn.primary{background:var(--accent);color:#000}
+.btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--secondary));
+  color:#000;
+}
 .btn.secondary{background:#333;color:var(--text)}
-.btn:hover{transform:translateY(-2px)}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
 .preview{
-  margin:0 35px 35px;
-  padding:25px;
-  background:#0e0e0e;
+  margin:0 40px 40px;
+  padding:30px;
+  background:#0a0a0a;
   border-left:4px solid var(--accent);
-  border-radius:0 14px 14px 0;
+  border-radius:0 18px 18px 0;
+  position:relative;
 }
-.preview h3{font-size:16px;margin-bottom:10px}
+.preview h3{
+  font-size:18px;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
 .preview pre{
   white-space:pre-wrap;
   font-family:var(--mono);
-  font-size:13px;
-  line-height:1.6;
+  font-size:13.5px;
+  line-height:1.7;
   color:var(--muted);
 }
+.copy-btn{
+  position:absolute;
+  top:28px;
+  right:28px;
+  background:#222;
+  border:1px solid #444;
+  color:var(--text);
+  padding:6px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:13px;
+  transition:.2s;
+}
+.copy-btn:hover{background:var(--accent);color:#000}
 </style>
 </head>
 <body>
 <div class="container">
   <div class="header">
-    <h1>XOBE DEV ULTRA UNBAN GENERATOR</h1>
-    <p>Professional WhatsApp Unban Appeal – VVIP Edition</p>
+    <h1><i class="fas fa-shield-alt"></i>XOBE DEV ULTRA UNBAN GENERATOR</h1>
+    <p>Professional WhatsApp Unban Appeal – VVIP 2.1 Edition | new era</p>
   </div>
 
   <form id="unbanForm">
+    <!-- Data Diri -->
     <div class="grid-2">
       <div>
-        <label>Full Name</label>
+        <label><i class="fas fa-user"></i> Full Name</label>
         <input id="fullName" placeholder="John Doe" required />
       </div>
       <div>
-        <label>WhatsApp Number</label>
+        <label><i class="fas fa-phone"></i> WhatsApp Number</label>
         <input id="phone" placeholder="+62 8XX-XXXX-XXXX" required />
       </div>
     </div>
 
     <div class="grid-2">
       <div>
-        <label>Email Address</label>
+        <label><i class="fas fa-envelope"></i> Email Address</label>
         <input id="email" type="email" placeholder="john@example.com" required />
       </div>
       <div>
-        <label>Account Creation Date</label>
+        <label><i class="fas fa-calendar-alt"></i> Account Creation Date</label>
         <input id="accountDate" type="date" />
       </div>
     </div>
 
+    <div class="grid-3">
+      <div>
+        <label><i class="fas fa-building"></i> Business Type</label>
+        <select id="businessType">
+          <option value="">Personal</option>
+          <option value="small">Small Business</option>
+          <option value="enterprise">Enterprise</option>
+          <option value="ngo">NGO</option>
+        </select>
+      </div>
+      <div>
+        <label><i class="fas fa-globe"></i> Country</label>
+        <select id="country">
+          <option value="">Indonesia</option>
+          <option value="US">United States</option>
+          <option value="IN">India</option>
+          <option value="BR">Brazil</option>
+          <option value="DE">Germany</option>
+        </select>
+      </div>
+      <div>
+        <label><i class="fas fa-hashtag"></i> Number of Groups</label>
+        <input id="groups" type="number" placeholder="0" min="0" />
+      </div>
+    </div>
+
+    <!-- Alasan & Detail -->
     <div>
-      <label>Reason for Ban</label>
+      <label><i class="fas fa-exclamation-triangle"></i> Reason for Ban</label>
       <select id="reason" required>
         <option value="">Select reason…</option>
         <option value="spam">Mass Messaging / Spam</option>
@@ -172,44 +266,59 @@ textarea{resize:vertical;min-height:110px}
     </div>
 
     <div>
-      <label>Detailed Explanation</label>
+      <label><i class="fas fa-edit"></i> Detailed Explanation</label>
       <textarea id="details" placeholder="Explain the incident in detail…"></textarea>
     </div>
 
-    <label>Tone of Appeal</label>
+    <!-- Tone Pilihan -->
+    <label><i class="fas fa-palette"></i> Tone of Appeal</label>
     <div class="options">
-      <div class="option" data-tone="formal">Formal</div>
-      <div class="option" data-tone="friendly">Friendly</div>
-      <div class="option" data-tone="urgent">Urgent</div>
-      <div class="option" data-tone="apologetic">Apologetic</div>
-      <div class="option" data-tone="business">Business</div>
-      <div class="option" data-tone="legal">Legal</div>
+      <div class="option" data-tone="formal"><i class="fas fa-briefcase"></i> Formal</div>
+      <div class="option" data-tone="friendly"><i class="fas fa-smile"></i> Friendly</div>
+      <div class="option" data-tone="urgent"><i class="fas fa-clock"></i> Urgent</div>
+      <div class="option" data-tone="apologetic"><i class="fas fa-heart-broken"></i> Apologetic</div>
+      <div class="option" data-tone="business"><i class="fas fa-handshake"></i> Business</div>
+      <div class="option" data-tone="legal"><i class="fas fa-gavel"></i> Legal</div>
+      <div class="option" data-tone="tech"><i class="fas fa-code"></i> Tech</div>
+      <div class="option" data-tone="creative"><i class="fas fa-magic"></i> Creative</div>
     </div>
 
+    <!-- Tambahan Fitur -->
     <div class="toggles">
       <div class="toggle-row">
-        <span>Include account history</span>
+        <span><i class="fas fa-history"></i> Include account history</span>
         <div class="switch" id="historyToggle"></div>
       </div>
       <div class="toggle-row">
-        <span>Add promise statement</span>
+        <span><i class="fas fa-promise"></i> Add promise statement</span>
         <div class="switch" id="promiseToggle"></div>
       </div>
       <div class="toggle-row">
-        <span>Professional signature</span>
+        <span><i class="fas fa-signature"></i> Professional signature</span>
         <div class="switch" id="signatureToggle"></div>
+      </div>
+      <div class="toggle-row">
+        <span><i class="fas fa-paperclip"></i> Attach usage stats</span>
+        <div class="switch" id="statsToggle"></div>
+      </div>
+      <div class="toggle-row">
+        <span><i class="fas fa-translate"></i> Multilingual support</span>
+        <div class="switch" id="langToggle"></div>
       </div>
     </div>
 
+    <!-- Tombol Aksi -->
     <div class="btn-group">
-      <button type="submit" class="btn primary">Send to WhatsApp</button>
-      <button type="button" class="btn secondary" onclick="copyMessage()">Copy Message</button>
-      <button type="button" class="btn secondary" onclick="resetForm()">Reset</button>
+      <button type="submit" class="btn primary"><i class="fab fa-whatsapp"></i> Send to WhatsApp</button>
+      <button type="button" class="btn secondary" onclick="copyMessage()"><i class="fas fa-copy"></i> Copy Message</button>
+      <button type="button" class="btn secondary" onclick="downloadMessage()"><i class="fas fa-download"></i> Download .txt</button>
+      <button type="button" class="btn secondary" onclick="resetForm()"><i class="fas fa-redo"></i> Reset</button>
     </div>
   </form>
 
   <div class="preview">
-    <h3>Generated Message</h3>
+    <h3><i class="fas fa-eye"></i> Generated Message</h3>
+    <button class="copy-btn" onclick="copyMessage()"><i class="fas fa-copy"></i> Copy</button>
     <pre id="messagePreview">Complete the form to generate your message…</pre>
   </div>
 </div>
@@ -247,11 +356,16 @@ function generateMessage(){
   const phone=$('#phone').value.trim();
   const email=$('#email').value.trim();
   const accountDate=$('#accountDate').value;
+  const businessType=$('#businessType').value;
+  const country=$('#country').value || 'Indonesia';
+  const groups=$('#groups').value;
   const reason=$('#reason').value;
   const details=$('#details').value.trim();
   const history=$('#historyToggle').classList.contains('on');
   const promise=$('#promiseToggle').classList.contains('on');
   const signature=$('#signatureToggle').classList.contains('on');
+  const stats=$('#statsToggle').classList.contains('on');
+  const lang=$('#langToggle').classList.contains('on');
 
   if(!name || !phone || !email || !reason) return 'Complete required fields…';
 
@@ -261,7 +375,9 @@ function generateMessage(){
     urgent:{greet:"URGENT: WhatsApp Support",close:"Thank you for immediate attention"},
     apologetic:{greet:"Dear WhatsApp Moderation",close:"With sincere apologies"},
     business:{greet:"WhatsApp Business API Support",close:"Best regards, business account"},
-    legal:{greet:"To: WhatsApp Legal Division",close:"Under penalty of perjury"}
+    legal:{greet:"To: WhatsApp Legal Division",close:"Under penalty of perjury"},
+    tech:{greet:"WhatsApp Technical Review",close:"Regards, tech user"},
+    creative:{greet:"Hello WhatsApp Creators",close:"Creatively yours"}
   };
   const reasonMap={
     spam:"alleged violation of Anti-Spam Policy (§4.B.2)",
@@ -284,6 +400,9 @@ function generateMessage(){
   msg+=`• Phone: ${phone}\n`;
   msg+=`• Email: ${email}\n`;
   if(ad) msg+=`• Created: ${ad}\n`;
+  if(businessType) msg+=`• Business Type: ${businessType}\n`;
+  if(country) msg+=`• Country: ${country}\n`;
+  if(groups) msg+=`• Active Groups: ${groups}\n`;
 
   if(details) msg+=`\nIncident Description:\n${details}\n`;
 
@@ -293,6 +412,12 @@ function generateMessage(){
     msg+=`• All communications were user-consented or business-critical.\n`;
   }
 
+  if(stats){
+    msg+=`\nUsage Statistics:\n`;
+    msg+=`• Daily active chats: ~${Math.floor(Math.random()*30+20)}\n`;
+    msg+=`• Average media sharing: <5 MB/day\n`;
+  }
+
   if(promise){
     msg+=`\nUndertaking:\n`;
     msg+=`I solemnly commit to strict adherence to all WhatsApp ToS & Community Guidelines.\n`;
@@ -300,6 +425,10 @@ function generateMessage(){
 
   if(signature){
     msg+=`\nSubmitted by:\n${name} (${email}, ${phone})\n`;
+  }
+
+  if(lang){
+    msg+=`\nVersi Bahasa Indonesia:\nSaya mohon maaf atas pelanggaran yang terjadi dan berjanji untuk mematuhi semua kebijakan WhatsApp.\n`;
   }
 
   msg+=`\n${t.close},\n${name}`;
@@ -316,6 +445,16 @@ function copyMessage(){
     navigator.clipboard.writeText(msg);
     alert('✅ Copied to clipboard');
   }
+}
+
+function downloadMessage(){
+  const msg=generateMessage();
+  if(msg==='Complete required fields…') return alert('⚠️ Please fill all required fields.');
+  const blob=new Blob([msg],{type:'text/plain'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='WhatsApp-Unban-Appeal.txt';
+  a.click();
 }
 
 function resetForm(){
