@@ -77,8 +77,6 @@ Tool ini hanya membantu menyusun appeal.
 Keputusan unban sepenuhnya di tangan WhatsApp.  
 Gunakan dengan jujur dan sesuai ketentuan WhatsApp.
 
----
-
 ## 📅 Changelog
 
 **v2.0 – 24 Aug 2025**
@@ -87,7 +85,40 @@ Gunakan dengan jujur dan sesuai ketentuan WhatsApp.
 - Teks appeal lebih teknis & legal
 - 100% responsive
 
----
+**v2.1 – 25 Aug 2025**
+- Teks unban lebih powerful & meyakinkan
+- Lebih banyak pilihan tone & opsi tambahan
+- Perbaikan bug & optimasi performa
+- Pembaruan UI & banner VVIP 2.1
+-----
+## ⚖️ Legal Note
+
+XOBE DEV Ultra Unban Generator adalah **tool generator teks otomatis** yang dibuat dengan **HTML, CSS, dan JavaScript murni**.  
+Tool ini **tidak melakukan hack, exploit, bypass sistem, atau interaksi langsung dengan server WhatsApp**.  
+
+Fungsi utama tool ini adalah:  
+- Membantu pengguna menyusun **surat banding (appeal)** yang profesional dan terstruktur.  
+- Menyediakan beberapa **template & tone bahasa** agar pengguna bisa memilih gaya komunikasi yang sesuai.  
+- Menyediakan fitur **copy to clipboard** sehingga pengguna bisa menyalin teks dengan mudah.  
+- Memberikan opsi **one-click WhatsApp Business API link** hanya sebagai shortcut membuka chat, **bukan sebagai cara bypass ban**.  
+
+### 🚫 Apa yang TIDAK dilakukan tool ini?
+- Tidak menjamin akun WhatsApp pengguna akan di-unban.  
+- Tidak mengakses database, server, atau API privat WhatsApp.  
+- Tidak menyimpan data pengguna.  
+- Tidak mengganti proses banding resmi WhatsApp.  
+
+### ✅ Apa yang HARUS dilakukan pengguna?
+- Setelah teks appeal dihasilkan, **pengguna wajib mengirimkannya sendiri** melalui:  
+  - Email resmi WhatsApp: support@support.whatsapp.com  
+  - Formulir resmi WhatsApp: [https://www.whatsapp.com/contact](https://www.whatsapp.com/contact)  
+- Menggunakan tool ini secara jujur dan sesuai dengan **Ketentuan Layanan (ToS) WhatsApp**.  
+
+### 📌 Kesimpulan
+Tool ini hanyalah **pembuat teks (text generator)**, bukan software ilegal atau alat untuk membobol sistem.  
+Segala keputusan unban sepenuhnya berada di tangan **WhatsApp Trust & Safety Team**.  
+
+Dengan demikian, penggunaan tool ini **100% legal** selama hanya dipakai untuk membantu menulis appeal resmi.  
 
 ## 📬 Butuh bantuan?
 
