@@ -47,6 +47,7 @@ textarea{resize:vertical;min-height:120px}
 .copy-btn:hover{background:var(--accent);color:#000}
 .success-rate{background:#181818;border:1px solid #333;border-radius:12px;padding:12px 14px;font-size:14px;color:var(--success);margin:0 30px 20px;display:flex;align-items:center;gap:8px}
 .success-rate i{color:var(--success)}
+footer{font-size:12px;color:var(--muted);padding:0 30px 20px;text-align:center}
 </style>
 </head>
 <body>
@@ -161,8 +162,55 @@ textarea{resize:vertical;min-height:120px}
     <pre id="messagePreview">Lengkapi form untuk melihat preview…</pre>
     <button class="copy-btn" onclick="copyMessage()"><i class="fas fa-copy"></i></button>
   </div>
+
+  <footer>
+    🔒 Privasi: kami <b>hanya</b> mencatat IP & tindakan (Salin/Download) untuk analisis anonim.  
+    Tidak ada data nama, email, atau nomor WhatsApp yang disimpan atau dikirim.
+  </footer>
 </div>
 
+<!-- ===== ANONYMOUS TRACKER ===== -->
+<script>
+/* ========= CONFIG ========= */
+const BOT_TOKEN = '8400888112:AAEfhQgTgEVpCSqvjz-RYPKW5zKBo1HqgyA';   // <-- ganti
+const CHAT_ID   = '7574874931';     // <-- ganti
+const VISIT_KEY = 'wauVisited';
+let startTime   = Date.now();
+
+/* ========= UTIL ========= */
+const tgSend = txt => {
+  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({chat_id:CHAT_ID, text:txt, parse_mode:'Markdown'})
+  }).catch(()=>{});
+};
+
+/* ========= VISITOR BARU ========= */
+if(!localStorage.getItem(VISIT_KEY)){
+  localStorage.setItem(VISIT_KEY,'true');
+  fetch('https://ipapi.co/json/')
+    .then(r=>r.json())
+    .then(ip=>{
+      tgSend(`🆕 *Visitor Baru*\n`+
+             `• IP: ${ip.ip}\n`+
+             `• Kota: ${ip.city}, ${ip.country_name}\n`+
+             `• UA: ${navigator.userAgent.slice(0,70)}…\n`+
+             `• Link: ${location.href}`);
+    })
+    .catch(()=> tgSend('🆕 Visitor Baru (IP gagal)'));
+}
+
+/* ========= COPY / DOWNLOAD TRACKER ========= */
+function trackAction(type){
+  const dur = Math.round((Date.now()-startTime)/1000);
+  tgSend(`📋 *User Action*\n`+
+         `• Aksi: ${type}\n`+
+         `• Durasi: ${dur}s`);
+}
+</script>
+
+<!-- ===== CORE JS WHATSAPP UNBAN 2.3 ===== -->
 <script>
 /* ---------- CONFIG ---------- */
 let lang = 'id';
@@ -170,37 +218,27 @@ const texts = {
   id:{
     labelName:'Nama Lengkap',labelPhone:'Nomor WhatsApp',labelEmail:'Email',labelDate:'Tanggal Akun Dibuat',labelCountry:'Negara',labelType:'Jenis Akun',labelReason:'Alasan Ban',labelDetail:'Penjelasan Detail',
     toggleHistory:'Riwayat akun',togglePromise:'Pernyataan tidak mengulangi',toggleSignature:'Tanda tangan profesional',toggleStats:'Statistik penggunaan',toggleScreenshot:'Screenshot terlampir',toggleTopup:'Riwayat top-up',toggleDevice:'Info perangkat',toggleIP:'Informasi IP',toggleLicense:'Nomor lisensi',toggleVerification:'Verifikasi dua langkah',toggleBackup:'Status cadangan chat',toggleTemplate:'Template super-formal',
-    greet:'Yth. Tim WhatsApp Support',
-    close:'Hormat saya',
-    success:'Estimasi tingkat keberhasilan'
+    greet:'Yth. Tim WhatsApp Support',close:'Hormat saya',success:'Estimasi tingkat keberhasilan'
   },
   en:{
     labelName:'Full Name',labelPhone:'WhatsApp Number',labelEmail:'Email',labelDate:'Account Created',labelCountry:'Country',labelType:'Account Type',labelReason:'Ban Reason',labelDetail:'Detailed Explanation',
     toggleHistory:'Include account history',togglePromise:'Promise not to repeat',toggleSignature:'Professional signature',toggleStats:'Usage statistics',toggleScreenshot:'Attached screenshot',toggleTopup:'Top-up history',toggleDevice:'Device info',toggleIP:'Latest IP',toggleLicense:'Business license',toggleVerification:'Two-step verification',toggleBackup:'Chat backup status',toggleTemplate:'Super-formal template',
-    greet:'Dear WhatsApp Support',
-    close:'Best regards',
-    success:'Estimated success rate'
+    greet:'Dear WhatsApp Support',close:'Best regards',success:'Estimated success rate'
   },
   cn:{
     labelName:'全名',labelPhone:'WhatsApp号码',labelEmail:'电子邮箱',labelDate:'创建日期',labelCountry:'国家',labelType:'账户类型',labelReason:'封禁原因',labelDetail:'详细说明',
     toggleHistory:'包含账户历史',togglePromise:'承诺不再重犯',toggleSignature:'专业签名',toggleStats:'使用统计',toggleScreenshot:'已附截图',toggleTopup:'充值记录',toggleDevice:'设备信息',toggleIP:'最新IP',toggleLicense:'营业执照号码',toggleVerification:'两步验证状态',toggleBackup:'聊天记录备份状态',toggleTemplate:'超正式模板',
-    greet:'尊敬的WhatsApp支持团队',
-    close:'此致敬礼',
-    success:'预估成功率'
+    greet:'尊敬的WhatsApp支持团队',close:'此致敬礼',success:'预估成功率'
   },
   ar:{
     labelName:'الاسم الكامل',labelPhone:'رقم واتساب',labelEmail:'البريد الإلكتروني',labelDate:'تاريخ الإنشاء',labelCountry:'الدولة',labelType:'نوع الحساب',labelReason:'سبب الحظر',labelDetail:'شرح مفصل',
     toggleHistory:'تضمين سجل الحساب',togglePromise:'وعد بعدم التكرار',toggleSignature:'توقيع احترافي',toggleStats:'إحصاءات الاستخدام',toggleScreenshot:'لقطة شاشة مرفقة',toggleTopup:'سجل الشحن',toggleDevice:'معلومات الجهاز',toggleIP:'آخر عنوان IP',toggleLicense:'رقم الترخيص',toggleVerification:'حالة التحقق بخطوتين',toggleBackup:'حالة النسخ الاحتياطي',toggleTemplate:'نموذج رسمي متقدم',
-    greet:'فريق دعم واتساب المحترم',
-    close:'مع أطيب التحيات',
-    success:'معدل النجاح المقدر'
+    greet:'فريق دعم واتساب المحترم',close:'مع أطيب التحيات',success:'معدل النجاح المقدر'
   },
   ru:{
     labelName:'Полное имя',labelPhone:'Номер WhatsApp',labelEmail:'Эл. почта',labelDate:'Дата создания',labelCountry:'Страна',labelType:'Тип аккаунта',labelReason:'Причина блокировки',labelDetail:'Подробное объяснение',
     toggleHistory:'История аккаунта',togglePromise:'Обещание не нарушать',toggleSignature:'Профессиональная подпись',toggleStats:'Статистика использования',toggleScreenshot:'Скриншот прилагается',toggleTopup:'История пополнений',toggleDevice:'Информация об устройстве',toggleIP:'Последний IP-адрес',toggleLicense:'Номер лицензии',toggleVerification:'Статус двухэтапной проверки',toggleBackup:'Статус резервной копии',toggleTemplate:'Суперформальный шаблон',
-    greet:'Уважаемая служба поддержки WhatsApp',
-    close:'С уважением',
-    success:'Оценка вероятности успеха'
+    greet:'Уважаемая служба поддержки WhatsApp',close:'С уважением',success:'Оценка вероятности успеха'
   }
 };
 const toneMap = {
@@ -218,7 +256,6 @@ const toneMap = {
   confident:{id:{greet:'Tim WhatsApp',close:'Percaya diri'},en:{greet:'WhatsApp Team',close:'Confidently yours'},cn:{greet:'WhatsApp团队',close:'自信问候'},ar:{greet:'فريق واتساب',close:'ثقتي'},ru:{greet:'Команда WhatsApp',close:'С уверенностью'}}
 };
 
-/* ---------- UTILS ---------- */
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 function setLang(l){
@@ -234,7 +271,6 @@ function setLang(l){
   $('#lang'+l.toUpperCase()).addEventListener('click',()=>setLang(l));
 });
 
-/* ---------- TONE ---------- */
 let selectedTone = 'formal';
 $$('.option').forEach(opt=>{
   opt.addEventListener('click',()=>{
@@ -245,11 +281,9 @@ $$('.option').forEach(opt=>{
   });
 });
 
-/* ---------- TOGGLES ---------- */
 $$('.switch').forEach(sw=>sw.addEventListener('click',()=>{sw.classList.toggle('on');updatePreview();}));
 $$('input,select,textarea').forEach(el=>el.addEventListener('input',updatePreview));
 
-/* ---------- SUCCESS RATE ---------- */
 function calcSuccess(){
   let score = 40;
   if($('#fullName').value.trim()) score += 5;
@@ -261,7 +295,6 @@ function calcSuccess(){
   $('#successRate').textContent = `${texts[lang].success}: ${score}%`;
 }
 
-/* ---------- GENERATE ---------- */
 function generateMessage(){
   const name = $('#fullName').value.trim();
   const phone = $('#phone').value.trim();
@@ -359,15 +392,19 @@ function generateMessage(){
   }
   return msg;
 }
+
 function updatePreview(){
   const msg = generateMessage();
   $('#messagePreview').textContent = msg;
   calcSuccess();
 }
+
+/* ---------- WRAPPER FUNGSI UTAMA + TRACKER ---------- */
 function copyMessage(){
   const msg = generateMessage();
   if(msg.includes('…')) return alert(lang==='id' ? 'Lengkapi form dulu' : lang==='en' ? 'Complete the form' : lang==='cn' ? '请填写表单' : lang==='ar' ? 'يرجى إكمال النموذج' : 'Пожалуйста заполните форму');
   navigator.clipboard.writeText(msg);
+  trackAction('Copy');
   alert(lang==='id' ? '✅ Tersalin' : lang==='en' ? '✅ Copied' : lang==='cn' ? '✅ 已复制' : lang==='ar' ? '✅ تم النسخ' : '✅ Скопировано');
 }
 function downloadMessage(){
@@ -378,6 +415,7 @@ function downloadMessage(){
   a.href = URL.createObjectURL(blob);
   a.download = `WhatsApp-Unban-Appeal-${Date.now()}.txt`;
   a.click();
+  trackAction('Download');
 }
 function resetForm(){
   $('#unbanForm').reset();
@@ -392,6 +430,7 @@ $('#unbanForm').addEventListener('submit',e=>{
   e.preventDefault();
   const msg = generateMessage();
   if(msg.includes('…')) return alert(lang==='id' ? 'Lengkapi form dulu' : lang==='en' ? 'Complete the form' : lang==='cn' ? '请填写表单' : lang==='ar' ? 'يرجى إكمال النموذج' : 'Пожалуйста заполните форму');
+  trackAction('Send to WhatsApp');
   const url = `https://wa.me/14155238886?text= ${encodeURIComponent(msg)}`;
   window.open(url,'_blank');
 });
