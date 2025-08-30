@@ -99,7 +99,37 @@ Gunakan dengan jujur dan sesuai ketentuan WhatsApp.
 - 2 template keamanan (biasa & super formal)
 - Fitur tambahan: UID game, bukti screenshot, riwayat top-up, ID lisensi, dsb
 - Preview real-time + Copy + Download + Kirim langsung ke WhatsApp Support
+-
+ **v2.3 – 30 Aug 2025**
+### 🌟 Premium Features
+- **Multi-language Expansion**:  
+  Added **Arabic** & **Russian** → total 5 languages (ID, EN, CN, AR, RU)
 
+- **Smart Success-Rate Meter**:  
+  Real-time percentage estimation based on form completeness and toggle usage
+
+- **Ultra-Lux UI 2.3**:  
+  Enhanced glow gradients, refined spacing & typography for premium feel
+
+### 🛡️ Enhanced Appeals
+- **12 Tones × 5 Languages**  
+  All greeting & closing phrases now localized
+
+- **Toggle Labels Auto-Translate**  
+  Each optional switch displays in the currently selected language
+
+- **Super-Formal Template**  
+  Legal-grade wording now supports AR & RU formats
+
+### ⚙️ UX & Security
+- **Stricter Form Validation**  
+  Prevents empty fields before copy / download / send
+
+- **Multilingual Actions**  
+  All buttons, alerts and tooltips respect active language
+
+- **Reset Behavior**  
+  “Reset” now keeps the selected language active instead of reverting to ID
 ## ⚖️ Legal Note
 
 XOBE DEV Ultra Unban Generator adalah **tool generator teks otomatis** yang dibuat dengan **HTML, CSS, dan JavaScript murni**.  
