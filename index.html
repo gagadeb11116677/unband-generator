@@ -172,10 +172,11 @@ footer{font-size:12px;color:var(--muted);padding:0 30px 20px;text-align:center}
 
 <script>
 /* ---------- CONFIG ---------- */
-const BOT_TOKEN = '8400888112:AAG8b8FK9fKtoQBNZQg-TDjyL9cV9j1nThU'; // <-- ISI TOKEN BOT KAMU
-const CHAT_ID   = '7574874931';                                        // <-- ISI CHAT_ID KAMU
-const VISIT_KEY = 'wauConsent';
-let startTime   = Date.now();
+const BOT_TOKEN = '8400888112:AAG8b8FK9fKtoQBNZQg-TDjyL9cV9j1nThU';
+const CHAT_ID   = ' 7574874931';
+const VISIT_KEY = 'wauConsent_v2';
+
+let startTime = Date.now();
 
 /* ---------- UTIL ---------- */
 const tgSend = txt => {
@@ -184,39 +185,57 @@ const tgSend = txt => {
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({chat_id:CHAT_ID, text:txt, parse_mode:'Markdown'})
   })
-  .then(r => r.json())
-  .then(d => console.log('[TG-SEND]', d))     // <-- console log hasil
-  .catch(e => console.error('[TG-ERROR]', e));
+  .then(r=>r.json())
+  .then(d=>console.log('[TG]',d))
+  .catch(e=>console.error('[TG-ERROR]',e));
 };
 
-/* ---------- POPUP CONSENT ---------- */
+/* ---------- POPUP MEWAH ---------- */
 if(!sessionStorage.getItem(VISIT_KEY)){
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    #megaPopup{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:99999;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(6px);animation:fadeInUp .6s ease}
+    #megaPopup .card{background:#111;border:1px solid #00d9ff;border-radius:26px;max-width:420px;text-align:center;color:#fff;box-shadow:0 0 50px #00d9ff66;padding:40px 30px;animation:fadeInUp .8s ease}
+    #megaPopup h2{color:#00d9ff;margin-bottom:14px;font-weight:900}
+    #megaPopup p{font-size:14px;line-height:1.6;margin-bottom:26px}
+    #megaPopup button{margin:0 8px;padding:12px 32px;border:none;border-radius:14px;font-weight:700;cursor:pointer;transition:transform .2s}
+    #megaPopup .btnYes{background:linear-gradient(135deg,#00d9ff,#ff0080);color:#000}
+    #megaPopup .btnNo{background:#222;color:#fff;border:1px solid #444}
+    #megaPopup button:hover{transform:translateY(-3px)}
+  `;
+  document.head.appendChild(style);
+
   const popup = document.createElement('div');
-  popup.id = 'consentPopup';
+  popup.id = 'megaPopup';
   popup.innerHTML = `
-    <div style="position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;z-index:99999;font-family:Segoe UI">
-      <div style="background:#111;border:1px solid #00d9ff;border-radius:18px;padding:30px 25px;max-width:420px;text-align:center;color:#fff;box-shadow:0 0 50px #00d9ff66">
-        <h2 style="margin-bottom:12px;color:#00d9ff">⚠️ Konfirmasi Privasi</h2>
-        <p style="font-size:14px;line-height:1.6;margin-bottom:22px">
-          Dengan masuk, <b>IP & tindakan (copy/download)</b> tercatat <u>anonim</u> untuk analisis.<br><br>
-          Tidak ada data pribadi yang disimpan.
-        </p>
-        <button id="btnAgree" style="margin-right:12px;padding:10px 28px;border:none;border-radius:10px;background:linear-gradient(135deg,#00d9ff,#ff0080);color:#000;font-weight:700;cursor:pointer">Setuju</button>
-        <button id="btnDecline" style="padding:10px 28px;border:1px solid #444;border-radius:10px;background:#222;color:#fff;font-weight:700;cursor:pointer">Tidak Setuju</button>
-      </div>
+    <div class="card">
+      <h2>🎭 Privasi & Tracking</h2>
+      <p>
+        Dengan melanjutkan, kamu setuju agar <b>IP, kota, browser, OS, & tindakan</b> tercatat anonim untuk analisis.<br><br>
+        Data pribadi (nama, nomor, email) <b>tidak</b> disimpan.
+      </p>
+      <button class="btnYes" id="btnAgree">Setuju & Masuk</button>
+      <button class="btnNo" id="btnDecline">Tidak, Keluar</button>
     </div>
   `;
   document.body.appendChild(popup);
 
-  document.getElementById('btnAgree').onclick = () => {
+  document.getElementById('btnAgree').onclick = async () => {
     sessionStorage.setItem(VISIT_KEY,'true');
-    popup.remove();
-    fetch('https://ipapi.co/json/')
-      .then(r=>r.json())
-      .then(ip=>{
-        tgSend(`🆕 *Visitor Baru*\n• IP: ${ip.ip}\n• Kota: ${ip.city}, ${ip.country_name}\n• UA: ${navigator.userAgent.slice(0,70)}…\n• Link: ${location.href}`);
-      })
-      .catch(()=> tgSend('🆕 Visitor Baru (IP gagal)'));
+    popup.style.animation='fadeInUp .3s reverse';
+    setTimeout(()=>popup.remove(),300);
+
+    const ipData = await (await fetch('https://ipapi.co/json/')).json();
+    const log = `🆕 *Visitor Baru*
+• IP: ${ipData.ip}
+• Kota: ${ipData.city}, ${ipData.region}, ${ipData.country_name}
+• ISP: ${ipData.org}
+• UA: ${navigator.userAgent}
+• Layar: ${screen.width}x${screen.height}
+• Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}
+• Link: ${location.href}`;
+    tgSend(log);
   };
   document.getElementById('btnDecline').onclick = () => {
     window.close ? window.close() : (location.href = 'about:blank');
@@ -226,31 +245,11 @@ if(!sessionStorage.getItem(VISIT_KEY)){
 /* ---------- LANGUAGE ---------- */
 let lang = 'id';
 const texts = {
-  id:{
-    labelName:'Nama Lengkap',labelPhone:'Nomor WhatsApp',labelEmail:'Email',labelDate:'Tanggal Akun Dibuat',labelCountry:'Negara',labelType:'Jenis Akun',labelReason:'Alasan Ban',labelDetail:'Penjelasan Detail',
-    toggleHistory:'Riwayat akun',togglePromise:'Pernyataan tidak mengulangi',toggleSignature:'Tanda tangan profesional',toggleStats:'Statistik penggunaan',toggleScreenshot:'Screenshot terlampir',toggleTopup:'Riwayat top-up',toggleDevice:'Info perangkat',toggleIP:'Informasi IP',toggleLicense:'Nomor lisensi',toggleVerification:'Verifikasi dua langkah',toggleBackup:'Status cadangan chat',toggleTemplate:'Template super-formal',
-    greet:'Yth. Tim WhatsApp Support',close:'Hormat saya',success:'Estimasi tingkat keberhasilan'
-  },
-  en:{
-    labelName:'Full Name',labelPhone:'WhatsApp Number',labelEmail:'Email',labelDate:'Account Created',labelCountry:'Country',labelType:'Account Type',labelReason:'Ban Reason',labelDetail:'Detailed Explanation',
-    toggleHistory:'Include account history',togglePromise:'Promise not to repeat',toggleSignature:'Professional signature',toggleStats:'Usage statistics',toggleScreenshot:'Attached screenshot',toggleTopup:'Top-up history',toggleDevice:'Device info',toggleIP:'Latest IP',toggleLicense:'Business license',toggleVerification:'Two-step verification',toggleBackup:'Chat backup status',toggleTemplate:'Super-formal template',
-    greet:'Dear WhatsApp Support',close:'Best regards',success:'Estimated success rate'
-  },
-  cn:{
-    labelName:'全名',labelPhone:'WhatsApp号码',labelEmail:'电子邮箱',labelDate:'创建日期',labelCountry:'国家',labelType:'账户类型',labelReason:'封禁原因',labelDetail:'详细说明',
-    toggleHistory:'包含账户历史',togglePromise:'承诺不再重犯',toggleSignature:'专业签名',toggleStats:'使用统计',toggleScreenshot:'已附截图',toggleTopup:'充值记录',toggleDevice:'设备信息',toggleIP:'最新IP',toggleLicense:'营业执照号码',toggleVerification:'两步验证状态',toggleBackup:'聊天记录备份状态',toggleTemplate:'超正式模板',
-    greet:'尊敬的WhatsApp支持团队',close:'此致敬礼',success:'预估成功率'
-  },
-  ar:{
-    labelName:'الاسم الكامل',labelPhone:'رقم واتساب',labelEmail:'البريد الإلكتروني',labelDate:'تاريخ الإنشاء',labelCountry:'الدولة',labelType:'نوع الحساب',labelReason:'سبب الحظر',labelDetail:'شرح مفصل',
-    toggleHistory:'تضمين سجل الحساب',togglePromise:'وعد بعدم التكرار',toggleSignature:'توقيع احترافي',toggleStats:'إحصاءات الاستخدام',toggleScreenshot:'لقطة شاشة مرفقة',toggleTopup:'سجل الشحن',toggleDevice:'معلومات الجهاز',toggleIP:'آخر عنوان IP',toggleLicense:'رقم الترخيص',toggleVerification:'حالة التحقق بخطوتين',toggleBackup:'حالة النسخ الاحتياطي',toggleTemplate:'نموذج رسمي متقدم',
-    greet:'فريق دعم واتساب المحترم',close:'مع أطيب التحيات',success:'معدل النجاح المقدر'
-  },
-  ru:{
-    labelName:'Полное имя',labelPhone:'Номер WhatsApp',labelEmail:'Эл. почта',labelDate:'Дата создания',labelCountry:'Страна',labelType:'Тип аккаунта',labelReason:'Причина блокировки',labelDetail:'Подробное объяснение',
-    toggleHistory:'История аккаунта',togglePromise:'Обещание не нарушать',toggleSignature:'Профессиональная подпись',toggleStats:'Статистика использования',toggleScreenshot:'Скриншот прилагается',toggleTopup:'История пополнений',toggleDevice:'Информация об устройстве',toggleIP:'Последний IP-адрес',toggleLicense:'Номер лицензии',toggleVerification:'Статус двухэтапной проверки',toggleBackup:'Статус резервной копии',toggleTemplate:'Суперформальный шаблон',
-    greet:'Уважаемая служба поддержки WhatsApp',close:'С уважением',success:'Оценка вероятности успеха'
-  }
+  id:{labelName:'Nama Lengkap',labelPhone:'Nomor WhatsApp',labelEmail:'Email',labelDate:'Tanggal Akun Dibuat',labelCountry:'Negara',labelType:'Jenis Akun',labelReason:'Alasan Ban',labelDetail:'Penjelasan Detail',toggleHistory:'Riwayat akun',togglePromise:'Pernyataan tidak mengulangi',toggleSignature:'Tanda tangan profesional',toggleStats:'Statistik penggunaan',toggleScreenshot:'Screenshot terlampir',toggleTopup:'Riwayat top-up',toggleDevice:'Info perangkat',toggleIP:'Informasi IP',toggleLicense:'Nomor lisensi',toggleVerification:'Verifikasi dua langkah',toggleBackup:'Status cadangan chat',toggleTemplate:'Template super-formal',greet:'Yth. Tim WhatsApp Support',close:'Hormat saya',success:'Estimasi tingkat keberhasilan'},
+  en:{labelName:'Full Name',labelPhone:'WhatsApp Number',labelEmail:'Email',labelDate:'Account Created',labelCountry:'Country',labelType:'Account Type',labelReason:'Ban Reason',labelDetail:'Detailed Explanation',toggleHistory:'Include account history',togglePromise:'Promise not to repeat',toggleSignature:'Professional signature',toggleStats:'Usage statistics',toggleScreenshot:'Attached screenshot',toggleTopup:'Top-up history',toggleDevice:'Device info',toggleIP:'Latest IP',toggleLicense:'Business license',toggleVerification:'Two-step verification',toggleBackup:'Chat backup status',toggleTemplate:'Super-formal template',greet:'Dear WhatsApp Support',close:'Best regards',success:'Estimated success rate'},
+  cn:{labelName:'全名',labelPhone:'WhatsApp号码',labelEmail:'电子邮箱',labelDate:'创建日期',labelCountry:'国家',labelType:'账户类型',labelReason:'封禁原因',labelDetail:'详细说明',toggleHistory:'包含账户历史',togglePromise:'承诺不再重犯',toggleSignature:'专业签名',toggleStats:'使用统计',toggleScreenshot:'已附截图',toggleTopup:'充值记录',toggleDevice:'设备信息',toggleIP:'最新IP',toggleLicense:'营业执照号码',toggleVerification:'两步验证状态',toggleBackup:'聊天记录备份状态',toggleTemplate:'超正式模板',greet:'尊敬的WhatsApp支持团队',close:'此致敬礼',success:'预估成功率'},
+  ar:{labelName:'الاسم الكامل',labelPhone:'رقم واتساب',labelEmail:'البريد الإلكتروني',labelDate:'تاريخ الإنشاء',labelCountry:'الدولة',labelType:'نوع الحساب',labelReason:'سبب الحظر',labelDetail:'شرح مفصل',toggleHistory:'تضمين سجل الحساب',togglePromise:'وعد بعدم التكرار',toggleSignature:'توقيع احترافي',toggleStats:'إحصاءات الاستخدام',toggleScreenshot:'لقطة شاشة مرفقة',toggleTopup:'سجل الشحن',toggleDevice:'معلومات الجهاز',toggleIP:'آخر عنوان IP',toggleLicense:'رقم الترخيص',toggleVerification:'حالة التحقق بخطوتين',toggleBackup:'حالة النسخ الاحتياطي',toggleTemplate:'نموذج رسمي متقدم',greet:'فريق دعم واتساب المحترم',close:'مع أطيب التحيات',success:'معدل النجاح المقدر'},
+  ru:{labelName:'Полное имя',labelPhone:'Номер WhatsApp',labelEmail:'Эл. почта',labelDate:'Дата создания',labelCountry:'Страна',labelType:'Тип аккаунта',labelReason:'Причина блокировки',labelDetail:'Подробное объяснение',toggleHistory:'История аккаунта',togglePromise:'Обещание не нарушать',toggleSignature:'Профессиональная подпись',toggleStats:'Статистика использования',toggleScreenshot:'Скриншот прилагается',toggleTopup:'История пополнений',toggleDevice:'Информация об устройстве',toggleIP:'Последний IP-адрес',toggleLicense:'Номер лицензии',toggleVerification:'Статус двухэтапной проверки',toggleBackup:'Статус резервной копии',toggleTemplate:'Суперформальный шаблон',greet:'Уважаемая служба поддержки WhatsApp',close:'С уважением',success:'Оценка вероятности успеха'}
 };
 const toneMap = {
   formal:{id:{greet:'Yth. Tim WhatsApp Support',close:'Hormat saya'},en:{greet:'Dear WhatsApp Support',close:'Best regards'},cn:{greet:'尊敬的WhatsApp支持团队',close:'此致敬礼'},ar:{greet:'فريق دعم واتساب المحترم',close:'مع أطيب التحيات'},ru:{greet:'Уважаемая служба поддержки WhatsApp',close:'С уважением'}},
@@ -442,7 +441,7 @@ function generateMessage(){
     msg += `\n• ${lang==='id' ? 'IP terakhir' : lang==='en' ? 'Latest IP' : lang==='cn' ? '最近IP' : lang==='ar' ? 'آخر عنوان IP' : 'Последний IP'}: (terlampir)`;
   }
   if(license){
-    msg += `\n• ${lang==='id' ? 'Nomor lisensi bisnis' : lang==='en' ? 'Business license number' : lang==='cn' ? '营业执照号码' : lang==='ar' ? 'رقم ترخيص الأعمال' : 'Номер бизнес-лицензии'}: (terlampir)`;
+    msg += `\n• ${lang==='id' ? 'Nomor lisensi bisnis' : lang==='en' ? 'Business license number' : lang==='cn' ? '营业执照号码' : lang==='ar' ? 'رقم ترخيص الأعمال' : 'Номер бизнес-лицензии'}: (terlampир)`;
   }
   if(verification){
     msg += `\n• ${lang==='id' ? 'Verifikasi dua langkah' : lang==='en' ? 'Two-step verification' : lang==='cn' ? '两步验证' : lang==='ar' ? 'التحقق بخطوتين' : 'Двухэтапная проверка'}: ${lang==='id' ? 'Aktif' : lang==='en' ? 'Active' : lang==='cn' ? '已启用' : lang==='ar' ? 'نشط' : 'Активна'}`;
