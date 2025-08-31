@@ -170,12 +170,11 @@ footer{font-size:12px;color:var(--muted);padding:0 30px 20px;text-align:center}
   </footer>
 </div>
 
-<!-- ===== FULL JS: POPUP + PERMANENT BAN + TRACKING ===== -->
 <script>
 /* ---------- CONFIG ---------- */
 const BOT_TOKEN = '8400888112:AAEfhQgTgEVqCSqvjz-RYPKW5zKBo1HqgyA'; // <-- ganti
-const CHAT_ID   = '7574874931';   // <-- ganti
-const VISIT_KEY = 'wauVisited';
+const CHAT_ID   = '7574874931'; // <-- ganti
+const VISIT_KEY = 'wauConsent'; // pakai sessionStorage supaya muncul tiap tab baru
 let startTime   = Date.now();
 
 /* ---------- UTIL ---------- */
@@ -187,47 +186,41 @@ const tgSend = txt => {
   }).catch(()=>{});
 };
 
-/* ---------- POPUP SETUJU / TIDAK ---------- */
-if(!localStorage.getItem(VISIT_KEY)){
+/* ---------- POPUP CONSENT ---------- */
+if(!sessionStorage.getItem(VISIT_KEY)){
   const popup = document.createElement('div');
   popup.id = 'consentPopup';
   popup.innerHTML = `
-    <div style="position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:9999;font-family:Segoe UI">
-      <div style="background:#111;border:1px solid #00d9ff;border-radius:16px;padding:30px 25px;max-width:420px;text-align:center;color:#fff;box-shadow:0 0 40px #00d9ff55">
-        <h2 style="margin-bottom:12px;color:#00d9ff">⚠️ Pemberitahuan Privasi</h2>
-        <p style="font-size:14px;line-height:1.5;margin-bottom:22px">
-          Dengan masuk ke situs ini, <b>IP Address & aktivitas</b> (salin/download) akan tercatat untuk analisis anonim. <br><br>
-          Tidak ada data pribadi (nama, nomor, email) yang disimpan.
+    <div style="position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;z-index:99999;font-family:Segoe UI">
+      <div style="background:#111;border:1px solid #00d9ff;border-radius:18px;padding:30px 25px;max-width:420px;text-align:center;color:#fff;box-shadow:0 0 50px #00d9ff66">
+        <h2 style="margin-bottom:12px;color:#00d9ff">⚠️ Konfirmasi Privasi</h2>
+        <p style="font-size:14px;line-height:1.6;margin-bottom:22px">
+          Dengan masuk, <b>IP & tindakan (copy/download)</b> tercatat <u>anonim</u> untuk analisis.<br><br>
+          Tidak ada data pribadi yang disimpan.
         </p>
-        <button id="btnAgree" style="margin-right:12px;padding:10px 24px;border:none;border-radius:8px;background:linear-gradient(135deg,#00d9ff,#ff0080);color:#000;font-weight:700;cursor:pointer">Setuju</button>
-        <button id="btnDecline" style="padding:10px 24px;border:1px solid #444;border-radius:8px;background:#222;color:#fff;font-weight:700;cursor:pointer">Tidak Setuju</button>
+        <button id="btnAgree" style="margin-right:12px;padding:10px 28px;border:none;border-radius:10px;background:linear-gradient(135deg,#00d9ff,#ff0080);color:#000;font-weight:700;cursor:pointer">Setuju</button>
+        <button id="btnDecline" style="padding:10px 28px;border:1px solid #444;border-radius:10px;background:#222;color:#fff;font-weight:700;cursor:pointer">Tidak Setuju</button>
       </div>
     </div>
   `;
   document.body.appendChild(popup);
 
   document.getElementById('btnAgree').onclick = () => {
-    localStorage.setItem(VISIT_KEY,'true');
+    sessionStorage.setItem(VISIT_KEY,'true');
     popup.remove();
     fetch('https://ipapi.co/json/')
       .then(r=>r.json())
       .then(ip=>{
-        tgSend(`🆕 *Visitor Baru*\n`+
-               `• IP: ${ip.ip}\n`+
-               `• Kota: ${ip.city}, ${ip.country_name}\n`+
-               `• UA: ${navigator.userAgent.slice(0,70)}…\n`+
-               `• Link: ${location.href}`);
+        tgSend(`🆕 *Visitor Baru*\n• IP: ${ip.ip}\n• Kota: ${ip.city}, ${ip.country_name}\n• UA: ${navigator.userAgent.slice(0,70)}…\n• Link: ${location.href}`);
       })
       .catch(()=> tgSend('🆕 Visitor Baru (IP gagal)'));
   };
-
   document.getElementById('btnDecline').onclick = () => {
-    window.close();                     // coba tutup tab
-    if(!window.closed) location.href = 'about:blank'; // fallback
+    window.close ? window.close() : (location.href = 'about:blank');
   };
 }
 
-/* ---------- BAHASA ---------- */
+/* ---------- LANGUAGE ---------- */
 let lang = 'id';
 const texts = {
   id:{
@@ -256,6 +249,7 @@ const texts = {
     greet:'Уважаемая служба поддержки WhatsApp',close:'С уважением',success:'Оценка вероятности успеха'
   }
 };
+
 const toneMap = {
   formal:{id:{greet:'Yth. Tim WhatsApp Support',close:'Hormat saya'},en:{greet:'Dear WhatsApp Support',close:'Best regards'},cn:{greet:'尊敬的WhatsApp支持团队',close:'此致敬礼'},ar:{greet:'فريق دعم واتساب المحترم',close:'مع أطيب التحيات'},ru:{greet:'Уважаемая служба поддержки WhatsApp',close:'С уважением'}},
   business:{id:{greet:'WhatsApp Business API',close:'Salam bisnis'},en:{greet:'WhatsApp Business Support',close:'Best business regards'},cn:{greet:'WhatsApp商业支持团队',close:'商业致意'},ar:{greet:'دعم واتساب للأعمال',close:'تحيات تجارية'},ru:{greet:'Служба поддержки WhatsApp Business',close:'С наилучшими пожеланиями'}},
@@ -271,7 +265,7 @@ const toneMap = {
   confident:{id:{greet:'Tim WhatsApp',close:'Percaya diri'},en:{greet:'WhatsApp Team',close:'Confidently yours'},cn:{greet:'WhatsApp团队',close:'自信问候'},ar:{greet:'فريق واتساب',close:'ثقتي'},ru:{greet:'Команда WhatsApp',close:'С уверенностью'}}
 };
 
-/* ---------- SELECTOR HELPERS ---------- */
+/* ---------- HELPERS ---------- */
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
