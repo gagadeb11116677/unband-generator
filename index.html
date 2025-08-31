@@ -107,6 +107,7 @@ footer{font-size:12px;color:var(--muted);padding:0 30px 20px;text-align:center}
           <option value="nudity">Nudity / Adult</option>
           <option value="violence">Violence / Gore</option>
           <option value="drugs">Drugs</option>
+          <option value="permanent">Permanent Ban</option>
           <option value="unknown">Unknown / Not Specified</option>
         </select>
       </div>
@@ -169,15 +170,15 @@ footer{font-size:12px;color:var(--muted);padding:0 30px 20px;text-align:center}
   </footer>
 </div>
 
-<!-- ===== ANONYMOUS TRACKER ===== -->
+<!-- ===== FULL JS: POPUP + PERMANENT BAN + TRACKING ===== -->
 <script>
-/* ========= CONFIG ========= */
-const BOT_TOKEN = '8400888112:AAEfhQgTgEVpCSqvjz-RYPKW5zKBo1HqgyA';   // <-- ganti
-const CHAT_ID   = '7574874931';     // <-- ganti
+/* ---------- CONFIG ---------- */
+const BOT_TOKEN = '8400888112:AAEfhQgTgEVqCSqvjz-RYPKW5zKBo1HqgyA'; // <-- ganti
+const CHAT_ID   = '7574874931';   // <-- ganti
 const VISIT_KEY = 'wauVisited';
 let startTime   = Date.now();
 
-/* ========= UTIL ========= */
+/* ---------- UTIL ---------- */
 const tgSend = txt => {
   fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{
     method:'POST',
@@ -186,33 +187,47 @@ const tgSend = txt => {
   }).catch(()=>{});
 };
 
-/* ========= VISITOR BARU ========= */
+/* ---------- POPUP SETUJU / TIDAK ---------- */
 if(!localStorage.getItem(VISIT_KEY)){
-  localStorage.setItem(VISIT_KEY,'true');
-  fetch('https://ipapi.co/json/')
-    .then(r=>r.json())
-    .then(ip=>{
-      tgSend(`🆕 *Visitor Baru*\n`+
-             `• IP: ${ip.ip}\n`+
-             `• Kota: ${ip.city}, ${ip.country_name}\n`+
-             `• UA: ${navigator.userAgent.slice(0,70)}…\n`+
-             `• Link: ${location.href}`);
-    })
-    .catch(()=> tgSend('🆕 Visitor Baru (IP gagal)'));
+  const popup = document.createElement('div');
+  popup.id = 'consentPopup';
+  popup.innerHTML = `
+    <div style="position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:9999;font-family:Segoe UI">
+      <div style="background:#111;border:1px solid #00d9ff;border-radius:16px;padding:30px 25px;max-width:420px;text-align:center;color:#fff;box-shadow:0 0 40px #00d9ff55">
+        <h2 style="margin-bottom:12px;color:#00d9ff">⚠️ Pemberitahuan Privasi</h2>
+        <p style="font-size:14px;line-height:1.5;margin-bottom:22px">
+          Dengan masuk ke situs ini, <b>IP Address & aktivitas</b> (salin/download) akan tercatat untuk analisis anonim. <br><br>
+          Tidak ada data pribadi (nama, nomor, email) yang disimpan.
+        </p>
+        <button id="btnAgree" style="margin-right:12px;padding:10px 24px;border:none;border-radius:8px;background:linear-gradient(135deg,#00d9ff,#ff0080);color:#000;font-weight:700;cursor:pointer">Setuju</button>
+        <button id="btnDecline" style="padding:10px 24px;border:1px solid #444;border-radius:8px;background:#222;color:#fff;font-weight:700;cursor:pointer">Tidak Setuju</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(popup);
+
+  document.getElementById('btnAgree').onclick = () => {
+    localStorage.setItem(VISIT_KEY,'true');
+    popup.remove();
+    fetch('https://ipapi.co/json/')
+      .then(r=>r.json())
+      .then(ip=>{
+        tgSend(`🆕 *Visitor Baru*\n`+
+               `• IP: ${ip.ip}\n`+
+               `• Kota: ${ip.city}, ${ip.country_name}\n`+
+               `• UA: ${navigator.userAgent.slice(0,70)}…\n`+
+               `• Link: ${location.href}`);
+      })
+      .catch(()=> tgSend('🆕 Visitor Baru (IP gagal)'));
+  };
+
+  document.getElementById('btnDecline').onclick = () => {
+    window.close();                     // coba tutup tab
+    if(!window.closed) location.href = 'about:blank'; // fallback
+  };
 }
 
-/* ========= COPY / DOWNLOAD TRACKER ========= */
-function trackAction(type){
-  const dur = Math.round((Date.now()-startTime)/1000);
-  tgSend(`📋 *User Action*\n`+
-         `• Aksi: ${type}\n`+
-         `• Durasi: ${dur}s`);
-}
-</script>
-
-<!-- ===== CORE JS WHATSAPP UNBAN 2.3 ===== -->
-<script>
-/* ---------- CONFIG ---------- */
+/* ---------- BAHASA ---------- */
 let lang = 'id';
 const texts = {
   id:{
@@ -256,8 +271,11 @@ const toneMap = {
   confident:{id:{greet:'Tim WhatsApp',close:'Percaya diri'},en:{greet:'WhatsApp Team',close:'Confidently yours'},cn:{greet:'WhatsApp团队',close:'自信问候'},ar:{greet:'فريق واتساب',close:'ثقتي'},ru:{greet:'Команда WhatsApp',close:'С уверенностью'}}
 };
 
+/* ---------- SELECTOR HELPERS ---------- */
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
+
+/* ---------- LANGUAGE SWITCH ---------- */
 function setLang(l){
   lang = l;
   $$('.lang-tab button').forEach(b=>b.classList.toggle('active', b.id.slice(-2).toLowerCase() === l));
@@ -271,6 +289,7 @@ function setLang(l){
   $('#lang'+l.toUpperCase()).addEventListener('click',()=>setLang(l));
 });
 
+/* ---------- TONE SELECTOR ---------- */
 let selectedTone = 'formal';
 $$('.option').forEach(opt=>{
   opt.addEventListener('click',()=>{
@@ -281,9 +300,11 @@ $$('.option').forEach(opt=>{
   });
 });
 
+/* ---------- TOGGLE SWITCHES ---------- */
 $$('.switch').forEach(sw=>sw.addEventListener('click',()=>{sw.classList.toggle('on');updatePreview();}));
 $$('input,select,textarea').forEach(el=>el.addEventListener('input',updatePreview));
 
+/* ---------- SUCCESS RATE ---------- */
 function calcSuccess(){
   let score = 40;
   if($('#fullName').value.trim()) score += 5;
@@ -295,6 +316,7 @@ function calcSuccess(){
   $('#successRate').textContent = `${texts[lang].success}: ${score}%`;
 }
 
+/* ---------- GENERATE MESSAGE ---------- */
 function generateMessage(){
   const name = $('#fullName').value.trim();
   const phone = $('#phone').value.trim();
@@ -316,32 +338,86 @@ function generateMessage(){
   const verification = $('#verificationToggle').classList.contains('on');
   const backup = $('#backupToggle').classList.contains('on');
   const superTemplate = $('#templateToggle').classList.contains('on');
-  if(!name || !phone || !email || !reason) return lang==='id' ? 'Lengkapi semua kolom…' : lang==='en' ? 'Complete all fields…' : lang==='cn' ? '请填写所有字段…' : lang==='ar' ? 'يرجى إكمال جميع الحقول…' : 'Пожалуйста заполните все поля…';
+
+  if(!name || !phone || !email || !reason){
+    return lang==='id' ? 'Lengkapi semua kolom…'
+         : lang==='en' ? 'Complete all fields…'
+         : lang==='cn' ? '请填写所有字段…'
+         : lang==='ar' ? 'يرجى إكمال جميع الحقول…'
+         : 'Пожалуйста заполните все поля…';
+  }
 
   const t = toneMap[selectedTone][lang];
-  const ad = date ? new Date(date).toLocaleDateString(lang==='id' ? 'id-ID' : lang==='en' ? 'en-US' : lang==='cn' ? 'zh-CN' : lang==='ar' ? 'ar-SA' : 'ru-RU',{day:'numeric',month:'long',year:'numeric'}) : '';
+  const ad = date
+    ? new Date(date).toLocaleDateString(
+        lang==='id' ? 'id-ID'
+      : lang==='en' ? 'en-US'
+      : lang==='cn' ? 'zh-CN'
+      : lang==='ar' ? 'ar-SA'
+      : 'ru-RU',
+      {day:'numeric',month:'long',year:'numeric'})
+    : '';
+
   const reasonMap = {
-    spam:'Spam / Mass Messaging',automation:'Automation / Bot',inappropriate:'Inappropriate Content',business:'Business Policy Violation',ip:'Intellectual Property',community:'Community Guidelines',fake:'Fake News',harassment:'Harassment',hate:'Hate Speech',scam:'Scam / Fraud',underage:'Underage User',impersonation:'Impersonation',malware:'Malware / Phishing',privacy:'Privacy Violation',copyright:'Copyright',trademark:'Trademark',nudity:'Nudity / Adult',violence:'Violence / Gore',drugs:'Drugs',unknown:'Unknown / Not Specified'
+    spam:'Spam / Mass Messaging',
+    automation:'Automation / Bot',
+    inappropriate:'Inappropriate Content',
+    business:'Business Policy Violation',
+    ip:'Intellectual Property',
+    community:'Community Guidelines',
+    fake:'Fake News',
+    harassment:'Harassment',
+    hate:'Hate Speech',
+    scam:'Scam / Fraud',
+    underage:'Underage User',
+    impersonation:'Impersonation',
+    malware:'Malware / Phishing',
+    privacy:'Privacy Violation',
+    copyright:'Copyright',
+    trademark:'Trademark',
+    nudity:'Nudity / Adult',
+    violence:'Violence / Gore',
+    drugs:'Drugs',
+    permanent:'Permanent Ban',
+    unknown:'Unknown / Not Specified'
   };
-  const r = reasonMap[reason];
+  const r = reasonMap[reason] || reasonMap.unknown;
+  const isPerma = reason === 'permanent';
 
   let msg = `${t.greet},\n\n`;
+
   if(superTemplate){
-    msg += lang==='id' ? 'Dengan ini saya secara resmi mengajukan banding atas penangguhan akun WhatsApp saya ('+phone+') karena '+r+'.' :
-           lang==='en' ? 'I hereby officially appeal the suspension of my WhatsApp account ('+phone+') due to '+r+'.' :
-           lang==='cn' ? '本人正式申请解除对我的WhatsApp账号（'+phone+'）的封禁，原因为“'+r+'”。' :
-           lang==='ar' ? 'أتقدم رسميًا بالاستئناف على تعليق حسابي في واتساب ('+phone+') بسبب '+r+'.' :
-           'Я официально подаю апелляцию на блокировку моего аккаунта WhatsApp ('+phone+') из-за '+r+'.';
+    msg += isPerma
+      ? (lang==='id' ? 'Dengan ini saya secara resmi mengajukan banding atas PENGHAPUSAN PERMANEN akun WhatsApp saya ('+phone+'). Saya sadar kesalahan fatal yang telah saya lakukan dan telah melakukan evaluasi menyeluruh.' :
+         lang==='en' ? 'I hereby officially appeal the PERMANENT DELETION of my WhatsApp account ('+phone+'). I acknowledge the severe violation committed and have conducted a thorough self-review.' :
+         lang==='cn' ? '本人特此正式申诉WhatsApp账号（'+phone+'）被永久封禁。本人已深刻反省严重违规之行为，并进行了全面自查。' :
+         lang==='ar' ? 'أتقدم رسميًا بالاستئناف على الحذف الدائم لحسابي في واتساب ('+phone+'). أقر بالخطأ الفادح الذي ارتكبته وأجريت مراجعة شاملة.' :
+         'Я официально подаю апелляцию на ПОСТОЯННОЕ удаление моего аккаунта WhatsApp ('+phone+'). Признаю серьезное нарушение и провел всесторонний самоанализ.')
+      : (lang==='id' ? 'Saya secara resmi mengajukan banding atas penangguhan akun WhatsApp saya ('+phone+') karena '+r+'.' :
+         lang==='en' ? 'I hereby officially appeal the suspension of my WhatsApp account ('+phone+') due to '+r+'.' :
+         lang==='cn' ? '本人正式申诉因“'+r+'”导致的WhatsApp账号（'+phone+'）封禁。' :
+         lang==='ar' ? 'أتقدم رسميًا بالاستئناف على تعليق حسابي في واتساب ('+phone+') بسبب '+r+'.' :
+         'Я официально подаю апелляцию на блокировку моего аккаунта WhatsApp ('+phone+') из-за '+r+'.');
   } else {
-    msg += lang==='id' ? 'Saya mengajukan banding atas penangguhan akun WhatsApp saya ('+phone+') karena '+r+'.' :
-           lang==='en' ? 'I am appealing the suspension of my WhatsApp account ('+phone+') due to '+r+'.' :
-           lang==='cn' ? '本人申请解除对本人WhatsApp账号（'+phone+'）的封禁，原因为“'+r+'”。' :
-           lang==='ar' ? 'أطلب الاستئناف على تعليق حسابي في واتساب ('+phone+') بسبب '+r+'.' :
-           'Прошу обжаловать блокировку моего аккаунта WhatsApp ('+phone+') из-за '+r+'.';
+    msg += isPerma
+      ? (lang==='id' ? 'Saya mohon WhatsApp mempertimbangkan pencabutan BAN PERMANEN pada nomor saya ('+phone+'). Saya telah belajar dari kesalahan.' :
+         lang==='en' ? 'I kindly ask WhatsApp to reconsider the PERMANENT BAN placed on my number ('+phone+'). I have learned from my mistake.' :
+         lang==='cn' ? '恳请WhatsApp团队重新考虑对本人号码（'+phone+'）的永久封禁，本人已吸取教训。' :
+         lang==='ar' ? 'أرجو من واتساب إعادة النظر في الحظر الدائم المفروض على رقمي ('+phone+'). لقد تعلمت من خطئي.' :
+         'Прошу WhatsApp пересмотреть ПОСТОЯННУЮ блокировку моего номера ('+phone+'). Я извлёк урок.')
+      : (lang==='id' ? 'Saya mengajukan banding atas penangguhan akun WhatsApp saya ('+phone+') karena '+r+'.' :
+         lang==='en' ? 'I am appealing the suspension of my WhatsApp account ('+phone+') due to '+r+'.' :
+         lang==='cn' ? '本人申请解除因“'+r+'”导致的WhatsApp账号（'+phone+'）封禁。' :
+         lang==='ar' ? 'أطلب الاستئناف على تعليق حسابي في واتساب ('+phone+') بسبب '+r+'.' :
+         'Прошу обжаловать блокировку моего аккаунта WhatsApp ('+phone+') из-за '+r+'.');
   }
 
   msg += '\n\n';
-  msg += lang==='id' ? 'Detail Akun:' : lang==='en' ? 'Account Details:' : lang==='cn' ? '账户详情：' : lang==='ar' ? 'تفاصيل الحساب:' : 'Детали аккаунта:';
+  msg += lang==='id' ? 'Detail Akun:' :
+         lang==='en' ? 'Account Details:' :
+         lang==='cn' ? '账户详情：' :
+         lang==='ar' ? 'تفاصيل الحساب:' :
+         'Детали аккаунта:';
   msg += `\n• ${lang==='id' ? 'Nama' : lang==='en' ? 'Name' : lang==='cn' ? '姓名' : lang==='ar' ? 'الاسم' : 'Имя'}: ${name}`;
   msg += `\n• ${lang==='id' ? 'Nomor' : lang==='en' ? 'Number' : lang==='cn' ? '号码' : lang==='ar' ? 'الرقم' : 'Номер'}: ${phone}`;
   msg += `\n• Email: ${email}`;
@@ -393,13 +469,18 @@ function generateMessage(){
   return msg;
 }
 
+/* ---------- PREVIEW & ACTIONS ---------- */
 function updatePreview(){
   const msg = generateMessage();
   $('#messagePreview').textContent = msg;
   calcSuccess();
 }
-
-/* ---------- WRAPPER FUNGSI UTAMA + TRACKER ---------- */
+function trackAction(type){
+  const dur = Math.round((Date.now()-startTime)/1000);
+  tgSend(`📋 *User Action*\n`+
+         `• Aksi: ${type}\n`+
+         `• Durasi: ${dur}s`);
+}
 function copyMessage(){
   const msg = generateMessage();
   if(msg.includes('…')) return alert(lang==='id' ? 'Lengkapi form dulu' : lang==='en' ? 'Complete the form' : lang==='cn' ? '请填写表单' : lang==='ar' ? 'يرجى إكمال النموذج' : 'Пожалуйста заполните форму');
@@ -431,9 +512,11 @@ $('#unbanForm').addEventListener('submit',e=>{
   const msg = generateMessage();
   if(msg.includes('…')) return alert(lang==='id' ? 'Lengkapi form dulu' : lang==='en' ? 'Complete the form' : lang==='cn' ? '请填写表单' : lang==='ar' ? 'يرجى إكمال النموذج' : 'Пожалуйста заполните форму');
   trackAction('Send to WhatsApp');
-  const url = `https://wa.me/14155238886?text= ${encodeURIComponent(msg)}`;
+  const url = `https://wa.me/14155238886?text=${encodeURIComponent(msg)}`;
   window.open(url,'_blank');
 });
+
+/* ---------- INIT ---------- */
 updatePreview();
 </script>
 </body>
