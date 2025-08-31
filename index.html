@@ -172,9 +172,9 @@ footer{font-size:12px;color:var(--muted);padding:0 30px 20px;text-align:center}
 
 <script>
 /* ---------- CONFIG ---------- */
-const BOT_TOKEN = '8400888112:AAEfhQgTgEVqCSqvjz-RYPKW5zKBo1HqgyA'; // <-- ganti
-const CHAT_ID   = '7574874931'; // <-- ganti
-const VISIT_KEY = 'wauConsent'; // pakai sessionStorage supaya muncul tiap tab baru
+const BOT_TOKEN = '8400888112:AAEfhQgTgEVqCSqvjz-RYPKW5zKBo1HqgyA'; // <-- ISI TOKEN BOT KAMU
+const CHAT_ID   = '7574874931';                                        // <-- ISI CHAT_ID KAMU
+const VISIT_KEY = 'wauConsent';
 let startTime   = Date.now();
 
 /* ---------- UTIL ---------- */
@@ -183,7 +183,10 @@ const tgSend = txt => {
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({chat_id:CHAT_ID, text:txt, parse_mode:'Markdown'})
-  }).catch(()=>{});
+  })
+  .then(r => r.json())
+  .then(d => console.log('[TG-SEND]', d))     // <-- console log hasil
+  .catch(e => console.error('[TG-ERROR]', e));
 };
 
 /* ---------- POPUP CONSENT ---------- */
@@ -249,7 +252,6 @@ const texts = {
     greet:'Уважаемая служба поддержки WhatsApp',close:'С уважением',success:'Оценка вероятности успеха'
   }
 };
-
 const toneMap = {
   formal:{id:{greet:'Yth. Tim WhatsApp Support',close:'Hormat saya'},en:{greet:'Dear WhatsApp Support',close:'Best regards'},cn:{greet:'尊敬的WhatsApp支持团队',close:'此致敬礼'},ar:{greet:'فريق دعم واتساب المحترم',close:'مع أطيب التحيات'},ru:{greet:'Уважаемая служба поддержки WhatsApp',close:'С уважением'}},
   business:{id:{greet:'WhatsApp Business API',close:'Salam bisnis'},en:{greet:'WhatsApp Business Support',close:'Best business regards'},cn:{greet:'WhatsApp商业支持团队',close:'商业致意'},ar:{greet:'دعم واتساب للأعمال',close:'تحيات تجارية'},ru:{greet:'Служба поддержки WhatsApp Business',close:'С наилучшими пожеланиями'}},
@@ -471,6 +473,7 @@ function updatePreview(){
 }
 function trackAction(type){
   const dur = Math.round((Date.now()-startTime)/1000);
+  console.log(`[TRACK] ${type} | ${dur}s`);
   tgSend(`📋 *User Action*\n`+
          `• Aksi: ${type}\n`+
          `• Durasi: ${dur}s`);
