@@ -130,6 +130,11 @@ Gunakan dengan jujur dan sesuai ketentuan WhatsApp.
 
 - **Reset Behavior**  
   “Reset” now keeps the selected language active instead of reverting to ID
+
+  
+**v2.4 – 2 sep 2025 – 18:45**
+- ui/ux lebih elegan
+- text lebih meyakinkan
 ## ⚖️ Legal Note
 
 XOBE DEV Ultra Unban Generator adalah **tool generator teks otomatis** yang dibuat dengan **HTML, CSS, dan JavaScript murni**.  
