@@ -3,58 +3,68 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>XOBE DEV | WhatsApp Ultra Unban 2.3 PREMIUM</title>
+<title>WhatsApp Account Restoration Suite | Advanced Recovery  2.4| New Era</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0a0a0a;--card:#111111;--accent:#00d9ff;--secondary:#ff0080;
-  --text:#f2f2f2;--muted:#8a8a8a;--success:#00ff88;--danger:#ff2e4d;
-  --font:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;--mono:'Cascadia Code','Courier New',monospace;
+  --bg:#0a0a0a;
+  --card:#111111;
+  --accent:#FFD700; /* Emas */
+  --secondary:#6A0DAD; /* Ungu Tua */
+  --text:#f2f2f2;
+  --muted:#8a8a8a;
+  --success:#00ff88;
+  --danger:#ff2e4d;
+  --font:'Inter', sans-serif;
+  --mono:'Cascadia Code','Fira Code',monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--font);background:radial-gradient(ellipse at top,#001122 0%,var(--bg) 70%);color:var(--text);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:20px}
-.container{width:100%;max-width:1100px;background:var(--card);border:1px solid #222;border-radius:24px;box-shadow:0 0 60px rgba(0,217,255,.25);overflow:hidden;animation:fadeIn 1s ease}
+body{font-family:var(--font);background:radial-gradient(ellipse at top,#1a0033 0%,var(--bg) 70%);color:var(--text);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:30px}
+.container{width:100%;max-width:1100px;background:var(--card);border:1px solid rgba(255,215,0,.3);border-radius:30px;box-shadow:0 0 80px rgba(255,215,0,.35);overflow:hidden;animation:fadeIn 1s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(30px)}}
-.header{padding:40px;background:linear-gradient(135deg,var(--accent) 0%,var(--secondary) 100%);text-align:center;position:relative}
-.header h1{font-size:32px;font-weight:900;letter-spacing:.8px;display:flex;align-items:center;justify-content:center;gap:10px}
-.header h1 i{color:#fff}.header p{font-size:16px;opacity:.9;margin-top:6px}
-.lang-tab{display:flex;justify-content:center;gap:10px;margin-top:10px;flex-wrap:wrap}
-.lang-tab button{padding:6px 14px;border:1px solid #333;background:#181818;color:var(--text);border-radius:12px;cursor:pointer;font-weight:600}
-.lang-tab button.active{background:linear-gradient(135deg,var(--accent),var(--secondary));color:#000}
-form{padding:30px;display:grid;gap:20px}
-.section-title{font-size:18px;font-weight:700;margin-bottom:8px;color:var(--accent)}
+.header{padding:50px;background:linear-gradient(135deg,var(--accent) 0%,var(--secondary) 100%);text-align:center;position:relative}
+.header h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;letter-spacing:1.2px;display:flex;align-items:center;justify-content:center;gap:12px;color:#fff}
+.header h1 i{color:#fff}.header p{font-size:18px;opacity:.9;margin-top:8px;color:#eee}
+.lang-tab{display:flex;justify-content:center;gap:12px;margin-top:20px;flex-wrap:wrap}
+.lang-tab button{padding:8px 18px;border:1px solid #333;background:#181818;color:var(--text);border-radius:14px;cursor:pointer;font-weight:600;font-size:15px;transition:.3s}
+.lang-tab button.active{background:linear-gradient(135deg,var(--accent),var(--secondary));color:#000;border-color:transparent;box-shadow:0 0 10px rgba(255,215,0,.4)}
+form{padding:40px;display:grid;gap:25px}
+.section-title{font-size:20px;font-weight:700;margin-bottom:10px;color:var(--accent);border-bottom:1px solid rgba(255,215,0,.2);padding-bottom:8px}
 .grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:1fr 1fr 1fr}
 @media(max-width:800px){.grid-2,.grid-3{grid-template-columns:1fr}}
-label{font-size:14px;font-weight:600;margin-bottom:6px;display:block;color:var(--text)}
-input,select,textarea{width:100%;padding:14px 16px;border-radius:12px;border:1px solid #333;background:#181818;color:var(--text);font-size:14px;transition:border .2s,box-shadow .2s}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 8px rgba(0,217,255,.4)}
-textarea{resize:vertical;min-height:120px}
-.options{display:grid;grid-template-columns:repeat(auto-fit,minmax 120px,1fr);gap:8px}
-.option{padding:12px 8px;background:#181818;border:1px solid #333;border-radius:10px;text-align:center;cursor:pointer;font-size:13px;font-weight:600;transition:.25s}
-.option:hover{transform:translateY(-2px)}.option.active{background:linear-gradient(135deg,var(--accent),var(--secondary));color:#000;border-color:transparent}
-.toggles{display:grid;grid-template-columns:repeat(auto-fit,minmax 220px,1fr);gap:10px}
-.toggle-row{display:flex;align-items:center;justify-content:space-between;background:#181818;padding:12px 14px;border-radius:10px;font-size:14px}
-.switch{position:relative;width:46px;height:24px;background:#333;border-radius:24px;cursor:pointer;transition:.3s}
-.switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.3s}
-.switch.on{background:linear-gradient(135deg,var(--accent),var(--secondary))}.switch.on::after{left:22px}
-.btn-group{display:grid;grid-template-columns:repeat(auto-fit,minmax 160px,1fr);gap:12px;margin-top:10px}
-.btn{padding:14px;font-size:14px;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:.2s}
-.btn.primary{background:linear-gradient(135deg,var(--accent),var(--secondary));color:#000}
-.btn.secondary{background:#333;color:var(--text)}.btn:hover{transform:translateY(-2px)}
-.preview{margin:0 30px 30px;padding:20px;background:#0a0a0a;border-left:4px solid var(--accent);border-radius:0 14px 14px 0;position:relative}
-.preview pre{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--muted);max-height:400px;overflow:auto}
-.copy-btn{position:absolute;top:14px;right:14px;background:#222;border:1px solid #444;color:var(--text);padding:4px 10px;border-radius:6px;font-size:12px;cursor:pointer}
-.copy-btn:hover{background:var(--accent);color:#000}
-.success-rate{background:#181818;border:1px solid #333;border-radius:12px;padding:12px 14px;font-size:14px;color:var(--success);margin:0 30px 20px;display:flex;align-items:center;gap:8px}
-.success-rate i{color:var(--success)}
-footer{font-size:12px;color:var(--muted);padding:0 30px 20px;text-align:center}
+label{font-size:15px;font-weight:600;margin-bottom:8px;display:block;color:var(--text)}
+input,select,textarea{width:100%;padding:16px 18px;border-radius:14px;border:1px solid #333;background:#181818;color:var(--text);font-size:15px;transition:border .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 10px rgba(255,215,0,.4)}
+textarea{resize:vertical;min-height:150px}
+.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.option{padding:14px 10px;background:#181818;border:1px solid #333;border-radius:12px;text-align:center;cursor:pointer;font-size:14px;font-weight:600;transition:.25s}
+.option:hover{transform:translateY(-3px);box-shadow:0 5px 15px rgba(0,0,0,.3)}.option.active{background:linear-gradient(135deg,var(--accent),var(--secondary));color:#000;border-color:transparent;box-shadow:0 0 15px rgba(255,215,0,.4)}
+.option-desc{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4}
+.toggles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;background:#181818;padding:14px 16px;border-radius:12px;font-size:15px;border:1px solid #222;transition:.2s}
+.toggle-row:hover{border-color:var(--accent)}
+.switch{position:relative;width:50px;height:26px;background:#333;border-radius:26px;cursor:pointer;transition:.3s}
+.switch::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.3s}
+.switch.on{background:linear-gradient(135deg,var(--accent),var(--secondary))}.switch.on::after{left:27px}
+.btn-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-top:20px}
+.btn{padding:16px;font-size:15px;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--secondary));color:#000;box-shadow:0 5px 20px rgba(255,215,0,.3)}
+.btn.secondary{background:#333;color:var(--text);border:1px solid #444}.btn:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.3)}
+.preview{margin:0 40px 40px;padding:25px;background:#0a0a0a;border-left:5px solid var(--accent);border-radius:0 16px 16px 0;position:relative;box-shadow:0 0 30px rgba(255,215,0,.15)}
+.preview pre{white-space:pre-wrap;font-family:var(--mono);font-size:14px;line-height:1.7;color:var(--muted);max-height:450px;overflow:auto;padding-right:10px}
+.copy-btn{position:absolute;top:18px;right:18px;background:#222;border:1px solid #444;color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer;transition:.2s}
+.copy-btn:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+.success-rate{background:#181818;border:1px solid #333;border-radius:14px;padding:15px 18px;font-size:16px;color:var(--success);margin:0 40px 30px;display:flex;align-items:center;gap:10px;box-shadow:0 0 20px rgba(0,255,136,.15)}
+.success-rate i{color:var(--success);font-size:20px}
+footer{font-size:13px;color:var(--muted);padding:0 40px 30px;text-align:center;line-height:1.8}
 </style>
 </head>
 <body>
 <div class="container">
   <div class="header">
-    <h1><i class="fab fa-whatsapp"></i> WhatsApp Ultra Unban 2.3 PREMIUM</h1>
-    <p>Multi-language, AI-powered success-rate & ultra-luxury interface</p>
+    <h1><i class="fab fa-whatsapp"></i> WhatsApp Account Restoration Suite</h1>
+    <p>Leveraging Advanced AI for Unparalleled Account Recovery Success. Designed for Critical Cases.</p>
     <div class="lang-tab">
       <button id="langID" class="active">🇮🇩 ID</button>
       <button id="langEN">🇺🇸 EN</button>
@@ -65,27 +75,27 @@ footer{font-size:12px;color:var(--muted);padding:0 30px 20px;text-align:center}
   </div>
 
   <form id="unbanForm">
-    <div class="section-title">1. Identitas & Akun</div>
+    <div class="section-title">1. Identitas & Detail Akun</div>
     <div class="grid-3">
-      <div><label id="labelName">Nama Lengkap</label><input id="fullName" placeholder="John Doe" required/></div>
-      <div><label id="labelPhone">Nomor WhatsApp</label><input id="phone" placeholder="+62 8XX-XXXX-XXXX" required/></div>
-      <div><label id="labelEmail">Email</label><input id="email" type="email" placeholder="john@example.com" required/></div>
-      <div><label id="labelDate">Tanggal Akun Dibuat</label><input id="accountDate" type="date"/></div>
-      <div><label id="labelCountry">Negara</label>
+      <div><label id="labelName">Nama Lengkap (Sesuai Identitas Resmi)</label><input id="fullName" placeholder="John Doe" required/></div>
+      <div><label id="labelPhone">Nomor WhatsApp Aktif</label><input id="phone" placeholder="+62 8XX-XXXX-XXXX" required/></div>
+      <div><label id="labelEmail">Alamat Email Utama</label><input id="email" type="email" placeholder="john@example.com" required/></div>
+      <div><label id="labelDate">Tanggal Akun Dibuat (Estimasi)</label><input id="accountDate" type="date"/></div>
+      <div><label id="labelCountry">Negara Domisili</label>
         <select id="country">
           <option value="Indonesia">Indonesia</option><option value="Malaysia">Malaysia</option><option value="Singapore">Singapore</option><option value="United States">United States</option><option value="India">India</option><option value="Brazil">Brazil</option><option value="Other">Other</option>
         </select>
       </div>
-      <div><label id="labelType">Jenis Akun</label>
+      <div><label id="labelType">Jenis Akun WhatsApp</label>
         <select id="accountType">
           <option value="Personal">Personal</option><option value="Business">Business</option><option value="Creator">Creator / Influencer</option><option value="Game">Game Player</option><option value="Seller">Seller</option><option value="Developer">Developer</option><option value="NGO">NGO</option><option value="Education">Education</option><option value="Government">Government</option>
         </select>
       </div>
     </div>
 
-    <div class="section-title">2. Alasan & Detail</div>
+    <div class="section-title">2. Alasan Pemblokiran & Penjelasan Rinci</div>
     <div class="grid-2">
-      <div><label id="labelReason">Alasan Ban</label>
+      <div><label id="labelReason">Alasan Pemblokiran (Pilih yang Paling Sesuai)</label>
         <select id="reason" required>
           <option value="">Pilih…</option>
           <option value="spam">Spam / Mass Messaging</option>
@@ -108,65 +118,65 @@ footer{font-size:12px;color:var(--muted);padding:0 30px 20px;text-align:center}
           <option value="violence">Violence / Gore</option>
           <option value="drugs">Drugs</option>
           <option value="permanent">Permanent Ban</option>
+          <option value="system_error">Kesalahan Sistem / Error Teknis</option>
           <option value="unknown">Unknown / Not Specified</option>
         </select>
       </div>
-      <div><label id="labelDetail">Penjelasan Detail</label><textarea id="details" placeholder="Ceritakan kejadiannya…"></textarea></div>
+      <div><label id="labelDetail">Penjelasan Rinci & Kronologi Kejadian</label><textarea id="details" placeholder="Jelaskan secara rinci dan jujur kronologi kejadian, serta langkah-langkah yang telah Anda ambil untuk mematuhi kebijakan WhatsApp."></textarea></div>
     </div>
 
-    <div class="section-title">3. Gaya Surat</div>
+    <div class="section-title">3. Nada Komunikasi & Strategi Banding</div>
     <div class="options">
-      <div class="option active" data-tone="formal">Formal</div>
-      <div class="option" data-tone="business">Business</div>
-      <div class="option" data-tone="apologetic">Apologetic</div>
-      <div class="option" data-tone="friendly">Friendly</div>
-      <div class="option" data-tone="urgent">Urgent</div>
-      <div class="option" data-tone="legal">Legal</div>
-      <div class="option" data-tone="tech">Tech</div>
-      <div class="option" data-tone="creative">Creative</div>
-      <div class="option" data-tone="respectful">Respectful</div>
-      <div class="option" data-tone="casual">Casual</div>
-      <div class="option" data-tone="emotional">Emotional</div>
-      <div class="option" data-tone="confident">Confident</div>
+      <div class="option active" data-tone="formal">Formal<div class="option-desc">Pendekatan resmi dan lugas, menekankan kepatuhan.</div></div>
+      <div class="option" data-tone="business">Business<div class="option-desc">Fokus pada dampak bisnis dan kepatuhan terhadap kebijakan komersial.</div></div>
+      <div class="option" data-tone="apologetic">Apologetic<div class="option-desc">Ekspresi penyesalan mendalam dan komitmen untuk perbaikan.</div></div>
+      <div class="option" data-tone="friendly">Friendly<div class="option-desc">Nada yang lebih personal, namun tetap profesional.</div></div>
+      <div class="option" data-tone="urgent">Urgent<div class="option-desc">Menekankan urgensi pemulihan akun karena dampak signifikan.</div></div>
+      <div class="option" data-tone="legal">Legal<div class="option-desc">Menggunakan terminologi hukum untuk kasus yang kompleks.</div></div>
+      <div class="option" data-tone="tech">Tech<div class="option-desc">Fokus pada aspek teknis dan pemahaman sistem.</div></div>
+      <div class="option" data-tone="creative">Creative<div class="option-desc">Pendekatan unik dan persuasif, cocok untuk akun kreatif.</div></div>
+      <div class="option" data-tone="respectful">Respectful<div class="option-desc">Menunjukkan rasa hormat tinggi terhadap tim WhatsApp.</div></div>
+      <div class="option" data-tone="casual">Casual<div class="option-desc">Nada santai, namun tetap jelas dan informatif.</div></div>
+      <div class="option" data-tone="emotional">Emotional<div class="option-desc">Menyampaikan dampak emosional dari pemblokiran akun.</div></div>
+      <div class="option" data-tone="confident">Confident<div class="option-desc">Menyatakan keyakinan atas ketidakbersalahan atau kesalahpahaman.</div></div>
     </div>
 
-    <div class="section-title">4. Opsi Tambahan</div>
+    <div class="section-title">4. Dokumentasi Pendukung & Bukti Kepatuhan</div>
     <div class="toggles">
-      <div class="toggle-row"><span id="toggleHistory">Riwayat akun</span><div class="switch" id="historyToggle"></div></div>
-      <div class="toggle-row"><span id="togglePromise">Pernyataan tidak mengulangi</span><div class="switch" id="promiseToggle"></div></div>
-      <div class="toggle-row"><span id="toggleSignature">Tanda tangan profesional</span><div class="switch" id="signatureToggle"></div></div>
-      <div class="toggle-row"><span id="toggleStats">Statistik penggunaan</span><div class="switch" id="statsToggle"></div></div>
-      <div class="toggle-row"><span id="toggleScreenshot">Screenshot terlampir</span><div class="switch" id="screenshotToggle"></div></div>
-      <div class="toggle-row"><span id="toggleTopup">Riwayat top-up</span><div class="switch" id="topupToggle"></div></div>
-      <div class="toggle-row"><span id="toggleDevice">Info perangkat</span><div class="switch" id="deviceToggle"></div></div>
-      <div class="toggle-row"><span id="toggleIP">Informasi IP</span><div class="switch" id="ipToggle"></div></div>
-      <div class="toggle-row"><span id="toggleLicense">Nomor lisensi</span><div class="switch" id="licenseToggle"></div></div>
-      <div class="toggle-row"><span id="toggleVerification">Verifikasi dua langkah</span><div class="switch" id="verificationToggle"></div></div>
-      <div class="toggle-row"><span id="toggleBackup">Status cadangan chat</span><div class="switch" id="backupToggle"></div></div>
-      <div class="toggle-row"><span id="toggleTemplate">Template super-formal</span><div class="switch" id="templateToggle"></div></div>
+      <div class="toggle-row"><span id="toggleHistory">Riwayat Akun Bersih (Bukti Penggunaan Bertanggung Jawab)</span><div class="switch" id="historyToggle"></div></div>
+      <div class="toggle-row"><span id="togglePromise">Komitmen Absolut untuk Kepatuhan Penuh</span><div class="switch" id="promiseToggle"></div></div>
+      <div class="toggle-row"><span id="toggleSignature">Tanda Tangan Digital & Informasi Kontak Resmi</span><div class="switch" id="signatureToggle"></div></div>
+      <div class="toggle-row"><span id="toggleStats">Data Statistik Penggunaan Akun (Menunjukkan Aktivitas Normal)</span><div class="switch" id="statsToggle"></div></div>
+      <div class="toggle-row"><span id="toggleScreenshot">Bukti Screenshot Pendukung Krusial (Jika Relevan)</span><div class="switch" id="screenshotToggle"></div></div>
+      <div class="toggle-row"><span id="toggleTopup">Riwayat Transaksi/Top-up (Menunjukkan Aktivitas Legal & Investasi)</span><div class="switch" id="topupToggle"></div></div>
+      <div class="toggle-row"><span id="toggleDevice">Informasi Perangkat & Lingkungan Penggunaan (Untuk Verifikasi)</span><div class="switch" id="deviceToggle"></div></div>
+      <div class="toggle-row"><span id="toggleIP">Data Alamat IP Terakhir (Untuk Verifikasi Lokasi & Aktivitas)</span><div class="switch" id="ipToggle"></div></div>
+      <div class="toggle-row"><span id="toggleLicense">Nomor Lisensi Bisnis/Organisasi (Bukti Legalitas Entitas)</span><div class="switch" id="licenseToggle"></div></div>
+      <div class="toggle-row"><span id="toggleVerification">Status Verifikasi Dua Langkah (Indikator Keamanan Akun)</span><div class="switch" id="verificationToggle"></div></div>
+      <div class="toggle-row"><span id="toggleBackup">Status Cadangan Chat (Bukti Penggunaan Akun Aktif & Penting)</span><div class="switch" id="backupToggle"></div></div>
+      <div class="toggle-row"><span id="toggleTemplate">Template Banding Ultra-Formal (Untuk Kasus Sensitif & Mendesak)</span><div class="switch" id="templateToggle"></div></div>
     </div>
 
     <div class="success-rate">
       <i class="fas fa-rocket"></i>
-      <span id="successRate">Estimasi tingkat keberhasilan: 0%</span>
+      <span id="successRate">Probabilitas Pemulihan Akun (AI): 0%</span>
     </div>
 
     <div class="btn-group">
-      <button type="submit" class="btn primary"><i class="fab fa-whatsapp"></i> Kirim ke WhatsApp</button>
-      <button type="button" class="btn secondary" onclick="copyMessage()"><i class="fas fa-copy"></i> Salin</button>
+      <button type="submit" class="btn primary"><i class="fab fa-whatsapp"></i> Kirim Banding Mendesak ke WhatsApp</button>
+      <button type="button" class="btn secondary" onclick="copyMessage()"><i class="fas fa-copy"></i> Salin Pesan Banding</button>
       <button type="button" class="btn secondary" onclick="downloadMessage()"><i class="fas fa-download"></i> Unduh .txt</button>
-      <button type="button" class="btn secondary" onclick="resetForm()"><i class="fas fa-redo"></i> Reset</button>
+      <button type="button" class="btn secondary" onclick="resetForm()"><i class="fas fa-redo"></i> Reset Formulir</button>
     </div>
   </form>
 
   <div class="preview">
-    <pre id="messagePreview">Lengkapi form untuk melihat preview…</pre>
+    <pre id="messagePreview">Pratinjau Surat Banding Anda Akan Muncul di Sini. Pastikan Semua Data Akurat.</pre>
     <button class="copy-btn" onclick="copyMessage()"><i class="fas fa-copy"></i></button>
   </div>
 
   <footer>
-    🔒 Privasi: kami <b>hanya</b> mencatat IP & tindakan (Salin/Download) untuk analisis anonim.  
-    Tidak ada data nama, email, atau nomor WhatsApp yang disimpan atau dikirim.
+    🔒 **Privasi Terjamin:** Kami berkomitmen penuh pada privasi Anda. Hanya data anonim (IP & interaksi) yang dicatat untuk analisis performa sistem. Informasi pribadi Anda (nama, email, nomor WhatsApp) **tidak pernah** disimpan, dikirim, atau diakses oleh pihak ketiga.
   </footer>
 </div>
 
@@ -184,17 +194,17 @@ footer{font-size:12px;color:var(--muted);padding:0 30px 20px;text-align:center}
       #loaderWrap{
         position:fixed;inset:0;background:#000d;backdrop-filter:blur(6px);
         display:flex;align-items:center;justify-content:center;z-index:99999;
-        font-family:'Segoe UI',sans-serif;color:#fff;transition:opacity .5s;
+        font-family:'Inter',sans-serif;color:#fff;transition:opacity .5s;
       }
       .shimmer{
         width:280px;height:8px;border-radius:4px;
-        background:linear-gradient(90deg,#0000,#00d9ff40,#0000);
+        background:linear-gradient(90deg,#0000,rgba(255,215,0,.4),#0000); /* Warna shimmer emas */
         background-size:200% 100%;animation:shimmer 1.8s infinite;
       }
-      .loaderText{margin-bottom:12px;font-size:20px;font-weight:900}
+      .loaderText{margin-bottom:12px;font-size:22px;font-weight:900;color:var(--accent)}
     </style>
     <div>
-      <div class="loaderText">WhatsApp Ultra Unban 2.3</div>
+      <div class="loaderText">WhatsApp Account Restoration Suite</div>
       <div class="shimmer"></div>
     </div>
   `;
@@ -210,14 +220,14 @@ if(!sessionStorage.getItem('wauConsent')){
   const sty = document.createElement('style');
   sty.innerHTML = `
     @keyframes popIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
-    #popupConsent{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:'Segoe UI';backdrop-filter:blur(4px);animation:popIn .5s ease}
-    .consentBox{background:#111;border:1px solid #00d9ff;border-radius:26px;padding:45px 35px;max-width:420px;text-align:center;color:#fff;box-shadow:0 0 50px #00d9ff60}
-    .consentBox h2{color:#00d9ff;margin-bottom:18px;font-weight:900;font-size:24px}
-    .consentBox p{font-size:15px;line-height:1.6;margin-bottom:30px}
-    .consentBox button{margin:0 10px;padding:14px 34px;border:none;border-radius:14px;font-weight:700;font-size:14px;cursor:pointer;transition:transform .3s}
-    .btnYes{background:linear-gradient(135deg,#00d9ff,#ff0080);color:#000}
-    .btnNo{background:#222;color:#fff;border:1px solid #444}
-    .consentBox button:hover{transform:translateY(-4px)}
+    #popupConsent{position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:'Inter',sans-serif;backdrop-filter:blur(8px);animation:popIn .5s ease}
+    .consentBox{background:#111;border:1px solid var(--accent);border-radius:28px;padding:50px 40px;max-width:450px;text-align:center;color:#fff;box-shadow:0 0 60px rgba(255,215,0,.4);animation:popIn .6s ease-out}
+    .consentBox h2{color:var(--accent);margin-bottom:20px;font-weight:900;font-size:28px;font-family:'Playfair Display',serif;}
+    .consentBox p{font-size:16px;line-height:1.7;margin-bottom:35px;color:#eee}
+    .consentBox button{margin:0 12px;padding:16px 38px;border:none;border-radius:16px;font-weight:700;font-size:15px;cursor:pointer;transition:transform .3s, box-shadow .3s}
+    .btnYes{background:linear-gradient(135deg,var(--accent),var(--secondary));color:#000;box-shadow:0 5px 20px rgba(255,215,0,.3)}
+    .btnNo{background:#222;color:#fff;border:1px solid #444;box-shadow:0 5px 15px rgba(0,0,0,.2)}
+    .consentBox button:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.4)}
   `;
   document.head.appendChild(sty);
 
@@ -225,12 +235,12 @@ if(!sessionStorage.getItem('wauConsent')){
   popup.id = 'popupConsent';
   popup.innerHTML = `
     <div class="consentBox">
-      <h2>🌌 Konfirmasi</h2>
+      <h2>🌌 Konfirmasi Penggunaan</h2>
       <p>
-        Dengan masuk, Anda menyetujui penggunaan fitur ini sepenuhnya.<br>
-        Tidak ada data pribadi yang dikirim.
+        Dengan melanjutkan, Anda menyetujui penggunaan fitur ini sepenuhnya.<br>
+        Kami menjamin **tidak ada data pribadi** Anda yang disimpan atau dikirim.
       </p>
-      <button class="btnYes" onclick="acceptConsent()">Masuk</button>
+      <button class="btnYes" onclick="acceptConsent()">Lanjutkan</button>
       <button class="btnNo" onclick="window.close();">Keluar</button>
     </div>
   `;
@@ -245,25 +255,145 @@ if(!sessionStorage.getItem('wauConsent')){
 /* ---------- BAHASA & TEXT ---------- */
 let lang = 'id';
 const texts = {
-  id:{labelName:'Nama Lengkap',labelPhone:'Nomor WhatsApp',labelEmail:'Email',labelDate:'Tanggal Akun Dibuat',labelCountry:'Negara',labelType:'Jenis Akun',labelReason:'Alasan Ban',labelDetail:'Penjelasan Detail',toggleHistory:'Riwayat akun',togglePromise:'Pernyataan tidak mengulangi',toggleSignature:'Tanda tangan profesional',toggleStats:'Statistik penggunaan',toggleScreenshot:'Screenshot terlampir',toggleTopup:'Riwayat top-up',toggleDevice:'Info perangkat',toggleIP:'Informasi IP',toggleLicense:'Nomor lisensi',toggleVerification:'Verifikasi dua langkah',toggleBackup:'Status cadangan chat',toggleTemplate:'Template super-formal',greet:'Yth. Tim WhatsApp Support',close:'Hormat saya',success:'Estimasi tingkat keberhasilan'},
-  en:{labelName:'Full Name',labelPhone:'WhatsApp Number',labelEmail:'Email',labelDate:'Account Created',labelCountry:'Country',labelType:'Account Type',labelReason:'Ban Reason',labelDetail:'Detailed Explanation',toggleHistory:'Include account history',togglePromise:'Promise not to repeat',toggleSignature:'Professional signature',toggleStats:'Usage statistics',toggleScreenshot:'Attached screenshot',toggleTopup:'Top-up history',toggleDevice:'Device info',toggleIP:'Latest IP',toggleLicense:'Business license',toggleVerification:'Two-step verification',toggleBackup:'Chat backup status',toggleTemplate:'Super-formal template',greet:'Dear WhatsApp Support',close:'Best regards',success:'Estimated success rate'},
-  cn:{labelName:'全名',labelPhone:'WhatsApp号码',labelEmail:'电子邮箱',labelDate:'创建日期',labelCountry:'国家',labelType:'账户类型',labelReason:'封禁原因',labelDetail:'详细说明',toggleHistory:'包含账户历史',togglePromise:'承诺不再重犯',toggleSignature:'专业签名',toggleStats:'使用统计',toggleScreenshot:'已附截图',toggleTopup:'充值记录',toggleDevice:'设备信息',toggleIP:'最新IP',toggleLicense:'营业执照号码',toggleVerification:'两步验证状态',toggleBackup:'聊天记录备份状态',toggleTemplate:'超正式模板',greet:'尊敬的WhatsApp支持团队',close:'此致敬礼',success:'预估成功率'},
-  ar:{labelName:'الاسم الكامل',labelPhone:'رقم واتساب',labelEmail:'البريد الإلكتروني',labelDate:'تاريخ الإنشاء',labelCountry:'الدولة',labelType:'نوع الحساب',labelReason:'سبب الحظر',labelDetail:'شرح مفصل',toggleHistory:'تضمين سجل الحساب',togglePromise:'وعد بعدم التكرار',toggleSignature:'توقيع احترافي',toggleStats:'إحصاءات الاستخدام',toggleScreenshot:'لقطة شاشة مرفقة',toggleTopup:'سجل الشحن',toggleDevice:'معلومات الجهاز',toggleIP:'آخر عنوان IP',toggleLicense:'رقم الترخيص',toggleVerification:'حالة التحقق بخطوتين',toggleBackup:'حالة النسخ الاحتياطي',toggleTemplate:'نموذج رسمي متقدم',greet:'فريق دعم واتساب المحترم',close:'مع أطيب التحيات',success:'معدل النجاح المقدر'},
-  ru:{labelName:'Полное имя',labelPhone:'Номер WhatsApp',labelEmail:'Эл. почта',labelDate:'Дата создания',labelCountry:'Страна',labelType:'Тип аккаунта',labelReason:'Причина блокировки',labelDetail:'Подробное объяснение',toggleHistory:'История аккаунта',togglePromise:'Обещание не нарушать',toggleSignature:'Профессиональная подпись',toggleStats:'Статистика использования',toggleScreenshot:'Скриншот прилагается',toggleTopup:'История пополнений',toggleDevice:'Информация об устройстве',toggleIP:'Последний IP-адрес',toggleLicense:'Номер лицензии',toggleVerification:'Статус двухэтапной проверки',toggleBackup:'Статус резервной копии',toggleTemplate:'Суперформальный шаблон',greet:'Уважаемая служба поддержки WhatsApp',close:'С уважением',success:'Оценка вероятности успеха'}
+  id:{
+    labelName:'Nama Lengkap (Sesuai Identitas Resmi)',
+    labelPhone:'Nomor WhatsApp Aktif',
+    labelEmail:'Alamat Email Utama',
+    labelDate:'Tanggal Akun Dibuat (Estimasi)',
+    labelCountry:'Negara Domisili',
+    labelType:'Jenis Akun WhatsApp',
+    labelReason:'Alasan Pemblokiran (Pilih yang Paling Sesuai)',
+    labelDetail:'Penjelasan Rinci & Kronologi Kejadian',
+    toggleHistory:'Riwayat Akun Bersih (Bukti Penggunaan Bertanggung Jawab)',
+    togglePromise:'Komitmen Absolut untuk Kepatuhan Penuh',
+    toggleSignature:'Tanda Tangan Digital & Informasi Kontak Resmi',
+    toggleStats:'Data Statistik Penggunaan Akun (Menunjukkan Aktivitas Normal)',
+    toggleScreenshot:'Bukti Screenshot Pendukung Krusial (Jika Relevan)',
+    toggleTopup:'Riwayat Transaksi/Top-up (Menunjukkan Aktivitas Legal & Investasi)',
+    toggleDevice:'Informasi Perangkat & Lingkungan Penggunaan (Untuk Verifikasi)',
+    toggleIP:'Data Alamat IP Terakhir (Untuk Verifikasi Lokasi & Aktivitas)',
+    toggleLicense:'Nomor Lisensi Bisnis/Organisasi (Bukti Legalitas Entitas)',
+    toggleVerification:'Status Verifikasi Dua Langkah (Indikator Keamanan Akun)',
+    toggleBackup:'Status Cadangan Chat (Bukti Penggunaan Akun Aktif & Penting)',
+    toggleTemplate:'Template Banding Ultra-Formal (Untuk Kasus Sensitif & Mendesak)',
+    greet:'Yth. Tim WhatsApp Support & Peninjau Kebijakan yang Terhormat',
+    close:'Dengan Harapan Besar dan Komitmen Tak Tergoyahkan',
+    success:'Probabilitas Pemulihan Akun (AI)'
+  },
+  en:{
+    labelName:'Full Name (As per Official ID)',
+    labelPhone:'Active WhatsApp Number',
+    labelEmail:'Primary Email Address',
+    labelDate:'Account Creation Date (Estimated)',
+    labelCountry:'Country of Residence',
+    labelType:'WhatsApp Account Type',
+    labelReason:'Reason for Ban (Select Most Applicable)',
+    labelDetail:'Detailed Explanation & Chronology of Events',
+    toggleHistory:'Clean Account History (Proof of Responsible Use)',
+    togglePromise:'Absolute Commitment to Full Compliance',
+    toggleSignature:'Digital Signature & Official Contact Info',
+    toggleStats:'Account Usage Statistics (Indicating Normal Activity)',
+    toggleScreenshot:'Crucial Supporting Screenshot Evidence (If Relevant)',
+    toggleTopup:'Transaction/Top-up History (Indicating Legal Activity & Investment)',
+    toggleDevice:'Device & Usage Environment Information (For Verification)',
+    toggleIP:'Latest IP Address Data (For Location & Activity Verification)',
+    toggleLicense:'Business/Organization License Number (Proof of Entity Legality)',
+    toggleVerification:'Two-Step Verification Status (Account Security Indicator)',
+    toggleBackup:'Chat Backup Status (Proof of Active & Important Account Use)',
+    toggleTemplate:'Ultra-Formal Appeal Template (For Sensitive & Urgent Cases)',
+    greet:'Dear Esteemed WhatsApp Support Team & Policy Reviewers',
+    close:'With Great Hope and Unwavering Commitment',
+    success:'AI-Powered Account Recovery Probability'
+  },
+  cn:{
+    labelName:'全名 (与官方证件一致)',
+    labelPhone:'活跃WhatsApp号码',
+    labelEmail:'主要电子邮件地址',
+    labelDate:'账户创建日期 (估算)',
+    labelCountry:'居住国家',
+    labelType:'WhatsApp账户类型',
+    labelReason:'封禁原因 (选择最适用项)',
+    labelDetail:'详细解释与事件时间线',
+    toggleHistory:'账户历史清白 (负责任使用证明)',
+    togglePromise:'绝对遵守承诺',
+    toggleSignature:'数字签名与官方联系信息',
+    toggleStats:'账户使用统计 (表明正常活动)',
+    toggleScreenshot:'关键支持性截图证据 (如相关)',
+    toggleTopup:'交易/充值记录 (表明合法活动与投资)',
+    toggleDevice:'设备与使用环境信息 (用于验证)',
+    toggleIP:'最新IP地址数据 (用于位置与活动验证)',
+    toggleLicense:'商业/组织许可证号 (实体合法性证明)',
+    toggleVerification:'两步验证状态 (账户安全指标)',
+    toggleBackup:'聊天备份状态 (活跃且重要账户使用证明)',
+    toggleTemplate:'超正式申诉模板 (适用于敏感和紧急案件)',
+    greet:'尊敬的WhatsApp支持团队与政策审核员',
+    close:'怀着巨大希望和坚定不移的承诺',
+    success:'AI驱动账户恢复概率'
+  },
+  ar:{
+    labelName:'الاسم الكامل (حسب الهوية الرسمية)',
+    labelPhone:'رقم واتساب نشط',
+    labelEmail:'عنوان البريد الإلكتروني الأساسي',
+    labelDate:'تاريخ إنشاء الحساب (تقديري)',
+    labelCountry:'بلد الإقامة',
+    labelType:'نوع حساب واتساب',
+    labelReason:'سبب الحظر (اختر الأنسب)',
+    labelDetail:'شرح مفصل وتسلسل زمني للأحداث',
+    toggleHistory:'سجل حساب نظيف (دليل الاستخدام المسؤول)',
+    togglePromise:'التزام مطلق بالامتثال الكامل',
+    toggleSignature:'توقيع رقمي ومعلومات اتصال رسمية',
+    toggleStats:'إحصائيات استخدام الحساب (تشير إلى نشاط عادي)',
+    toggleScreenshot:'دليل لقطة شاشة داعمة حاسمة (إذا كانت ذات صلة)',
+    toggleTopup:'سجل المعاملات/الشحن (يشير إلى نشاط قانوني واستثمار)',
+    toggleDevice:'معلومات الجهاز وبيئة الاستخدام (للتحقق)',
+    toggleIP:'بيانات آخر عنوان IP (للتحقق من الموقع والنشاط)',
+    toggleLicense:'رقم ترخيص الأعمال/المنظمة (دليل شرعية الكيان)',
+    toggleVerification:'حالة التحقق بخطوتين (مؤشر أمان الحساب)',
+    toggleBackup:'حالة النسخ الاحتياطي للدردشة (دليل الاستخدام النشط والمهم للحساب)',
+    toggleTemplate:'نموذج استئناف رسمي للغاية (للحالات الحساسة والملحة)',
+    greet:'إلى فريق دعم واتساب ومراجعي السياسات الكرام',
+    close:'مع أمل كبير والتزام لا يتزعزع',
+    success:'احتمالية استعادة الحساب المدعومة بالذكاء الاصطناعي'
+  },
+  ru:{
+    labelName:'Полное имя (согласно официальному удостоверению)',
+    labelPhone:'Активный номер WhatsApp',
+    labelEmail:'Основной адрес электронной почты',
+    labelDate:'Дата создания аккаунта (предполагаемая)',
+    labelCountry:'Страна проживания',
+    labelType:'Тип аккаунта WhatsApp',
+    labelReason:'Причина блокировки (выберите наиболее подходящую)',
+    labelDetail:'Подробное объяснение и хронология событий',
+    toggleHistory:'Чистая история аккаунта (доказательство ответственного использования)',
+    togglePromise:'Абсолютное обязательство полного соблюдения',
+    toggleSignature:'Цифровая подпись и официальная контактная информация',
+    toggleStats:'Статистика использования аккаунта (указывающая на нормальную активность)',
+    toggleScreenshot:'Ключевые подтверждающие скриншоты (если применимо)',
+    toggleTopup:'История транзакций/пополнений (указывающая на законную деятельность и инвестиции)',
+    toggleDevice:'Информация об устройстве и среде использования (для проверки)',
+    toggleIP:'Данные последнего IP-адреса (для проверки местоположения и активности)',
+    toggleLicense:'Номер бизнес-лицензии/организации (доказательство законности организации)',
+    toggleVerification:'Статус двухэтапной проверки (индикатор безопасности аккаунта)',
+    toggleBackup:'Статус резервной копии чатов (доказательство активного и важного использования аккаунта)',
+    toggleTemplate:'Суперформальный шаблон апелляции (для деликатных и срочных случаев)',
+    greet:'Уважаемая служба поддержки WhatsApp и специалисты по проверке политик',
+    close:'С большой надеждой и непоколебимой приверженностью',
+    success:'Вероятность восстановления аккаунта (на основе ИИ)'
+  }
 };
 const toneMap = {
-  formal:{id:{greet:'Yth. Tim WhatsApp Support',close:'Hormat saya'},en:{greet:'Dear WhatsApp Support',close:'Best regards'},cn:{greet:'尊敬的WhatsApp支持团队',close:'此致敬礼'},ar:{greet:'فريق دعم واتساب المحترم',close:'مع أطيب التحيات'},ru:{greet:'Уважаемая служба поддержки WhatsApp',close:'С уважением'}},
-  business:{id:{greet:'WhatsApp Business API',close:'Salam bisnis'},en:{greet:'WhatsApp Business Support',close:'Best business regards'},cn:{greet:'WhatsApp商业支持团队',close:'商业致意'},ar:{greet:'دعم واتساب للأعمال',close:'تحيات تجارية'},ru:{greet:'Служба поддержки WhatsApp Business',close:'С наилучшими пожеланиями'}},
-  apologetic:{id:{greet:'WhatsApp yang saya cintai',close:'Dengan permohonan maaf yang sebesar-besarnya'},en:{greet:'Beloved WhatsApp Team',close:'With deepest apologies'},cn:{greet:'敬爱的WhatsApp团队',close:'深表歉意'},ar:{greet:'فريق واتساب المحترم',close:'مع خالص الاعتذار'},ru:{greet:'Уважаемая команда WhatsApp',close:'С глубочайшими извинениями'}},
-  friendly:{id:{greet:'Halo WhatsApp',close:'Salam hangat'},en:{greet:'Hi WhatsApp Team',close:'Warm regards'},cn:{greet:'您好WhatsApp团队',close:'亲切问候'},ar:{greet:'مرحباً فريق واتساب',close:'أطيب التحيات'},ru:{greet:'Привет, команда WhatsApp',close:'Теплые пожелания'}},
-  urgent:{id:{greet:'URGENT: WhatsApp Support',close:'Terima kasih atas perhatian segera'},en:{greet:'URGENT: WhatsApp Support',close:'Thank you for immediate attention'},cn:{greet:'紧急：WhatsApp支持团队',close:'感谢紧急处理'},ar:{greet:'عاجل: دعم واتساب',close:'شكراً للاهتمام الفوري'},ru:{greet:'СРОЧНО: Служба поддержки WhatsApp',close:'Спасибо за срочное внимание'}},
-  legal:{id:{greet:'Kepada Divisi Legal WhatsApp',close:'Dengan itikad baik'},en:{greet:'To WhatsApp Legal Division',close:'In good faith'},cn:{greet:'WhatsApp法务部',close:'诚信至上'},ar:{greet:'إلى الشؤون القانونية في واتساب',close:'بكل حسن نية'},ru:{greet:'В Юридический отдел WhatsApp',close:'С доброй волей'}},
-  tech:{id:{greet:'WhatsApp Technical Review',close:'Salam teknis'},en:{greet:'WhatsApp Technical Review',close:'Regards, tech user'},cn:{greet:'WhatsApp技术审核团队',close:'技术问候'},ar:{greet:'المراجعة التقنية لواتساب',close:'تحيات تقنية'},ru:{greet:'Технический отдел WhatsApp',close:'С техническим уважением'}},
-  creative:{id:{greet:'WhatsApp Creative Team',close:'Kreatif salam'},en:{greet:'WhatsApp Creative Team',close:'Creatively yours'},cn:{greet:'WhatsApp创意团队',close:'创意问候'},ar:{greet:'فريق واتساب الإبداعي',close:'تحيات إبداعية'},ru:{greet:'Творческая команда WhatsApp',close:'С творческим уважением'}},
-  respectful:{id:{greet:'Yang terhormat WhatsApp',close:'Dengan hormat'},en:{greet:'Honorable WhatsApp',close:'Respectfully'},cn:{greet:'尊敬的WhatsApp',close:'敬上'},ar:{greet:'واتساب المحترم',close:'بكل احترام'},ru:{greet:'Почтенный WhatsApp',close:'С уважением'}},
-  casual:{id:{greet:'WhatsApp',close:'Salam'},en:{greet:'WhatsApp',close:'Cheers'},cn:{greet:'WhatsApp',close:'问候'},ar:{greet:'واتساب',close:'تحياتي'},ru:{greet:'WhatsApp',close:'Привет'}},
-  emotional:{id:{greet:'WhatsApp yang saya cintai',close:'Dengan hati yang tulus'},en:{greet:'Beloved WhatsApp Team',close:'With heartfelt sincerity'},cn:{greet:'敬爱的WhatsApp团队',close:'衷心诚意'},ar:{greet:'واتساب العزيز',close:'بكل صدق'},ru:{greet:'Любимая команда WhatsApp',close:'С искренним сердцем'}},
-  confident:{id:{greet:'Tim WhatsApp',close:'Percaya diri'},en:{greet:'WhatsApp Team',close:'Confidently yours'},cn:{greet:'WhatsApp团队',close:'自信问候'},ar:{greet:'فريق واتساب',close:'ثقتي'},ru:{greet:'Команда WhatsApp',close:'С уверенностью'}}
+  formal:{id:{greet:'Yth. Tim WhatsApp Support & Peninjau Kebijakan yang Terhormat',close:'Dengan Hormat dan Harapan Besar'},en:{greet:'Dear Esteemed WhatsApp Support Team & Policy Reviewers',close:'Sincerely and with Great Hope'},cn:{greet:'尊敬的WhatsApp支持团队与政策审核员',close:'此致，并抱以巨大希望'},ar:{greet:'إلى فريق دعم واتساب ومراجعي السياسات الكرام',close:'مع خالص التقدير وأمل كبير'},ru:{greet:'Уважаемая служба поддержки WhatsApp и специалисты по проверке политик',close:'С уважением и большой надеждой'}},
+  business:{id:{greet:'Yth. Tim WhatsApp Business Support yang Berharga',close:'Salam Hormat dari Mitra Bisnis Anda yang Setia'},en:{greet:'Dear Valued WhatsApp Business Support Team',close:'Best Regards from Your Loyal Business Partner'},cn:{greet:'尊敬的WhatsApp商业支持团队',close:'您的忠实商业伙伴致以最诚挚的问候'},ar:{greet:'إلى فريق دعم واتساب للأعمال الكرام',close:'مع خالص التقدير من شريك عملكم المخلص'},ru:{greet:'Уважаемая служба поддержки WhatsApp Business',close:'С уважением, Ваш верный деловой партнер'}},
+  apologetic:{id:{greet:'Kepada Tim WhatsApp yang Saya Hormati dan Sesali dengan Sangat Mendalam',close:'Dengan Penyesalan Terdalam, Komitmen Penuh, dan Permohonan Maaf yang Tulus'},en:{greet:'To the WhatsApp Team I Deeply Respect and Regretfully Address',close:'With Deepest Regret, Full Commitment, and Sincere Apologies'},cn:{greet:'致我深感尊敬和万分抱歉的WhatsApp团队',close:'深表歉意，全力以赴，并致以最诚挚的歉意'},ar:{greet:'إلى فريق واتساب الذي أحترمه وأعتذر له بشدة',close:'مع أعمق الأسف، والالتزام الكامل، والاعتذار الصادق'},ru:{greet:'Уважаемая и глубоко сожалеющая команда WhatsApp',close:'С глубочайшим сожалением, полной приверженностью и искренними извинениями'}},
+  friendly:{id:{greet:'Halo Tim WhatsApp yang Luar Biasa',close:'Salam Hangat dan Penuh Harap untuk Pemulihan Cepat'},en:{greet:'Hello Amazing WhatsApp Team',close:'Warm Regards and Full of Hope for a Swift Resolution'},cn:{greet:'你好，了不起的WhatsApp团队',close:'亲切问候，并希望迅速解决'},ar:{greet:'مرحباً فريق واتساب الرائع',close:'تحياتي الحارة ومليئة بالأمل لحل سريع'},ru:{greet:'Привет, удивительная команда WhatsApp',close:'С теплыми пожеланиями и надеждой на быстрое разрешение'}},
+  urgent:{id:{greet:'PERHATIAN SEGERA & KRUSIAL: Tim WhatsApp Support',close:'Tindakan Cepat Anda Sangat Diharapkan dan Akan Sangat Dihargai'},en:{greet:'IMMEDIATE & CRUCIAL ATTENTION: WhatsApp Support Team',close:'Your Prompt Action is Highly Anticipated and Will Be Deeply Appreciated'},cn:{greet:'紧急且关键关注：WhatsApp支持团队',close:'您的迅速行动备受期待，并将深表感谢'},ar:{greet:'انتباه فوري وحاسم: فريق دعم واتساب',close:'نتوقع بشدة إجراءاتكم السريعة وسنقدرها كثيرًا'},ru:{greet:'СРОЧНОЕ И КРИТИЧЕСКОЕ ВНИМАНИЕ: Служба поддержки WhatsApp',close:'Ваши оперативные действия очень ожидаемы и будут глубоко оценены'}},
+  legal:{id:{greet:'Kepada Divisi Hukum WhatsApp Inc. yang Berwenang',close:'Dengan Hormat, Kepatuhan Hukum, dan Permohonan Keadilan'},en:{greet:'To the Authorized Legal Department of WhatsApp Inc.',close:'Respectfully, in Legal Compliance, and with a Plea for Justice'},cn:{greet:'致WhatsApp公司授权法务部',close:'谨此致敬，遵守法律，并请求公正'},ar:{greet:'إلى القسم القانوني المخول في واتساب إنك.',close:'مع خالص التقدير، والامتثال القانوني، وطلب العدالة'},ru:{greet:'В Уполномоченный юридический отдел WhatsApp Inc.',close:'С уважением, в соответствии с законодательством и с просьбой о справедливости'}},
+  tech:{id:{greet:'Yth. Tim Teknis WhatsApp & Analis Sistem yang Brilian',close:'Salam Hormat dari Pengguna Teknis yang Memahami Sistem Anda'},en:{greet:'Dear Brilliant WhatsApp Technical Team & System Analysts',close:'Regards from a Technical User Who Understands Your System'},cn:{greet:'尊敬的WhatsApp技术团队与系统分析师',close:'来自理解您系统的技术用户的问候'},ar:{greet:'إلى فريق واتساب التقني ومحللي الأنظمة العباقرة',close:'تحياتي من مستخدم تقني يفهم نظامكم'},ru:{greet:'Уважаемая блестящая техническая команда WhatsApp и системные аналитики',close:'С уважением от технического пользователя, понимающего Вашу систему'}},
+  creative:{id:{greet:'Kepada Tim Kreatif WhatsApp yang Visioner dan Inspiratif',close:'Dengan Semangat Kreativitas, Inovasi, dan Harapan Besar'},en:{greet:'To the Visionary and Inspiring WhatsApp Creative Team',close:'With Creative Spirit, Innovation, and Great Hope'},cn:{greet:'致富有远见和启发性的WhatsApp创意团队',close:'以创造精神、创新和巨大希望'},ar:{greet:'إلى فريق واتساب الإبداعي الملهم والرؤيوي',close:'بروح إبداعية، وابتكار، وأمل كبير'},ru:{greet:'Визионерской и вдохновляющей творческой команде WhatsApp',close:'С творческим духом, инновациями и большой надеждой'}},
+  respectful:{id:{greet:'Yang Terhormat dan Mulia Tim WhatsApp yang Sangat Saya Hormati',close:'Dengan Segala Hormat, Kerendahan Hati, dan Kepercayaan Penuh'},en:{greet:'To the Highly Respected and Esteemed WhatsApp Team Whom I Deeply Honor',close:'With Utmost Respect, Humility, and Full Trust'},cn:{greet:'致我深感尊敬的WhatsApp团队',close:'致以最崇高的敬意、谦卑和完全的信任'},ar:{greet:'إلى فريق واتساب المحترم والموقر الذي أكن له كل الاحترام',close:'مع كل الاحترام، والتواضع، والثقة الكاملة'},ru:{greet:'Глубокоуважаемая и почтенная команда WhatsApp, которую я глубоко чту',close:'С глубочайшим уважением, смирением и полным доверием'}},
+  casual:{id:{greet:'Hai Tim WhatsApp',close:'Salam Santai'},en:{greet:'Hey WhatsApp Team',close:'Cheers'},cn:{greet:'嗨，WhatsApp团队',close:'问候'},ar:{greet:'مرحباً فريق واتساب',close:'تحياتي'},ru:{greet:'Привет, команда WhatsApp',close:'С наилучшими пожеланиями'}},
+  emotional:{id:{greet:'Kepada Tim WhatsApp yang Saya Cintai dan Sangat Butuhkan Kehadirannya',close:'Dengan Hati yang Hancur, Air Mata, dan Permohonan yang Sangat Mendesak'},en:{greet:'To the WhatsApp Team I Love and Desperately Need',close:'With a Broken Heart, Tears, and a Most Urgent Plea'},cn:{greet:'致我所爱和迫切需要的WhatsApp团队',close:'怀着破碎的心、泪水和最紧急的请求'},ar:{greet:'إلى فريق واتساب الذي أحبه وأحتاجه بشدة',close:'بقلب مكسور، ودموع، وطلب ملح للغاية'},ru:{greet:'Команде WhatsApp, которую я люблю и отчаянно нуждаюсь',close:'С разбитым сердцем, слезами и самым срочным мольбой'}},
+  confident:{id:{greet:'Kepada Tim WhatsApp yang Berkompeten dan Adil',close:'Dengan Keyakinan Penuh, Data Akurat, dan Harapan Keadilan Segera'},en:{greet:'To the Competent and Just WhatsApp Team',close:'With Full Confidence, Accurate Data, and Hope for Swift Justice'},cn:{greet:'致有能力和公正的WhatsApp团队',close:'充满信心、准确数据，并希望迅速获得公正'},ar:{greet:'إلى فريق واتساب الكفؤ والعادل',close:'بكل ثقة، وبيانات دقيقة، وأمل في عدالة سريعة'},ru:{greet:'Компетентной и справедливой команде WhatsApp',close:'С полной уверенностью, точными данными и надеждой на скорое правосудие'}}
 };
 
 /* ---------- HELPERS ---------- */
@@ -276,8 +406,27 @@ function setLang(l){
   $$('.lang-tab button').forEach(b=>b.classList.toggle('active', b.id.slice(-2).toLowerCase() === l));
   Object.keys(texts.id).forEach(key => {
     const el = document.getElementById(key);
-    if(el) el.textContent = texts[lang][key];
+    if(el) {
+      if (el.tagName === 'LABEL') {
+        el.textContent = texts[lang][key];
+      } else if (el.tagName === 'SPAN') {
+        el.textContent = texts[lang][key];
+      }
+    }
   });
+  // Update placeholder for details textarea
+  if (lang === 'id') {
+    $('#details').placeholder = 'Jelaskan secara rinci dan jujur kronologi kejadian, serta langkah-langkah yang telah Anda ambil untuk mematuhi kebijakan WhatsApp. Ini adalah kesempatan Anda untuk meluruskan kesalahpahaman dan memulihkan kepercayaan.';
+  } else if (lang === 'en') {
+    $('#details').placeholder = 'Provide a detailed and honest chronology of events, and outline the steps you have taken to comply with WhatsApp policies. This is your chance to clarify misunderstandings and restore trust.';
+  } else if (lang === 'cn') {
+    $('#details').placeholder = '详细、诚实地说明事件经过，并概述您为遵守WhatsApp政策所采取的措施。这是您澄清误解、恢复信任的机会。';
+  } else if (lang === 'ar') {
+    $('#details').placeholder = 'قدم شرحًا مفصلاً وصادقًا لتسلسل الأحداث، واذكر الخطوات التي اتخذتها للامتثال لسياسات واتساب. هذه فرصتك لتوضيح سوء الفهم واستعادة الثقة.';
+  } else if (lang === 'ru') {
+    $('#details').placeholder = 'Подробно и честно опишите хронологию событий, а также шаги, которые вы предприняли для соблюдения политик WhatsApp. Это ваш шанс прояснить недоразумения и восстановить доверие.';
+  }
+
   updatePreview();
 }
 ['id','en','cn','ar','ru'].forEach(l=>{
@@ -301,13 +450,42 @@ $$('input,select,textarea').forEach(el=>el.addEventListener('input',updatePrevie
 
 /* ---------- SUCCESS RATE ---------- */
 function calcSuccess(){
-  let score = 40;
-  if($('#fullName').value.trim()) score += 5;
-  if($('#phone').value.trim()) score += 5;
-  if($('#email').value.trim()) score += 5;
-  if($('#details').value.trim().length > 50) score += 10;
-  $$('.switch.on').forEach(()=>score += 2.5);
-  score = Math.min(score,95).toFixed(0);
+  let score = 30; // Base score lebih rendah, karena kita ingin lebih banyak faktor yang mempengaruhi
+  if ($('#fullName').value.trim()) score += 5;
+  if ($('#phone').value.trim()) score += 5;
+  if ($('#email').value.trim()) score += 5;
+  if ($('#accountDate').value.trim()) score += 3; // Tanggal pembuatan akun juga penting
+  if ($('#country').value.trim() && $('#country').value.trim() !== 'Other') score += 2;
+  if ($('#accountType').value.trim()) score += 2;
+  if ($('#reason').value.trim() && $('#reason').value.trim() !== 'unknown') score += 5; // Alasan spesifik lebih baik
+  if ($('#details').value.trim().length > 150) score += 20; // Penjelasan detail sangat penting, bobot lebih tinggi
+  else if ($('#details').value.trim().length > 80) score += 15;
+  else if ($('#details').value.trim().length > 0) score += 8;
+
+  // Bobot lebih tinggi untuk toggle yang menunjukkan kepatuhan dan bukti
+  if ($('#historyToggle').classList.contains('on')) score += 10; // Sangat penting
+  if ($('#promiseToggle').classList.contains('on')) score += 12; // Sangat, sangat penting
+  if ($('#signatureToggle').classList.contains('on')) score += 4;
+  if ($('#statsToggle').classList.contains('on')) score += 7;
+  if ($('#screenshotToggle').classList.contains('on')) score += 10; // Bukti visual sangat kuat
+  if ($('#topupToggle').classList.contains('on')) score += 3;
+  if ($('#deviceToggle').classList.contains('on')) score += 3;
+  if ($('#ipToggle').classList.contains('on')) score += 3;
+  if ($('#licenseToggle').classList.contains('on') && $('#accountType').value === 'Business') score += 15; // Krusial untuk bisnis
+  if ($('#verificationToggle').classList.contains('on')) score += 6;
+  if ($('#backupToggle').classList.contains('on')) score += 4;
+  if ($('#templateToggle').classList.contains('on')) score += 3; // Template super-formal
+
+  // Penalti untuk alasan ban permanen jika tidak ada detail yang kuat
+  if ($('#reason').value === 'permanent' && $('#details').value.trim().length < 150) {
+    score -= 20; // Penalti lebih besar
+  }
+  // Penalti jika tidak ada detail sama sekali
+  if ($('#details').value.trim().length === 0) {
+    score -= 15; // Penalti lebih besar
+  }
+
+  score = Math.max(0, Math.min(score, 100)).toFixed(0); // Pastikan skor antara 0-100
   $('#successRate').textContent = `${texts[lang].success}: ${score}%`;
 }
 
@@ -335,11 +513,11 @@ function generateMessage(){
   const superTemplate = $('#templateToggle').classList.contains('on');
 
   if(!name || !phone || !email || !reason){
-    return lang==='id' ? 'Lengkapi semua kolom…'
-         : lang==='en' ? 'Complete all fields…'
-         : lang==='cn' ? '请填写所有字段…'
-         : lang==='ar' ? 'يرجى إكمال جميع الحقول…'
-         : 'Пожалуйста заполните все поля…';
+    return lang==='id' ? 'Mohon lengkapi semua kolom wajib untuk memproses banding Anda.'
+         : lang==='en' ? 'Please complete all required fields to process your appeal.'
+         : lang==='cn' ? '请填写所有必填字段以处理您的申诉。'
+         : lang==='ar' ? 'يرجى إكمال جميع الحقول المطلوبة لمعالجة طلب الاستئناف الخاص بك.'
+         : 'Пожалуйста, заполните все обязательные поля для обработки вашей апелляции.';
   }
 
   const t = toneMap[selectedTone][lang];
@@ -354,101 +532,114 @@ function generateMessage(){
     : '';
 
   const reasonMap = {
-    spam:'Spam / Mass Messaging',
-    automation:'Automation / Bot',
-    inappropriate:'Inappropriate Content',
-    business:'Business Policy Violation',
-    ip:'Intellectual Property',
-    community:'Community Guidelines',
-    fake:'Fake News',
-    harassment:'Harassment',
-    hate:'Hate Speech',
-    scam:'Scam / Fraud',
-    underage:'Underage User',
-    impersonation:'Impersonation',
-    malware:'Malware / Phishing',
-    privacy:'Privacy Violation',
-    copyright:'Copyright',
-    trademark:'Trademark',
-    nudity:'Nudity / Adult',
-    violence:'Violence / Gore',
-    drugs:'Drugs',
-    permanent:'Permanent Ban',
-    unknown:'Unknown / Not Specified'
+    spam:'Pelanggaran Kebijakan Spam / Pesan Massal',
+    automation:'Penggunaan Otomatisasi / Bot yang Tidak Sah',
+    inappropriate:'Konten Tidak Pantas / Melanggar Norma',
+    business:'Pelanggaran Kebijakan Bisnis WhatsApp',
+    ip:'Pelanggaran Hak Kekayaan Intelektual',
+    community:'Pelanggaran Pedoman Komunitas WhatsApp',
+    fake:'Penyebaran Berita Palsu / Hoaks',
+    harassment:'Tindakan Pelecehan / Intimidasi',
+    hate:'Ujaran Kebencian / Diskriminasi',
+    scam:'Penipuan / Aktivitas Penipuan',
+    underage:'Pengguna di Bawah Umur',
+    impersonation:'Peniruan Identitas',
+    malware:'Penyebaran Malware / Phishing',
+    privacy:'Pelanggaran Privasi Pengguna',
+    copyright:'Pelanggaran Hak Cipta',
+    trademark:'Pelanggaran Merek Dagang',
+    nudity:'Konten Ketelanjangan / Dewasa',
+    violence:'Konten Kekerasan / Gore',
+    drugs:'Aktivitas Terkait Narkoba',
+    permanent:'Pemblokiran Permanen Akun',
+    system_error:'Kesalahan Sistem / Error Teknis',
+    unknown:'Alasan Tidak Diketahui / Tidak Spesifik'
   };
   const r = reasonMap[reason] || reasonMap.unknown;
   const isPerma = reason === 'permanent';
+  const isSystemError = reason === 'system_error';
 
   let msg = `${t.greet},\n\n`;
 
-  // Teks ultra menyentuh untuk ban permanen
   if(isPerma){
-    msg += lang==='id' ? 'Dengan hati yang remuk dan air mata yang hampir jatuh, saya memohon kepada WhatsApp untuk mengangkat BAN PERMANEN dari akun saya ('+phone+'). Saya sudah kehilangan kontak keluarga, teman, dan bisnis. Tidak ada hari tanpa rasa sesal yang menusuk. Mohon beri saya kesempatan kedua untuk memperbaiki segalanya.' :
-           lang==='en' ? 'With a broken heart and tears on the verge, I beg WhatsApp to lift the PERMANENT BAN from my account ('+phone+'). I have lost touch with family, friends, and my small business. Every day is filled with remorse. Please grant me a second chance to make things right.' :
-           lang==='cn' ? '我怀着破碎的心和即将夺眶的泪水，恳请WhatsApp解除对我账号（'+phone+'）的永久封禁。我已与家人、朋友和生意失去联系。每一天都充满悔恨，请赐予我第二次机会去弥补一切。' :
-           lang==='ar' ? 'بقلب مكسور ودموع على وشك السقوط، أتوسل إلى واتساب لرفع الحظر الدائم عن حسابي ('+phone+'). لقد فقدت التواصل مع عائلتي وأصدقائي وعملي. كل يوم يعج بالندم، أرجو منحي فرصة ثانية لإصلاح الأمور.' :
-           'С разбитым сердцем и слезами на глазах, умоляю WhatsApp снять постоянную блокировку с моего аккаунта ('+phone+'). Я потерял связь с семьёй, друзьями и бизнесом. Каждый день полон раскаяния, прошу дать мне второй шанс всё исправить.';
+    msg += lang==='id' ? 'Dengan hati yang hancur, air mata yang tak terbendung, dan keputusasaan yang mendalam, saya memohon kepada WhatsApp untuk segera mengangkat BAN PERMANEN dari akun saya ('+phone+'). Akun ini bukan hanya sekadar nomor; ini adalah pusat kehidupan saya, penghubung dengan keluarga, teman, dan kelangsungan bisnis. Setiap detik tanpa akses adalah penderitaan yang tak terhingga. Saya bersumpah akan mematuhi setiap kebijakan WhatsApp dengan ketat. Mohon, berikan saya kesempatan terakhir ini untuk membuktikan komitmen saya dan memulihkan hidup saya.' :
+           lang==='en' ? 'With a shattered heart, uncontrollable tears, and profound despair, I implore WhatsApp to immediately lift the PERMANENT BAN from my account ('+phone+'). This account is more than just a number; it is the core of my life, connecting me with family, friends, and the continuity of my business. Every second without access is immeasurable suffering. I vow to strictly adhere to every WhatsApp policy. Please, grant me this final chance to prove my commitment and restore my life.' :
+           lang==='cn' ? '我怀着破碎的心、无法控制的泪水和深深的绝望，恳求WhatsApp立即解除对我账户（'+phone+'）的永久封禁。这个账户不仅仅是一个号码；它是我的生活中心，连接着我的家人、朋友和我的业务连续性。每一秒无法访问都是无法估量的痛苦。我发誓将严格遵守WhatsApp的每一项政策。请给我最后一次机会来证明我的承诺并恢复我的生活。' :
+           lang==='ar' ? 'بقلب محطم، ودموع لا تتوقف، ويأس عميق، أتوسل إلى واتساب لرفع الحظر الدائم فوراً عن حسابي ('+phone+'). هذا الحساب ليس مجرد رقم؛ إنه محور حياتي، يربطني بالعائلة والأصدقاء واستمرارية عملي. كل ثانية بدون وصول هي معاناة لا تقدر بثمن. أقسم أنني سألتزم بكل سياسة واتساب بصرامة. من فضلك، امنحني هذه الفرصة الأخيرة لأثبت التزامي وأستعيد حياتي.' :
+           'С разбитым сердцем, неудержимыми слезами и глубоким отчаянием, я умоляю WhatsApp немедленно снять ПОСТОЯННУЮ БЛОКИРОВКУ с моего аккаунта ('+phone+'). Этот аккаунт — не просто номер; это центр моей жизни, связующее звено с семьей, друзьями и непрерывностью моего бизнеса. Каждая секунда без доступа — это неизмеримое страдание. Я клянусь строго соблюдать каждую политику WhatsApp. Пожалуйста, дайте мне этот последний шанс доказать свою приверженность и восстановить мою жизнь.';
+  }else if(isSystemError){
+    msg += lang==='id' ? 'Saya menulis surat ini dengan keyakinan penuh bahwa pemblokiran akun WhatsApp saya ('+phone+') adalah hasil dari kesalahan sistem atau kesalahpahaman teknis yang tidak disengaja. Saya tidak pernah berniat melanggar Pedoman Komunitas WhatsApp dan selalu berusaha menjadi pengguna yang patuh. Mohon tinjau kembali kasus saya dengan segera, karena akun ini sangat vital bagi komunikasi harian saya.' :
+           lang==='en' ? 'I am writing this letter with full conviction that the blocking of my WhatsApp account ('+phone+') is a result of an unintentional system error or technical misunderstanding. I have never intended to violate WhatsApp Community Guidelines and have always strived to be a compliant user. Please review my case immediately, as this account is vital for my daily communication.' :
+           lang==='cn' ? '我写这封信，坚信我的WhatsApp账户（'+phone+'）被封禁是由于无意的系统错误或技术误解。我从未打算违反WhatsApp社区准则，并一直努力成为一名合规用户。请立即重新审查我的案件，因为此账户对我的日常通信至关重要。' :
+           lang==='ar' ? 'أكتب هذه الرسالة بيقين كامل بأن حظر حسابي في واتساب ('+phone+') هو نتيجة خطأ في النظام غير مقصود أو سوء فهم فني. لم أقصد أبدًا انتهاك إرشادات مجتمع واتساب وقد سعيت دائمًا لأكون مستخدمًا ملتزمًا. يرجى مراجعة حالتي فورًا، حيث أن هذا الحساب حيوي جدًا لتواصلي اليومي.' :
+           'Я пишу это письмо с полной уверенностью, что блокировка моего аккаунта WhatsApp ('+phone+') является результатом непреднамеренной системной ошибки или технического недоразумения. Я никогда не намеревался нарушать Правила сообщества WhatsApp и всегда стремился быть законопослушным пользователем. Пожалуйста, немедленно пересмотрите мое дело, так как этот аккаунт жизненно важен для моего ежедневного общения.';
   }else{
-    msg += lang==='id' ? 'Saya sangat menyesal atas pelanggaran yang terjadi dan mohon dengan rendah hati agar WhatsApp mempertimbangkan pengajuan banding untuk akun saya ('+phone+').' :
-           lang==='en' ? 'I deeply regret the violation that occurred and humbly ask WhatsApp to consider my appeal for my account ('+phone+').' :
-           lang==='cn' ? '我对所发生的违规行为深感懊悔，并恳请WhatsApp考虑对我的账号（'+phone+'）进行申诉。' :
-           lang==='ar' ? 'أنا نادم بشدة على الانتهاك الذي حدث وأطلب بتواضع من واتساب النظر في استئنافي لحسابي ('+phone+').' :
-           'Я глубоко сожалею о произошедшем нарушении и с покорностью прошу WhatsApp рассмотреть мою апелляцию для моего аккаунта ('+phone+').';
+    msg += lang==='id' ? 'Saya sangat menyesal atas dugaan pelanggaran yang terjadi dan memohon dengan hormat agar WhatsApp mempertimbangkan pengajuan banding untuk akun saya ('+phone+'). Saya berkomitmen penuh untuk memahami dan mematuhi semua kebijakan WhatsApp. Saya percaya pada keadilan sistem Anda dan memohon kesempatan untuk meluruskan kesalahpahaman ini.' :
+           lang==='en' ? 'I deeply regret the alleged violation that occurred and humbly ask WhatsApp to consider my appeal for my account ('+phone+'). I am fully committed to understanding and complying with all WhatsApp policies. I believe in the fairness of your system and plead for an opportunity to clarify this misunderstanding.' :
+           lang==='cn' ? '我对所发生的涉嫌违规行为深感懊悔，并恳请WhatsApp考虑对我的账号（'+phone+'）进行申诉。我完全致力于理解并遵守所有WhatsApp政策。我相信您的系统的公平性，并恳求有机会澄清这个误解。' :
+           lang==='ar' ? 'أنا نادم بشدة على الانتهاك المزعوم الذي حدث وأطلب بتواضع من واتساب النظر في استئنافي لحسابي ('+phone+'). أنا ملتزم تمامًا بفهم والامتثال لجميع سياسات واتساب. أؤمن بعدالة نظامكم وأتوسل للحصول على فرصة لتوضيح هذا سوء الفهم.' :
+           'Я глубоко сожалею о предполагаемом нарушении, которое произошло, и смиренно прошу WhatsApp рассмотреть мою апелляцию для моего аккаунта ('+phone+'). Я полностью обязуюсь понимать и соблюдать все политики WhatsApp. Я верю в справедливость вашей системы и умоляю о возможности прояснить это недоразумение.';
   }
 
   msg += '\n\n';
-  msg += lang==='id' ? 'Detail Akun:' :
-         lang==='en' ? 'Account Details:' :
-         lang==='cn' ? '账户详情：' :
-         lang==='ar' ? 'تفاصيل الحساب:' :
-         'Детали аккаунта:';
-  msg += `\n• ${lang==='id' ? 'Nama' : lang==='en' ? 'Name' : lang==='cn' ? '姓名' : lang==='ar' ? 'الاسم' : 'Имя'}: ${name}`;
-  msg += `\n• ${lang==='id' ? 'Nomor' : lang==='en' ? 'Number' : lang==='cn' ? '号码' : lang==='ar' ? 'الرقم' : 'Номер'}: ${phone}`;
+  msg += lang==='id' ? 'Detail Akun & Konteks Krusial:' :
+         lang==='en' ? 'Crucial Account & Context Details:' :
+         lang==='cn' ? '关键账户与上下文详情：' :
+         lang==='ar' ? 'تفاصيل الحساب والسياق الحاسمة:' :
+         'Ключевые детали аккаунта и контекст:';
+  msg += `\n• ${lang==='id' ? 'Nama Lengkap' : lang==='en' ? 'Full Name' : lang==='cn' ? '姓名' : lang==='ar' ? 'الاسم' : 'Имя'}: ${name}`;
+  msg += `\n• ${lang==='id' ? 'Nomor WhatsApp' : lang==='en' ? 'WhatsApp Number' : lang==='cn' ? '号码' : lang==='ar' ? 'الرقم' : 'Номер'}: ${phone}`;
   msg += `\n• Email: ${email}`;
-  if(country && country!=='Other') msg += `\n• ${lang==='id' ? 'Negara' : lang==='en' ? 'Country' : lang==='cn' ? '国家' : lang==='ar' ? 'الدولة' : 'Страна'}: ${country}`;
+  if(country && country!=='Other') msg += `\n• ${lang==='id' ? 'Negara Domisili' : lang==='en' ? 'Country of Residence' : lang==='cn' ? '国家' : lang==='ar' ? 'الدولة' : 'Страна'}: ${country}`;
   if(accountType) msg += `\n• ${lang==='id' ? 'Jenis Akun' : lang==='en' ? 'Account Type' : lang==='cn' ? '账号类型' : lang==='ar' ? 'نوع الحساب' : 'Тип аккаунта'}: ${accountType}`;
-  if(ad) msg += `\n• ${lang==='id' ? 'Dibuat' : lang==='en' ? 'Created' : lang==='cn' ? '创建日期' : lang==='ar' ? 'تم الإنشاء' : 'Создан'}: ${ad}`;
+  if(ad) msg += `\n• ${lang==='id' ? 'Tanggal Pembuatan Akun' : lang==='en' ? 'Account Creation Date' : lang==='cn' ? '创建日期' : lang==='ar' ? 'تاريخ الإنشاء' : 'Создан'}: ${ad}`;
+  msg += `\n• ${lang==='id' ? 'Alasan Pemblokiran (Dugaan)' : lang==='en' ? 'Alleged Ban Reason' : lang==='cn' ? '涉嫌封禁原因' : lang==='ar' ? 'سبب الحظر المزعوم' : 'Предполагаемая причина блокировки'}: ${r}`;
 
   if(details){
-    msg += `\n\n${lang==='id' ? 'Penjelasan yang memilukan:' : lang==='en' ? 'Heart-wrenching explanation:' : lang==='cn' ? '令人心碎的解释:' : lang==='ar' ? 'شرح مؤلم:' : 'Трогательное объяснение:'}\n${details}`;
+    msg += `\n\n${lang==='id' ? 'Penjelasan Rinci & Langkah Perbaikan (Penting untuk Pemulihan Kepercayaan):' : lang==='en' ? 'Detailed Explanation & Remedial Actions (Crucial for Trust Restoration):' : lang==='cn' ? '详细解释与补救措施 (恢复信任的关键):' : lang==='ar' ? 'شرح مفصل وإجراءات علاجية (حاسمة لاستعادة الثقة):' : 'Подробное объяснение и меры по исправлению (ключевые для восстановления доверия):'}\n${details}\n\n${lang==='id' ? 'Saya telah meninjau kebijakan WhatsApp secara menyeluruh dan berkomitmen untuk memastikan kepatuhan mutlak di masa mendatang. Saya memohon kesempatan untuk membuktikan dedikasi saya.' : lang==='en' ? 'I have thoroughly reviewed WhatsApp policies and am absolutely committed to ensuring full compliance moving forward. I plead for an opportunity to prove my dedication.' : lang==='cn' ? '我已彻底审查WhatsApp政策，并绝对致力于确保未来完全遵守。我恳求有机会证明我的奉献。' : lang==='ar' ? 'لقد راجعت سياسات واتساب بدقة وألتزم تمامًا بضمان الامتثال الكامل في المستقبل. أتوسل للحصول على فرصة لإثبات تفاني.' : 'Я тщательно изучил политики WhatsApp и абсолютно привержен полному соблюдению их в будущем. Я умоляю о возможности доказать свою преданность.'}`;
+  } else {
+    msg += `\n\n${lang==='id' ? 'Saya siap memberikan penjelasan lebih lanjut secara mendalam jika diperlukan dan berkomitmen penuh untuk mematuhi semua kebijakan WhatsApp tanpa terkecuali. Mohon berikan saya kesempatan untuk berdialog.' : lang==='en' ? 'I am ready to provide further in-depth explanation if needed and am fully committed to adhering to all WhatsApp policies without exception. Please grant me an opportunity for dialogue.' : lang==='cn' ? '如果需要，我随时准备提供更深入的解释，并完全致力于无一例外地遵守所有WhatsApp政策。请给我一个对话的机会。' : lang==='ar' ? 'أنا مستعد لتقديم مزيد من الشرح المتعمق إذا لزم الأمر وألتزم تمامًا بالالتزام بجميع سياسات واتساب دون استثناء. يرجى منحي فرصة للحوار.' : 'Я готов предоставить более подробные объяснения, если потребуется, и полностью привержен соблюдению всех политик WhatsApp без исключения. Пожалуйста, предоставьте мне возможность для диалога.'}`;
   }
 
   if(history){
-    msg += `\n\n${lang==='id' ? 'Riwayat akun bersih tanpa pelanggaran sejak pembuatan.' : lang==='en' ? 'Account history is clean without any violations since creation.' : lang==='cn' ? '自创建以来账号历史清白，无任何违规记录。' : lang==='ar' ? 'سجل الحساب نظيف دون أي مخالفات منذ الإنشاء.' : 'История аккаунта чиста без нарушений с момента создания.'}`;
+    msg += `\n\n${lang==='id' ? 'Riwayat akun saya adalah bukti tak terbantahkan dari penggunaan yang bertanggung jawab dan konsisten sejak akun ini dibuat. Tidak ada pelanggaran serius yang pernah tercatat, menunjukkan dedikasi saya pada platform ini.' : lang==='en' ? 'My account history is undeniable proof of responsible and consistent usage since its creation. No serious violations have ever been recorded, demonstrating my dedication to this platform.' : lang==='cn' ? '我的账户历史是自创建以来负责任和持续使用的无可辩驳的证据。从未有过严重违规记录，这表明了我对该平台的奉献。' : lang==='ar' ? 'سجل حسابي هو دليل لا يمكن دحضه على الاستخدام المسؤول والمتسق منذ إنشائه. لم يتم تسجيل أي انتهاكات خطيرة على الإطلاق، مما يدل على تفاني في هذه المنصة.' : 'История моего аккаунта является неоспоримым доказательством ответственного и последовательного использования с момента его создания. Никаких серьезных нарушений никогда не было зафиксировано, что демонстрирует мою преданность этой платформе.'}`;
   }
   if(stats){
     const randChats = Math.floor(Math.random()*100+50);
     const randMedia = (Math.random()*30+5).toFixed(1);
-    msg += `\n\n${lang==='id' ? 'Statistik Penggunaan:' : lang==='en' ? 'Usage Statistics:' : lang==='cn' ? '使用统计：' : lang==='ar' ? 'إحصائيات الاستخدام:' : 'Статистика использования:'}`;
-    msg += `\n• ${lang==='id' ? 'Rata-rata chat harian' : lang==='en' ? 'Average daily chats' : lang==='cn' ? '日均聊天' : lang==='ar' ? 'المحادثات اليومية المتوسطة' : 'Среднее количество чатов в день'}: ~${randChats}`;
-    msg += `\n• ${lang==='id' ? 'Penggunaan media' : lang==='en' ? 'Media usage' : lang==='cn' ? '媒体使用' : lang==='ar' ? 'استخدام الوسائط' : 'Использование медиа'}: <${randMedia} MB/день`;
+    msg += `\n\n${lang==='id' ? 'Statistik Penggunaan Akun (Menunjukkan Aktivitas Normal & Vitalitas Akun):' : lang==='en' ? 'Account Usage Statistics (Indicating Normal Activity & Account Vitality):' : lang==='cn' ? '账户使用统计 (表明正常活动与账户活力):' : lang==='ar' ? 'إحصائيات استخدام الحساب (تشير إلى نشاط عادي وحيوية الحساب):' : 'Статистика использования аккаунта (указывающая на нормальную активность и жизнеспособность аккаунта):'}`;
+    msg += `\n• ${lang==='id' ? 'Rata-rata chat harian' : lang==='en' ? 'Average daily chats' : lang==='cn' ? '日均聊天' : lang==='ar' ? 'المحادثات اليومية المتوسطة' : 'Среднее количество чатов в день'}: ~${randChats} pesan (menunjukkan interaksi organik)`;
+    msg += `\n• ${lang==='id' ? 'Penggunaan media' : lang==='en' ? 'Media usage' : lang==='cn' ? '媒体使用' : lang==='ar' ? 'استخدام الوسائط' : 'Использование медиа'}: <${randMedia} MB/hari (sesuai standar penggunaan wajar)`;
+    msg += `\n• ${lang==='id' ? 'Durasi penggunaan' : lang==='en' ? 'Usage duration' : lang==='cn' ? '使用时长' : lang==='ar' ? 'مدة الاستخدام' : 'Продолжительность использования'}: Konsisten dan esensial untuk komunikasi pribadi/bisnis`;
   }
   if(device){
-    msg += `\n\n${lang==='id' ? 'Perangkat:' : lang==='en' ? 'Device:' : lang==='cn' ? '设备：' : lang==='ar' ? 'الجهاز:' : 'Устройство:'} ${navigator.platform || 'Android / iOS'}`;
+    msg += `\n\n${lang==='id' ? 'Informasi Perangkat & Lingkungan Penggunaan (Untuk Verifikasi Keamanan Akun):' : lang==='en' ? 'Device & Usage Environment Information (For Account Security Verification):' : lang==='cn' ? '设备与使用环境信息 (用于账户安全验证):' : lang==='ar' ? 'معلومات الجهاز وبيئة الاستخدام (للتحقق من أمان الحساب):' : 'Информация об устройстве и среде использования (для проверки безопасности аккаунта):'}`;
+    msg += `\n• ${lang==='id' ? 'Jenis Perangkat' : lang==='en' ? 'Device Type' : lang==='cn' ? '设备类型' : lang==='ar' ? 'نوع الجهاز' : 'Тип устройства'}: ${navigator.platform || 'Android / iOS'} (perangkat utama yang selalu digunakan)`;
+    msg += `\n• ${lang==='id' ? 'Koneksi Jaringan' : lang==='en' ? 'Network Connection' : lang==='cn' ? '网络连接' : lang==='ar' ? 'اتصال الشبكة' : 'Сетевое соединение'}: Stabil dan aman (tidak ada indikasi aktivitas mencurigakan)`;
   }
   if(ip){
-    msg += `\n• ${lang==='id' ? 'IP terakhir' : lang==='en' ? 'Latest IP' : lang==='cn' ? '最近IP' : lang==='ar' ? 'آخر عنوان IP' : 'Последний IP'}: (terlampir)`;
+    msg += `\n• ${lang==='id' ? 'Alamat IP Terakhir' : lang==='en' ? 'Latest IP Address' : lang==='cn' ? '最近IP地址' : lang==='ar' ? 'آخر عنوان IP' : 'Последний IP-адрес'}: (Data terlampir, krusial untuk verifikasi lokasi dan pola aktivitas yang sah)`;
   }
   if(license){
-    msg += `\n• ${lang==='id' ? 'Nomor lisensi bisnis' : lang==='en' ? 'Business license number' : lang==='cn' ? '营业执照号码' : lang==='ar' ? 'رقم ترخيص الأعمال' : 'Номер бизнес-лицензии'}: (terlampir)`;
+    msg += `\n• ${lang==='id' ? 'Nomor Lisensi Bisnis/Organisasi' : lang==='en' ? 'Business/Organization License Number' : lang==='cn' ? '营业执照号码' : lang==='ar' ? 'رقم ترخيص الأعمال/المنظمة' : 'Номер бизнес-лицензии/организации'}: (Terlampir, bukti tak terbantahkan legalitas entitas dan pentingnya akun ini untuk operasional)`;
   }
   if(verification){
-    msg += `\n• ${lang==='id' ? 'Verifikasi dua langkah' : lang==='en' ? 'Two-step verification' : lang==='cn' ? '两步验证' : lang==='ar' ? 'التحقق بخطوتين' : 'Двухэтапная проверка'}: ${lang==='id' ? 'Aktif' : lang==='en' ? 'Active' : lang==='cn' ? '已启用' : lang==='ar' ? 'نشط' : 'Активна'}`;
+    msg += `\n• ${lang==='id' ? 'Verifikasi Dua Langkah' : lang==='en' ? 'Two-Step Verification' : lang==='cn' ? '两步验证' : lang==='ar' ? 'التحقق بخطوتين' : 'Двухэтапная проверка'}: ${lang==='id' ? 'Aktif dan selalu dijaga dengan ketat, menunjukkan komitmen saya pada keamanan akun dan pencegahan akses tidak sah.' : lang==='en' ? 'Active and strictly maintained, demonstrating my commitment to account security and prevention of unauthorized access.' : lang==='cn' ? '已启用并严格维护，表明我对账户安全和防止未经授权访问的承诺。' : lang==='ar' ? 'نشط ويتم الحفاظ عليه بصرامة، مما يدل على التزامي بأمان الحساب ومنع الوصول غير المصرح به.' : 'Активна и строго поддерживается, демонстрируя мою приверженность безопасности аккаунта и предотвращению несанкционированного доступа.'}`;
   }
   if(backup){
-    msg += `\n• ${lang==='id' ? 'Cadangan chat' : lang==='en' ? 'Chat backup' : lang==='cn' ? '聊天记录备份' : lang==='ar' ? 'نسخة الدردشة الاحتياطية' : 'Резервная копия чатов'}: ${lang==='id' ? 'Tersedia' : lang==='en' ? 'Available' : lang==='cn' ? '已备份' : lang==='ar' ? 'متاحة' : 'Доступна'}`;
+    msg += `\n• ${lang==='id' ? 'Cadangan Chat' : lang==='en' ? 'Chat Backup' : lang==='cn' ? '聊天记录备份' : lang==='ar' ? 'نسخة الدردشة الاحتياطية' : 'Резервная копия чатов'}: ${lang==='id' ? 'Tersedia dan rutin dilakukan, membuktikan penggunaan akun yang aktif, penting, dan berisi data krusial yang tidak dapat digantikan.' : lang==='en' ? 'Available and regularly performed, proving active, important account usage and containing crucial, irreplaceable data.' : lang==='cn' ? '已备份并定期执行，证明账户使用活跃、重要，并包含关键的、不可替代的数据。' : lang==='ar' ? 'متاحة ويتم إجراؤها بانتظام، مما يثبت الاستخدام النشط والمهم للحساب ويحتوي على بيانات حاسمة لا يمكن استبدالها.' : 'Доступна и регулярно выполняется, доказывая активное, важное использование аккаунта и содержащая критически важные, незаменимые данные.'}`;
   }
   if(topup){
-    msg += `\n• ${lang==='id' ? 'Riwayat top-up game' : lang==='en' ? 'Game top-up history' : lang==='cn' ? '游戏充值记录' : lang==='ar' ? 'سجل شحن الألعاب' : 'История пополнений игр'}: (terlampir)`;
+    msg += `\n• ${lang==='id' ? 'Riwayat Transaksi/Top-up' : lang==='en' ? 'Transaction/Top-up History' : lang==='cn' ? '交易/充值记录' : lang==='ar' ? 'سجل المعاملات/الشحن' : 'История транзакций/пополнений'}: (Terlampir, menunjukkan investasi finansial pada platform dan aktivitas yang sepenuhnya legal dan sah)`;
   }
   if(screenshot){
-    msg += `\n\n${lang==='id' ? 'Screenshot bukti terlampir.' : lang==='en' ? 'Attached screenshot as evidence.' : lang==='cn' ? '已附截图证据。' : lang==='ar' ? 'لقطة شاشة مرفقة كدليل.' : 'Скриншот приложен как доказательство.'}`;
+    msg += `\n\n${lang==='id' ? 'Screenshot bukti pendukung yang krusial dan relevan telah terlampir untuk memberikan gambaran yang jelas dan tak terbantahkan atas situasi ini. Mohon periksa dengan seksama.' : lang==='en' ? 'Crucial and relevant supporting screenshot evidence has been attached to provide a clear and undeniable picture of this situation. Please review carefully.' : lang==='cn' ? '关键且相关的支持性截图证据已附上，以提供对当前情况清晰且无可辩驳的说明。请仔细审查。' : lang==='ar' ? 'تم إرفاق لقطات شاشة داعمة حاسمة وذات صلة لتقديم صورة واضحة ولا يمكن دحضها لهذه الحالة. يرجى المراجعة بعناية.' : 'Ключевые и соответствующие подтверждающие скриншоты приложены для предоставления четкой и неоспоримой картины этой ситуации. Пожалуйста, внимательно изучите.'}`;
   }
   if(promise){
-    msg += `\n\n${lang==='id' ? 'Saya berjanji mematuhi semua kebijakan WhatsApp.' : lang==='en' ? 'I promise to strictly follow all WhatsApp policies.' : lang==='cn' ? '本人承诺严格遵守所有WhatsApp政策。' : lang==='ar' ? 'أعد بالالتزام بجميع سياسات واتساب.' : 'Обещаю строго соблюдать все политики WhatsApp.'}`;
+    msg += `\n\n${lang==='id' ? 'Saya dengan tulus berjanji, dengan sumpah dan komitmen absolut, untuk tidak mengulangi pelanggaran apa pun dan akan selalu menggunakan WhatsApp sesuai dengan Pedoman Komunitas dan Ketentuan Layanan secara ketat. Saya berkomitmen penuh untuk menjadi pengguna yang bertanggung jawab, patuh, dan teladan.' : lang==='en' ? 'I sincerely promise, with an absolute vow and commitment, not to repeat any violations and will always use WhatsApp strictly in accordance with its Community Guidelines and Terms of Service. I am fully committed to being a responsible, compliant, and exemplary user.' : lang==='cn' ? '我真诚地承诺，以绝对的誓言和承诺，绝不重复任何违规行为，并将始终严格按照WhatsApp的社区准则和服务条款使用。我完全致力于成为一个负责任、合规和模范的用户。' : lang==='ar' ? 'أتعهد بصدق، بقسم والتزام مطلق، بعدم تكرار أي انتهاكات وسأستخدم واتساب دائمًا بصرامة وفقًا لإرشادات المجتمع وشروط الخدمة. أنا ملتزم تمامًا بأن أكون مستخدمًا مسؤولًا، وملتزمًا، ومثالًا يحتذى به.' : 'Я искренне обещаю, с абсолютной клятвой и приверженностью, не повторять никаких нарушений и всегда буду использовать WhatsApp строго в соответствии с его Правилами сообщества и Условиями обслуживания. Я полностью обязуюсь быть ответственным, законопослушным и образцовым пользователем.'}`;
   }
   if(signature){
-    msg += `\n\n${t.close},\n${name}\n${email}`;
+    msg += `\n\n${t.close},\n\n${name}\n${email}\n${phone}\n\n${lang==='id' ? 'Menunggu kabar baik Anda dalam hitungan jam.' : lang==='en' ? 'Awaiting your positive news within hours.' : lang==='cn' ? '期待您在数小时内的好消息。' : lang==='ar' ? 'في انتظار أخباركم الإيجابية خلال ساعات.' : 'Ожидаю ваших положительных новостей в течение нескольких часов.'}`;
   }
   return msg;
 }
@@ -461,17 +652,21 @@ function updatePreview(){
 }
 function copyMessage(){
   const msg = generateMessage();
-  if(msg.includes('…')) return alert(lang==='id' ? 'Lengkapi form dulu' : lang==='en' ? 'Complete the form' : lang==='cn' ? '请填写表单' : lang==='ar' ? 'يرجى إكمال النموذج' : 'Пожалуйста заполните форму');
+  if(msg.includes('Mohon lengkapi semua kolom wajib') || msg.includes('Please complete all required fields') || msg.includes('请填写所有必填字段') || msg.includes('يرجى إكمال جميع الحقول المطلوبة') || msg.includes('Пожалуйста, заполните все обязательные поля')) {
+    return alert(lang==='id' ? 'Mohon lengkapi formulir terlebih dahulu untuk menghasilkan pesan banding.' : lang==='en' ? 'Please complete the form first to generate the appeal message.' : lang==='cn' ? '请先填写表格以生成申诉信息。' : lang==='ar' ? 'يرجى إكمال النموذج أولاً لإنشاء رسالة الاستئناف.' : 'Пожалуйста, сначала заполните форму, чтобы сгенерировать сообщение апелляции.');
+  }
   navigator.clipboard.writeText(msg);
-  alert(lang==='id' ? '✅ Tersalin' : lang==='en' ? '✅ Copied' : lang==='cn' ? '✅ 已复制' : lang==='ar' ? '✅ تم النسخ' : '✅ Скопировано');
+  alert(lang==='id' ? '✅ Pesan banding berhasil disalin ke clipboard!' : lang==='en' ? '✅ Appeal message successfully copied to clipboard!' : lang==='cn' ? '✅ 申诉信息已成功复制到剪贴板！' : lang==='ar' ? '✅ تم نسخ رسالة الاستئناف بنجاح إلى الحافظة!' : '✅ Сообщение апелляции успешно скопировано в буфер обмена!');
 }
 function downloadMessage(){
   const msg = generateMessage();
-  if(msg.includes('…')) return alert(lang==='id' ? 'Lengkapi form dulu' : lang==='en' ? 'Complete the form' : lang==='cn' ? '请填写表单' : lang==='ar' ? 'يرجى إكمال النموذج' : 'Пожалуйста заполните форму');
+  if(msg.includes('Mohon lengkapi semua kolom wajib') || msg.includes('Please complete all required fields') || msg.includes('请填写所有必填字段') || msg.includes('يرجى إكمال جميع الحقول المطلوبة') || msg.includes('Пожалуйста, заполните все обязательные поля')) {
+    return alert(lang==='id' ? 'Mohon lengkapi formulir terlebih dahulu untuk mengunduh pesan banding.' : lang==='en' ? 'Please complete the form first to download the appeal message.' : lang==='cn' ? '请先填写表格以下载申诉信息。' : lang==='ar' ? 'يرجى إكمال النموذج أولاً لتنزيل رسالة الاستئناف.' : 'Пожалуйста, сначала заполните форму, чтобы скачать сообщение апелляции.');
+  }
   const blob = new Blob([msg],{type:'text/plain'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `WhatsApp-Unban-Appeal-${Date.now()}.txt`;
+  a.download = `WhatsApp-Appeal-${Date.now()}.txt`;
   a.click();
 }
 function resetForm(){
@@ -480,13 +675,16 @@ function resetForm(){
   $$('.option').forEach(o=>o.classList.remove('active'));
   $('.option[data-tone="formal"]').classList.add('active');
   selectedTone = 'formal';
-  setLang('id');
+  setLang('id'); // Reset language to default ID
   updatePreview();
+  alert(lang==='id' ? 'Formulir telah direset!' : lang==='en' ? 'Form has been reset!' : lang==='cn' ? '表格已重置！' : lang==='ar' ? 'تم إعادة تعيين النموذج!' : 'Форма была сброшена!');
 }
 $('#unbanForm').addEventListener('submit',e=>{
   e.preventDefault();
   const msg = generateMessage();
-  if(msg.includes('…')) return alert(lang==='id' ? 'Lengkapi form dulu' : lang==='en' ? 'Complete the form' : lang==='cn' ? '请填写表单' : lang==='ar' ? 'يرجى إكمال النموذج' : 'Пожалуйста заполните форму');
+  if(msg.includes('Mohon lengkapi semua kolom wajib') || msg.includes('Please complete all required fields') || msg.includes('请填写所有必填字段') || msg.includes('يرجى إكمال جميع الحقول المطلوبة') || msg.includes('Пожалуйста, заполните все обязательные поля')) {
+    return alert(lang==='id' ? 'Mohon lengkapi formulir terlebih dahulu sebelum mengirim.' : lang==='en' ? 'Please complete the form first before sending.' : lang==='cn' ? '请先填写表格再发送。' : lang==='ar' ? 'يرجى إكمال النموذج أولاً قبل الإرسال.' : 'Пожалуйста, сначала заполните форму, прежде чем отправлять.');
+  }
   const url = `https://wa.me/14155238886?text=${encodeURIComponent(msg)}`;
   window.open(url,'_blank');
 });
